@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "servePreview": "cd Static-Wind && npm run servePreview",
+    "build": "cd Static-Wind && npm run build",
+    "serveBuild": "cd Static-Wind && npm run serveBuild",
+    "test": "cd Static-Wind && npm run build && npm run serveBuild"
+  }
+}
