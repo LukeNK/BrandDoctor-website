@@ -1,15 +1,31 @@
 * {
     box-sizing: border-box;
+
+    /* Config vars */
+    font-family: 'Be Vietnam Pro', sans-serif;
+    --border-radius: 0.5rem;
     --nav-height: 3rem;
+
+    /* Color vars */
     --color-theme: #003399;
     --color-light: #fcf0ce;
-    /* Universal font */
-    font-family: 'Be Vietnam Pro', sans-serif;
+    --color-bright: #ffbb33;
 }
 
 /* ------------------------------------------------------------------Elements */
 a {
     color: inherit;
+    /* Additional link @ a.btn */
+}
+
+a.btn, button {
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--border-radius);
+    background-color: #ffbb33;
+    color: var(--color-light);
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +94,7 @@ div.banner.full {
 div.banner.full h1,
 div.banner.full h2 {
     text-align: center;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     margin: 0.5rem;
     padding: 0.25rem;
     background-color: var(--color-theme);
