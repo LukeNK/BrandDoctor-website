@@ -3,6 +3,8 @@
     --nav-height: 3rem;
     --color-theme: #003399;
     --color-light: #fcf0ce;
+    /* Universal font */
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 /* ------------------------------------------------------------------Elements */
@@ -54,22 +56,23 @@ main {
 }
 
 /* -------------------------------------------------------------------Classes */
-/* full-screen banner */
-div.banner-full {
-    height: 100vh;
+div.banner {
     background-position: center;
     background-size: cover;
-    /* Align items center */
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-div.banner-full > div {
-    width: max-content;
+div.banner > div {
+    padding: 5rem;
 }
-div.banner-full h1,
-div.banner-full h2 {
+
+div.banner.full {
+    /* full-screen banner */
+    height: 100vh;
+}
+div.banner.full h1,
+div.banner.full h2 {
     text-align: center;
     border-radius: 0.5rem;
     margin: 0.5rem;
