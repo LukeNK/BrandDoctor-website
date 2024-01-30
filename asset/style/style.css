@@ -66,6 +66,10 @@ div.banner {
 div.banner > div {
     padding: 5rem;
 }
+div.banner h1,
+div.banner h2 {
+    color: var(--color-light);
+}
 
 div.banner.full {
     /* full-screen banner */
@@ -78,5 +82,4 @@ div.banner.full h2 {
     margin: 0.5rem;
     padding: 0.25rem;
     background-color: var(--color-theme);
-    color: var(--color-light);
 }
