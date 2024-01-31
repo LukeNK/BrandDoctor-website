@@ -4,6 +4,8 @@
 <head html-src="/comp/head.html">
     <title>Brand Doctor Group</title>
 
+    <link rel="stylesheet" href="/asset/style/circle-border.css">
+
     <style>
         /* No margin for full page banner */
         main {
@@ -12,10 +14,23 @@
 
         #banner-whois {
             background-image:
-            linear-gradient(to left, #003399ff, #ffffff00),
-            url(/asset/image/51589.jpg);
+                linear-gradient(to left, #003399ff, #ffffff00),
+                url(/asset/image/51589.jpg);
             color: #ffffff;
         }
+
+        #banner-stats {
+            background-image:
+                linear-gradient(to top, #003399ff, #ffffff00),
+                url(/asset/image/banner_bg.jpg);
+        }
+        #banner-stats .circle-border {
+            width: 10rem;
+            height: 10rem;
+            border: 0.5rem solid white;
+        }
+        #banner-stats h2 { font-size: xx-large; }
+        #banner-stats h3 { color: white; }
     </style>
 </head>
 
@@ -38,8 +53,26 @@
                 <a class="btn">Xem thêm</a>
             </div>
         </div>
-        <div class="banner">
+        <div id="banner-stats" class="banner col">
             <h1>Những con số ấn tượng về Brand Doctor</h1>
+            <div class="banner">
+                <div>
+                    <h2 class="circle-border">02</h2>
+                    <h3>Dịch vụ chính</h3>
+                </div>
+                <div>
+                    <h2 class="circle-border">07</h2>
+                    <h3>Phòng, Ban</h3>
+                </div>
+                <div>
+                    <h2 class="circle-border">267</h2>
+                    <h3>Chuyên gia nghiên cứu</h3>
+                </div>
+                <div>
+                    <h2 class="circle-border">1007</h2>
+                    <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
+                </div>
+            </div>
         </div>
     </main>
     <footer html-src="/comp/footer.html"></footer>

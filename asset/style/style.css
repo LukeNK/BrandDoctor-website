@@ -86,8 +86,28 @@ div.banner h2 {
     color: var(--color-light);
 }
 
+/* Banner with columns */
+div.banner.col {
+    flex-direction: column;
+}
+div.banner.col h1,
+div.banner.col h2,
+div.banner.col h3 {
+    text-align: center;
+}
+div.banner.col > div.banner {
+    padding: 0;
+}
+div.banner.col > div.banner > div {
+    /* Align center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* full-screen banner */
 div.banner.full {
-    /* full-screen banner */
     height: 100vh;
 }
 div.banner.full h1,
