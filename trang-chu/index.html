@@ -57,19 +57,19 @@
             <h1>Những con số ấn tượng về Brand Doctor</h1>
             <div class="banner">
                 <div>
-                    <h2 class="circle-border">02</h2>
+                    <h2 id="stats-srv" class="circle-border">2</h2>
                     <h3>Dịch vụ chính</h3>
                 </div>
                 <div>
-                    <h2 class="circle-border">07</h2>
+                    <h2 id="stats-rom" class="circle-border">7</h2>
                     <h3>Phòng, Ban</h3>
                 </div>
                 <div>
-                    <h2 class="circle-border">267</h2>
+                    <h2 id="stats-exp" class="circle-border">267</h2>
                     <h3>Chuyên gia nghiên cứu</h3>
                 </div>
                 <div>
-                    <h2 class="circle-border">1007</h2>
+                    <h2 id="stats-tch" class="circle-border">1007</h2>
                     <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
                 </div>
             </div>
@@ -80,5 +80,43 @@
 
 <script src="/asset/script/script.js"></script>
 <script src="/Static-Wind/preview.js"></script>
+<script>
+    // Init stat animation
+    const stats = {};
+    let statsAnimationTrigger = false; // if the has been triggered
+    document.querySelectorAll('#banner-stats > .banner h2').forEach(elm => {
+        // save stat numbers
+        stats[elm.id] = {
+            num: Number(elm.innerHTML),
+            elm: elm,
+            inc: 0, // increment
+        }
+        elm.innerHTML = 0;
+    });
+    document.addEventListener('scroll', () => {
+        // get surrounding div of the stats
+        const rect =
+            document.querySelector('#banner-stats > .banner')
+            .getBoundingClientRect();
+
+        // run animation if in viewport
+        if (
+            statsAnimationTrigger
+            || rect.top > (window.innerHeight || document.documentElement.clientHeight)
+        ) return
+        statsAnimationTrigger = true;
+        for (const id in stats) {
+            stats[id].interval = setInterval(() => {
+                let cur = Number(document.getElementById(id).innerHTML);
+                stats[id].inc = ~~((stats[id].num - cur) / 10 + 1);
+                // remove interval at number
+                if (cur >= stats[id].num)
+                    clearInterval(stats[id].interval);
+                else
+                    document.getElementById(id).innerHTML = cur + stats[id].inc;
+            }, 1000 / 60); // 60fps
+        }
+    })
+</script>
 
 </html>
