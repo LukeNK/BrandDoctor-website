@@ -108,7 +108,7 @@
         for (const id in stats) {
             stats[id].interval = setInterval(() => {
                 let cur = Number(document.getElementById(id).innerHTML);
-                stats[id].inc = ~~((stats[id].num - cur) / 10 + 1);
+                stats[id].inc = ~~((stats[id].num - cur) / 50) + 1;
                 // remove interval at number
                 if (cur >= stats[id].num)
                     clearInterval(stats[id].interval);
