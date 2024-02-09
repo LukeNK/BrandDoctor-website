@@ -31,6 +31,46 @@
         }
         #banner-stats h2 { font-size: xx-large; }
         #banner-stats h3 { color: white; }
+
+        #solutions > h1 {
+            text-align: center;
+            color: var(--color-theme);
+        }
+        #solutions > div {
+            display: flex;
+            padding: 0 10%;
+        }
+        #solutions > div > div { flex: 1; }
+
+        #solutions-texts {
+            --bg-color: #003399cc;
+            background-image:
+                linear-gradient(to top, var(--bg-color), var(--bg-color)),
+                url(/asset/image/8e98c.jpg);
+            background-size: 1000px;
+            background-position: right;
+            color: #ffffff;
+            padding: 1rem;
+        }
+
+        #solutions-btns {
+            background-color: var(--color-gray);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        #solutions-btns button {
+            display: block;
+            margin: 0.5rem;
+            background-color: transparent;
+            color: var(--color-theme);
+            text-align: left;
+            text-decoration: none;
+        }
+        #solutions-btns button.select {
+            background-color: var(--color-theme-light);
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -71,6 +111,25 @@
                 <div>
                     <h2 id="stats-tch" class="circle-border">1007</h2>
                     <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
+                </div>
+            </div>
+        </div>
+        <div id="solutions">
+            <h1>GIẢI PHÁP TỪ BRAND DOCTOR</h1>
+            <div>
+                <div id="solutions-texts">
+                    <div>
+                        <p>Phương pháp đánh giá Chỉ số sức mạnh thương hiệu (SBI). Đánh giá toàn diện doanh nghiệp dựa trên nền tảng thương hiệu</p>
+                        <ul>
+                            <li>9 yếu tố bên trong</li>
+                            <li>4 yếu tố bên ngoài</li>
+                        </ul>
+                    </div>
+                    <div>2</div>
+                </div>
+                <div id="solutions-btns">
+                    <button onclick="solutionsAnimation(0)">ĐỒNG HÀNH CÙNG DOANH NGHIỆP</button>
+                    <button onclick="solutionsAnimation(1)">KIẾN TẠO SỰ NGHIỆP</button>
                 </div>
             </div>
         </div>
@@ -116,7 +175,23 @@
                     document.getElementById(id).innerHTML = cur + stats[id].inc;
             }, 1000 / 60); // 60fps
         }
-    })
+    });
+
+    // Switch solution banner based on button order
+    function solutionsAnimation(index) {
+        let texts = [...document.getElementById('solutions-texts').children],
+            btns = [...document.getElementById('solutions-btns').children];
+
+        for (let l1 = 0; l1 < texts.length; l1++)
+            if (l1 == index) {
+                texts[l1].style.display = '';
+                btns[l1].classList.add('select');
+            } else {
+                texts[l1].style.display = 'none';
+                btns[l1].classList.remove('select');
+            }
+    }
+    solutionsAnimation(0);
 </script>
 
 </html>
