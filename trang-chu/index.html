@@ -12,6 +12,11 @@
             margin: 0;
         }
 
+        h1 {
+            text-align: center;
+            color: var(--color-theme);
+        }
+
         #banner-whois {
             background-image:
                 linear-gradient(to left, #003399ff, #ffffff00),
@@ -32,15 +37,11 @@
         #banner-stats h2 { font-size: xx-large; }
         #banner-stats h3 { color: white; }
 
-        #solutions > h1 {
-            text-align: center;
-            color: var(--color-theme);
-        }
-        #solutions > div {
+        #solutions {
             display: flex;
             padding: 0 10%;
         }
-        #solutions > div > div { flex: 1; }
+        #solutions > div { flex: 1; }
 
         #solutions-texts {
             --bg-color: #003399cc;
@@ -71,6 +72,25 @@
             background-color: var(--color-theme-light);
             color: #ffffff;
         }
+
+        #events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #events > div {
+            flex: 1 0 25rem;
+            margin: 2rem;
+            padding: 5rem 5rem 2rem 2rem;
+            background-color: lightgray;
+        }
+
+        #events > div > div {
+            padding: 1rem;
+            background-color: #003399cc;
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -93,6 +113,7 @@
                 <a class="btn">Xem thêm</a>
             </div>
         </div>
+
         <div id="banner-stats" class="banner col">
             <h1>Những con số ấn tượng về Brand Doctor</h1>
             <div class="banner">
@@ -114,24 +135,24 @@
                 </div>
             </div>
         </div>
+
+        <h1>GIẢI PHÁP TỪ BRAND DOCTOR</h1>
         <div id="solutions">
-            <h1>GIẢI PHÁP TỪ BRAND DOCTOR</h1>
-            <div>
-                <div id="solutions-texts">
-                    <div>
-                        <p>Phương pháp đánh giá Chỉ số sức mạnh thương hiệu (SBI). Đánh giá toàn diện doanh nghiệp dựa trên nền tảng thương hiệu</p>
-                        <ul>
-                            <li>9 yếu tố bên trong</li>
-                            <li>4 yếu tố bên ngoài</li>
-                        </ul>
-                    </div>
-                    <div>2</div>
+            <div id="solutions-texts">
+                <div>
+                    <p>Phương pháp đánh giá Chỉ số sức mạnh thương hiệu (SBI). Đánh giá toàn diện doanh nghiệp dựa trên nền tảng thương hiệu</p>
+                    <ul>
+                        <li>9 yếu tố bên trong</li>
+                        <li>4 yếu tố bên ngoài</li>
+                    </ul>
                 </div>
-                <div id="solutions-btns">
-                    <button onclick="solutionsAnimation(0)">ĐỒNG HÀNH CÙNG DOANH NGHIỆP</button>
-                    <button onclick="solutionsAnimation(1)">KIẾN TẠO SỰ NGHIỆP</button>
-                </div>
+                <div>2</div>
             </div>
+            <div id="solutions-btns">
+                <button onclick="solutionsAnimation(0)">ĐỒNG HÀNH CÙNG DOANH NGHIỆP</button>
+                <button onclick="solutionsAnimation(1)">KIẾN TẠO SỰ NGHIỆP</button>
+            </div>
+        </div>
 
         <h1>New</h1>
         <div id="events">
