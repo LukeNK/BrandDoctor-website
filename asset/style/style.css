@@ -37,9 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------Layout */
-body {
-    margin: 0;
-}
+body { margin: 0; }
+
 nav {
     position: fixed;
     top: 0; left: 0;
@@ -54,15 +53,9 @@ nav > div {
     justify-content: space-around;
     width: 20%;
 }
-nav > div > img {
-    height: 100%;
-}
-#nav-logo {
-    padding: 0.5rem;
-}
-#nav-center {
-    flex-grow: 2;
-}
+nav > div > img { height: 100%; }
+#nav-logo { padding: 0.5rem; }
+#nav-center { flex-grow: 2; }
 #nav-center > a {
     /* ALign text to vertical center */
     display: flex;
@@ -73,9 +66,7 @@ nav > div > img {
     text-decoration: none;
 }
 
-main {
-    margin-top: var(--nav-height);
-}
+main { margin-top: var(--nav-height); }
 
 /* -------------------------------------------------------------------Classes */
 div.banner {
@@ -85,26 +76,16 @@ div.banner {
     justify-content: space-around;
     align-items: center;
 }
-div.banner > div {
-    padding: 5rem;
-}
+div.banner > div { padding: 5rem; }
 div.banner h1,
-div.banner h2 {
-    color: var(--color-light);
-}
+div.banner h2 { color: var(--color-light); }
 
 /* Banner with columns */
-div.banner.col {
-    flex-direction: column;
-}
+div.banner.col { flex-direction: column; }
 div.banner.col h1,
 div.banner.col h2,
-div.banner.col h3 {
-    text-align: center;
-}
-div.banner.col > div.banner {
-    padding: 0;
-}
+div.banner.col h3 { text-align: center; }
+div.banner.col > div.banner { padding: 0; }
 div.banner.col > div.banner > div {
     /* Align center */
     display: flex;
@@ -114,9 +95,7 @@ div.banner.col > div.banner > div {
 }
 
 /* full-screen banner */
-div.banner.full {
-    height: 100vh;
-}
+div.banner.full { height: 100vh; }
 div.banner.full h1,
 div.banner.full h2 {
     text-align: center;
