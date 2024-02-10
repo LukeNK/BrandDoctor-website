@@ -47,6 +47,7 @@ nav {
     display: flex;
     color: var(--color-theme);
     background: linear-gradient(to right, #ffffffcc, #ffffffff);
+    backdrop-filter: blur(10px);
 }
 nav > div {
     display: flex;
