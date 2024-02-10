@@ -46,8 +46,8 @@ nav {
     height: var(--nav-height);
     width: 100%;
     display: flex;
-    color: #ffffff;
-    background-color: var(--color-theme);
+    color: var(--color-theme);
+    background: linear-gradient(to right, #ffffffcc, #ffffffff);
 }
 nav > div {
     display: flex;
@@ -57,10 +57,13 @@ nav > div {
 nav > div > img {
     height: 100%;
 }
-nav > div.center {
+#nav-logo {
+    padding: 0.5rem;
+}
+#nav-center {
     flex-grow: 2;
 }
-nav > div.center > a {
+#nav-center > a {
     /* ALign text to vertical center */
     display: flex;
     justify-content: space-around;
