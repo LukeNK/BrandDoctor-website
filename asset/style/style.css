@@ -31,6 +31,9 @@ a.btn, button {
     text-decoration: underline;
     font-size: 1rem;
 }
+a.btn.dark, button.dark {
+    background-color: var(--color-theme-light);
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
