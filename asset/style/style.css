@@ -17,6 +17,8 @@
 /* ------------------------------------------------------------------Elements */
 a {
     color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
     /* Additional link @ a.btn */
 }
 
@@ -25,10 +27,8 @@ a.btn, button {
     border: none;
     border-radius: var(--border-radius);
     padding: var(--border-radius);
-    background-color: #ffbb33;
+    background-color: var(--color-bright);
     color: var(--color-light);
-    cursor: pointer;
-    text-decoration: underline;
     font-size: 1rem;
 }
 a.btn.dark, button.dark {
@@ -107,4 +107,29 @@ div.banner.full h2 {
     margin: 0.5rem;
     padding: 0.25rem;
     background-color: var(--color-theme);
+}
+
+/* Div with two-column layout */
+div.divCol {
+    /* Section with column layout */
+    display: flex;
+    flex-wrap: wrap;
+}
+.divCol.reverse { flex-direction: row-reverse; }
+.divCol > div {
+    flex: 1 1 50%;
+}
+.divCol > div.text {
+    flex: 1 1 50%; /* New line when out of space */
+    padding: 1rem;
+    align-self: center;
+}
+.divCol > div.img {
+    background-size: cover;
+    background-position: center;
+}
+.divCol > .noPadding { padding: 0; }
+.divCol > .right {
+    /* Allign items to the right */
+    text-align: right;
 }
