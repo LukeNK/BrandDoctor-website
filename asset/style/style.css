@@ -29,6 +29,7 @@ a.btn, button {
     padding: var(--border-radius);
     background-color: var(--color-bright);
     color: var(--color-light);
+    cursor: pointer;
     font-size: 1rem;
 }
 a.btn.dark, button.dark {
@@ -75,6 +76,10 @@ nav > div > img { height: 100%; }
 }
 
 main { margin-top: var(--nav-height); }
+main > h1 {
+    text-align: center;
+    color: var(--color-theme);
+}
 
 /* -------------------------------------------------------------------Classes */
 div.banner {
