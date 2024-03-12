@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/asset/style/circle-border.css">
+
+<style>
+    #banner-stats {
+        background-image:
+            linear-gradient(to top, #003399ff, #ffffff00),
+            url(/asset/image/banner_bg.jpg);
+    }
+
+    #banner-stats > div > div {
+        padding: 0 2rem;
+        flex-basis: 0; /* Equal flex */
+    }
+
+    #banner-stats .circle-border {
+        width: 10rem;
+        height: 10rem;
+        border: 0.5rem solid white;
+    }
+
+    #banner-stats h2 { font-size: xx-large; }
+
+    #banner-stats h3 { color: white; }
+</style>
+
+<!-- Surround to have the heading inside the background -->
+<div id="banner-stats" class="banner col">
+    <h1>Những con số ấn tượng về Brand Doctor</h1>
+    <div class="banner">
+        <div>
+            <h2 id="stats-srv" class="circle-border">2</h2>
+            <h3>Dịch vụ chính</h3>
+        </div>
+        <div>
+            <h2 id="stats-rom" class="circle-border">7</h2>
+            <h3>Phòng, Ban</h3>
+        </div>
+        <div>
+            <h2 id="stats-exp" class="circle-border">267</h2>
+            <h3>Chuyên gia nghiên cứu</h3>
+        </div>
+        <div>
+            <h2 id="stats-tch" class="circle-border">1007</h2>
+            <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
+        </div>
+    </div>
+</div>
+
+<!-- Script on a separate file -->
