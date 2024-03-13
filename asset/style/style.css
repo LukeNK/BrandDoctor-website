@@ -45,7 +45,7 @@ form label {
 form input, form textarea {
     width: 100%;
     border: 2px solid var(--color-theme);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     background-color: white;
 }
 form button {
@@ -77,7 +77,7 @@ nav {
     display: flex;
     color: var(--color-theme);
     background: linear-gradient(to right, #ffffffcc, #ffffffff);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 nav > div {
     display: flex;
@@ -98,9 +98,14 @@ nav > div > img { height: 100%; }
 }
 
 main { margin-top: var(--nav-height); }
+
 main > h1 {
     text-align: center;
     color: var(--color-theme);
+}
+main > p {
+    margin: 1rem 5rem;
+    text-align: center;
 }
 
 footer {
@@ -112,9 +117,6 @@ footer {
 footer > div {
     display: flex;
     justify-content: space-around;
-}
-footer > div > div.info {
-
 }
 footer > div > ul {
     list-style-type: none;
@@ -177,20 +179,33 @@ div.divCol {
     flex-wrap: wrap;
 }
 .divCol.reverse { flex-direction: row-reverse; }
-.divCol > div {
-    flex: 1 1 50%;
-}
-.divCol > div.text {
-    flex: 1 1 50%; /* New line when out of space */
-    padding: 1rem;
-    align-self: center;
-}
+.divCol > div { flex: 1 1 10rem; }
+
 .divCol > div.img {
     background-size: cover;
     background-position: center;
+}
+.divCol > div.text {
+    padding: 1rem;
+    align-self: center;
 }
 .divCol > .noPadding { padding: 0; }
 .divCol > .right {
     /* Allign items to the right */
     text-align: right;
+}
+
+.divCol.divBox {
+    /* Surrounding divBox elements */
+    padding: 0 5rem;
+    gap: 1rem;
+}
+.divCol > div.divBox {
+    /* Create a box for contents */
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--color-gray);
+}
+.divBox h1, .divBox h2 {
+    color: var(--color-theme);
 }
