@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head html-src="/comp/head.html">
+    <style>
+        #filter {
+            margin: 0 5vw;
+        }
+        #filter button {
+            background-color: transparent;
+            color: var(--color-theme);
+            padding: 1rem;
+        }
+        #filter .selected {
+            color: var(--color-theme-light)
+        }
+        #filter .sep {
+            /* Separator from border */
+            border-right: 2px solid black;
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav html-src="/comp/nav.html"></nav>
+    <main>
+        <div html-src="/comp/banner-header.html"></div>
+
+        <div id="filter">
+            <button class="selected sep">Tất cả</button>
+            <button>Nhóm dự án 1</button>
+            <button>Nhóm dự án 2</button>
+            <button>Nhóm dự án 3</button>
+        </div>
+
+        <h1>Dự án cùng Brand Doctor</h1>
+        <div style="margin: 1rem 5rem;">
+            <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
+            <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
+        </div>
+    </main>
+    <footer html-src="/comp/footer.html"></footer>
+</body>
+
+<script src="/asset/script/script.js"></script>
+<script src="/Static-Wind/preview.js"></script>
+</html>
