@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head html-src="/comp/head.html"></head>
+    <style>
+        #form {
+            display: flex;
+        }
+        #form-pic {
+            flex: 0 1 30rem;
+            display: flex;
+            align-items: end;
+            background-color: black;
+            color: white;
+        }
+        #form-form {
+            flex: 2 1 77%;
+            padding: 0 10%;
+            text-align: center;
+            background-color: var(--color-gray);
+        }
+
+        #FAQ {
+            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image:
+                linear-gradient(to left, #0055ffe0, #0055ffe0),
+                url(/asset/image/banner_bg.jpg);
+            background-position: center;
+            background-size: cover;
+            color: var(--color-bright);
+        }
+    </style>
+<body>
+    <nav html-src="/comp/nav.html"></nav>
+    <main>
+        <div html-src="/comp/header-banner.html"></div>
+
+        <div id="form">
+            <div id="form-pic">
+                <p>
+                    Địa chỉ: 87 Đường 14, Phường Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh<br>
+                    Email: branddoctor.info@gmail.com<br>
+                    Điện thoại: (028) 398 404 12
+                </p>
+            </div>
+            <div id="form-form">
+                <h1>Đồng hành cùng Brand Doctor</h1>
+                <form>
+                    <input type="text" placeholder="Họ & Tên">
+                    <input type="text" placeholder="Tên Doanh Nghiệp">
+                    <input type="email" placeholder="Email">
+                    <input type="tel" placeholder="Điện thoại">
+                    <textarea rows="5" placeholder="Nội dung cần tư vấn"></textarea>
+                    <button>GỬI</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="FAQ">
+            <h1>FAQ</h1>
+        </div>
+
+        <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
+
+
+    </main>
+    <footer html-src="/comp/footer.html"></footer>
+</body>
+
+<script src="/asset/script/script.js"></script>
+<script src="/Static-Wind/preview.js"></script>
+</html>
