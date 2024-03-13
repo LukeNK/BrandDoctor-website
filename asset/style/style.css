@@ -36,6 +36,16 @@ a.btn.dark, button.dark {
     background-color: var(--color-theme-light);
 }
 
+details > summary {
+    list-style-type: '+';
+    color: var(--color-theme);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+details[open] > summary {
+    list-style-type: '-';
+}
+
 form button {
     margin-top: 1rem;
     width: 100%;
@@ -63,8 +73,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
 }
 
+hr {
+    margin: 1rem 3rem;
+}
+
 input, textarea {
     font-size: 1rem;
+}
+
+summary {
+    cursor: pointer;
 }
 
 textarea {
