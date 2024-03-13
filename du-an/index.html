@@ -20,7 +20,41 @@
         }
 
         #projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+        .project {
+            width: 20rem;
+            flex: 0 1 20rem;
+        }
+        .project img {
+            width: 100%;
+        }
+        .project h2 { color: var(--color-theme); }
+        .project h3 { color: var(--color-gray-dark); }
+        .project h4 { color: var(--color-bright); }
+        .project p { color: var(--color-gray-light); }
 
+        #nav-page {
+            display: flex;
+            justify-content: center;
+            margin: 3rem;
+            gap: 1rem
+        }
+        #nav-page a {
+            display: block;
+            text-align: center;
+            width: 3rem;
+            line-height: 2rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            background-color: #fcefce;
+            color: black;
+        }
+        #nav-page .current {
+            background-color: var(--color-bright);
         }
     </style>
 </head>
@@ -44,7 +78,40 @@
         </div>
 
         <div id="projects">
+            <div class="project">
+                <img src="/asset/projects/61fce.jpg" alt="">
+                <h4>Lĩnh vực/ Nhóm dự án</h4>
+                <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
+                <h3>Tên đơn vị</h3>
+                <p>Quốc gia: Việt Nam</p>
+            </div>
+            <div class="project">
+                <img src="/asset/projects/61fce.jpg" alt="">
+                <h4>Lĩnh vực/ Nhóm dự án</h4>
+                <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
+                <h3>Tên đơn vị</h3>
+                <p>Quốc gia: Việt Nam</p>
+            </div>
+            <div class="project">
+                <img src="/asset/projects/61fce.jpg" alt="">
+                <h4>Lĩnh vực/ Nhóm dự án</h4>
+                <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
+                <h3>Tên đơn vị</h3>
+                <p>Quốc gia: Việt Nam</p>
+            </div>
+            <div class="project">
+                <img src="/asset/projects/61fce.jpg" alt="">
+                <h4>Lĩnh vực/ Nhóm dự án</h4>
+                <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
+                <h3>Tên đơn vị</h3>
+                <p>Quốc gia: Việt Nam</p>
+            </div>
+        </div>
 
+        <div id="nav-page">
+            <a class="btn current" href="">1</a>
+            <a class="btn" href="">2</a>
+            <a class="btn" href="">3</a>
         </div>
     </main>
     <footer html-src="/comp/footer.html"></footer>
