@@ -18,6 +18,10 @@
             border-right: 2px solid black;
             border-radius: 0;
         }
+
+        #projects {
+
+        }
     </style>
 </head>
 
@@ -27,10 +31,10 @@
         <div html-src="/comp/banner-header.html"></div>
 
         <div id="filter">
-            <button class="selected sep">Tất cả</button>
-            <button>Nhóm dự án 1</button>
-            <button>Nhóm dự án 2</button>
-            <button>Nhóm dự án 3</button>
+            <button onclick="projectFilter(0)" class="selected sep">Tất cả</button>
+            <button onclick="projectFilter(1)">Nhóm dự án 1</button>
+            <button onclick="projectFilter(2)">Nhóm dự án 2</button>
+            <button onclick="projectFilter(3)">Nhóm dự án 3</button>
         </div>
 
         <h1>Dự án cùng Brand Doctor</h1>
@@ -38,10 +42,30 @@
             <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
             <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
         </div>
+
+        <div id="projects">
+
+        </div>
     </main>
     <footer html-src="/comp/footer.html"></footer>
 </body>
 
 <script src="/asset/script/script.js"></script>
 <script src="/Static-Wind/preview.js"></script>
+<script>
+    // TODO: find out why this did not work
+    // document.querySelectorAll('#filter > button').forEach((elm, key) => {
+    //     elm.addEventListener('click', () => {
+    //         projectFilter(key)
+    //     });
+    // });
+
+    function projectFilter(key) {
+        // change the color of the button
+        document.querySelectorAll('#filter > button').forEach((elm, l1) => {
+            if (key == l1) elm.classList.add('selected');
+            else elm.classList.remove('selected');
+        });
+    }
+</script>
 </html>
