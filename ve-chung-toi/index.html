@@ -3,6 +3,43 @@
 <head html-src="/comp/head.html">
     <link rel="stylesheet" href="/asset/style/timeline.css">
     <style>
+        #values {
+            display: flex;
+        }
+        #values .sticky {
+            flex: 33%;
+            text-align: center;
+            background-image:
+                linear-gradient(to right, #0055ffe0, #0055ffe0),
+                url(/asset/image/core_values.jpg);
+        }
+        #values aside {
+            position: sticky;
+            top: 5rem; left: 0;
+        }
+        #values aside h1,
+        #values aside h3 { color: white;}
+        #values aside h2 { color: var(--color-light); }
+        #values .float {
+            flex: 77%;
+            padding: 3rem;
+            background-color: var(--color-gray);
+        }
+        #values .float h1 { color: var(--color-theme); }
+        #values .float summary { color: var(--color-bright); }
+        #values details summary {
+            list-style-type: none;
+            width: 100%;
+        }
+        #values details summary::after {
+            content: '◀';
+            position: absolute;
+            right: 3rem;
+        }
+        #values details[open] summary::after {
+            content: '▼';
+        }
+
         .boxItem {
             background-color: var(--color-theme);
             height: 10rem;
@@ -29,6 +66,39 @@
         </div>
 
         <div html-src="/comp/banner-stats.html"></div>
+
+        <div id="values">
+            <div class="sticky">
+                <aside>
+
+                    <h1>Các giá trị mà chúng tôi theo đuổi</h1>
+                    <h2>Brand Doctor</h2>
+                    <h3>Thương hiệu thật ⦁ Giá trị thật</h3>
+                </aside>
+            </div>
+            <div class="float">
+                <h1>Tầm nhìn</h1>
+                <p>Trở thành biểu tượng chuẩn mực trong việc xây dựng phát triển thương hiệu mạnh và trường tồn</p>
+
+                <h1>Sứ mệnh</h1>
+                <p>Là điểm tựa vàng để mỗi cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn</p>
+
+                <h1>Giá trị cốt lõi</h1>
+                <details>
+                    <summary>Thương hiệu thật • Giá trị thật</summary>
+                    <p>Mỗi người, mỗi tổ chức đều có giá trị của riêng mình, không nhầm lẫn với ai. Theo Brand Doctor, một thương hiệu thật cần có sức bật mạnh m﻿ẽ từ trong nội tại để tồn tại trên thị trường. Và sức bật ấy đến từ những “giá trị thật”, điều gắn kết giữa khách hàng và doanh nghiệp. Những giá trị này đều tồn tại trong mỗi người, mỗi tổ chức, chỉ là bạn có thể chưa tìm ra được nó. Vì điều ấy, chúng tôi luôn sát cánh với từng doanh nghiệp khám phá năng lực tiềm ẩn ấy.</p>
+                </details>
+                <details>
+                    <summary>Tâm sáng • Trí minh</summary>
+                </details>
+                <details>
+                    <summary>Tư duy khác biệt</summary>
+                </details>
+                <details>
+                    <summary>Theo đuổi khát vọng đến cùng</summary>
+                </details>
+            </div>
+        </div>
 
         <h1>Cam kết của chúng tôi</h1>
         <p>Đến với Brand Doctor, Quý Đối tác không chỉ nhận được một giải pháp trong ngắn hạn mà là sự cam kết bên cạnh trọn vẹn trong từng giai đoạn phát triển thương hiệu, phát triển sự nghiệp.</p>
