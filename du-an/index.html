@@ -1,64 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head html-src="/comp/head.html">
-    <style>
-        #filter {
-            margin: 0 5vw;
-        }
-        #filter button {
-            background-color: transparent;
-            color: var(--color-theme);
-            padding: 1rem;
-        }
-        #filter .selected {
-            color: var(--color-theme-light)
-        }
-        #filter .sep {
-            /* Separator from border */
-            border-right: 2px solid black;
-            border-radius: 0;
-        }
-
-        #projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 1rem;
-        }
-        .project {
-            display: block;
-            flex: 0 1 20rem;
-            width: 20rem;
-            text-decoration: none;
-        }
-        .project img {
-            width: 100%;
-        }
-        .project h2 { color: var(--color-theme); }
-        .project h3 { color: var(--color-gray-dark); }
-        .project h4 { color: var(--color-bright); }
-        .project p { color: var(--color-gray-light); }
-
-        #nav-page {
-            display: flex;
-            justify-content: center;
-            margin: 3rem;
-            gap: 1rem
-        }
-        #nav-page a {
-            display: block;
-            text-align: center;
-            width: 3rem;
-            line-height: 2rem;
-            font-size: 1.5rem;
-            text-decoration: none;
-            background-color: #fcefce;
-            color: black;
-        }
-        #nav-page .current {
-            background-color: var(--color-bright);
-        }
-    </style>
+    <link rel="stylesheet" href="/asset/style/browser.css">
 </head>
 
 <body>
@@ -66,7 +9,7 @@
     <main>
         <div html-src="/comp/banner-header.html"></div>
 
-        <div id="filter">
+        <div class="browser-filter">
             <button onclick="projectFilter(0)" class="selected sep">Tất cả</button>
             <button onclick="projectFilter(1)">Nhóm dự án 1</button>
             <button onclick="projectFilter(2)">Nhóm dự án 2</button>
@@ -79,29 +22,29 @@
             <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
         </div>
 
-        <div id="projects">
-            <a class="project">
+        <div class="browser-projects">
+            <a>
                 <img src="/asset/projects/61fce.jpg" alt="">
                 <h4>Lĩnh vực/ Nhóm dự án</h4>
                 <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
                 <h3>Tên đơn vị</h3>
                 <p>Quốc gia: Việt Nam</p>
             </a>
-            <a class="project">
+            <a>
                 <img src="/asset/projects/61fce.jpg" alt="">
                 <h4>Lĩnh vực/ Nhóm dự án</h4>
                 <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
                 <h3>Tên đơn vị</h3>
                 <p>Quốc gia: Việt Nam</p>
             </a>
-            <a class="project">
+            <a>
                 <img src="/asset/projects/61fce.jpg" alt="">
                 <h4>Lĩnh vực/ Nhóm dự án</h4>
                 <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
                 <h3>Tên đơn vị</h3>
                 <p>Quốc gia: Việt Nam</p>
             </a>
-            <a class="project">
+            <a>
                 <img src="/asset/projects/61fce.jpg" alt="">
                 <h4>Lĩnh vực/ Nhóm dự án</h4>
                 <h2>Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit</h2>
@@ -110,7 +53,7 @@
             </a>
         </div>
 
-        <div id="nav-page">
+        <div class="browser-nav">
             <a class="btn current" href="">1</a>
             <a class="btn" href="">2</a>
             <a class="btn" href="">3</a>
