@@ -225,13 +225,31 @@ div.divCol {
 .divCol.divBox {
     /* Surrounding divBox elements */
     padding: 0 5rem;
+    justify-content: space-between;
     gap: 1rem;
 }
 .divCol > div.divBox {
     /* Create a box for contents */
+    flex: 0 0 20rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--color-gray);
+}
+.divBox.img {
+    /* divbox with image */
+    margin-top: 7.5rem;
+}
+.divBox.img > .img {
+    margin: auto;
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    background-size: contain;
+    position: relative;
+    top: -7.5rem;
+}
+.divBox.img > h2 {
+    margin-top: -7.5rem;
 }
 .divBox h1, .divBox h2 {
     color: var(--color-theme);
