@@ -10,10 +10,10 @@
         <div html-src="/comp/banner-header.html"></div>
 
         <div class="browser-filter">
-            <button onclick="projectFilter(0)" class="selected sep">Tất cả</button>
-            <button onclick="projectFilter(1)">Nhóm dự án 1</button>
-            <button onclick="projectFilter(2)">Nhóm dự án 2</button>
-            <button onclick="projectFilter(3)">Nhóm dự án 3</button>
+            <button onclick="browserFilter(0)" class="selected sep">Tất cả</button>
+            <button onclick="browserFilter(1)">Nhóm dự án 1</button>
+            <button onclick="browserFilter(2)">Nhóm dự án 2</button>
+            <button onclick="browserFilter(3)">Nhóm dự án 3</button>
         </div>
 
         <h1>Dự án cùng Brand Doctor</h1>
@@ -64,20 +64,5 @@
 
 <script src="/asset/script/script.js"></script>
 <script src="/Static-Wind/preview.js"></script>
-<script>
-    // TODO: find out why this did not work
-    // document.querySelectorAll('#filter > button').forEach((elm, key) => {
-    //     elm.addEventListener('click', () => {
-    //         projectFilter(key)
-    //     });
-    // });
-
-    function projectFilter(key) {
-        // change the color of the button
-        document.querySelectorAll('#filter > button').forEach((elm, l1) => {
-            if (key == l1) elm.classList.add('selected');
-            else elm.classList.remove('selected');
-        });
-    }
-</script>
+<script src="/asset/script/browser.js"></script>
 </html>
