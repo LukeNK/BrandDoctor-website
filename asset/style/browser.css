@@ -38,6 +38,7 @@
 .browser-projects > a h3 { color: var(--color-gray-dark); }
 .browser-projects > a h4 { color: var(--color-bright); }
 .browser-projects > a p { color: var(--color-gray-light); }
+.browser-projects > a p span { margin-left: 2rem; }
 
 .browser-nav {
     display: flex;
