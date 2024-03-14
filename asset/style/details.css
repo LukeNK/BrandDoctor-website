@@ -1,0 +1,56 @@
+/*
+    Use for pages that want to show full-page details of something
+    in to column layout: info on the left and article on the right
+    <section> is the body
+    section>div is the information side bar
+    section>aside is the sticky table of content
+    section>article is the article
+*/
+
+.details-title {
+    /* To be used along with .banner.full */
+    background:
+        linear-gradient(to right, #0055fff0, #fffffff0),
+        url(/asset/image/banner_bg.jpg);
+}
+.details-title > div {
+    flex: 1 1 50%;
+    padding: 0;
+}
+.details-title p { color: var(--color-gray) }
+.details-title img { width: 100%; }
+
+section {
+    padding: 3rem;
+    display: flex;
+    gap: 3rem;
+}
+
+section > div h4 {
+    color: var(--color-theme);
+}
+section > div p,
+section > div li {
+    border-top: 2px solid var(--color-gray);
+    margin: 0;
+    padding: 1rem 0;
+}
+
+section > div ol {
+    padding-left: 2rem;
+}
+
+section aside {
+    position: sticky;
+    z-index: 0;
+    overflow-x: hidden;
+    left: 0;
+    top: var(--nav-height);
+}
+
+section > article {
+    flex: 1 1 100%;
+}
+section > article > hr {
+    margin: 1rem 0;
+}
