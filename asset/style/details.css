@@ -9,7 +9,7 @@
 
 .details-title {
     /* To be used along with .banner.full */
-    background:
+    background-image:
         linear-gradient(to right, #0055fff0, #fffffff0),
         url(/asset/image/banner_bg.jpg);
 }
