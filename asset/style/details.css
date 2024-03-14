@@ -15,7 +15,7 @@
 }
 .details-title > div {
     flex: 1 1 50%;
-    padding: 0;
+    padding: 3rem !important;
 }
 .details-title p { color: var(--color-gray) }
 .details-title img { width: 100%; }
@@ -48,9 +48,6 @@ section aside {
     top: var(--nav-height);
 }
 
-section > article {
-    flex: 1 1 100%;
-}
-section > article > hr {
-    margin: 1rem 0;
-}
+section > article { flex: 1 1 100%; }
+section > article h2 { color: var(--color-gray-dark); }
+section > article > hr { margin: 1rem 0; }
