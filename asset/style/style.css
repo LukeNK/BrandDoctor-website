@@ -14,6 +14,11 @@
     --color-gray: #ededed;
     --color-gray-light: #ababab;
     --color-gray-dark: #5d5d5d;
+
+    /* Other good default settings */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* ------------------------------------------------------------------Elements */
@@ -164,8 +169,6 @@ footer > p {
 
 /* -------------------------------------------------------------------Classes */
 div.banner {
-    background-position: center;
-    background-size: cover;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -208,10 +211,6 @@ div.divCol {
 .divCol.reverse { flex-direction: row-reverse; }
 .divCol > div { flex: 1 1 10rem; }
 
-.divCol > div.img {
-    background-size: cover;
-    background-position: center;
-}
 .divCol > div.text {
     padding: 1rem;
     align-self: center;
@@ -244,7 +243,7 @@ div.divCol {
     border-radius: 50%;
     height: 15rem;
     width: 15rem;
-    background-size: contain;
+    background-size: cover;
     position: relative;
     top: -7.5rem;
 }
