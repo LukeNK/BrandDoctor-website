@@ -159,6 +159,7 @@ footer > div > ul > li {
     margin-left: 0;
     text-indent: 0;
 }
+footer > div > ul > li > a { text-decoration: none; }
 footer > div > form {
     flex: 0 1 20rem;
     padding-top: 1rem;
