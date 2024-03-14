@@ -227,12 +227,13 @@ div.divCol {
     justify-content: space-between;
     gap: 1rem;
 }
-.divCol > div.divBox {
+.divCol > .divBox {
     /* Create a box for contents */
     flex: 0 0 20rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--color-gray);
+    text-decoration: none;
 }
 .divBox.img {
     /* divbox with image */
