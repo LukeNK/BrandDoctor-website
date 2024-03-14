@@ -174,7 +174,7 @@ div.banner {
     justify-content: space-around;
     align-items: center;
 }
-div.banner > div { padding: 5rem; }
+div.banner > div { padding: 3rem; }
 div.banner h1,
 div.banner h2 { color: var(--color-light); }
 

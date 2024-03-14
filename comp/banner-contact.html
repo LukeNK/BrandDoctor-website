@@ -1,9 +1,44 @@
 <style>
+    #banner-contact {
+        background-image:
+            linear-gradient(to left, #003399e0, #003399e0),
+            url(/asset/image/banner_bg.jpg);
+    }
 
+    #banner-contact a::before {
+        content: "➡";
+        vertical-align: -1.1rem; /* IDK, it just looks middle to me */
+        font-size: 5rem;
+        color: var(--color-bright);
+    }
+    #banner-contact a {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    #banner-contact p {
+        color: white;
+    }
+    #banner-contact span {
+        text-align: right;
+    }
+
+    #banner-contact img {
+        width: 20rem;
+    }
 </style>
 
-<div class="banner">
+<div id="banner-contact" class="banner">
     <div>
         <h1>Doanh nghiệp bạn cần giải pháp thương hiệu?</h1>
+        <a href="/lien-he">Liên hệ cùng chúng tôi</a>
+        <p>
+            (028) 398 404 12 branddoctor.info@gmail.com<br>
+            (+84) 963 801 030 www.branddoctorgroup.com
+        </p>
+    </div>
+    <div>
+        <img src="/asset/ecosBDG/dotha lotus.png" alt="">
     </div>
 </div>
