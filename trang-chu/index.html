@@ -14,9 +14,13 @@
 
         #banner-whois {
             background-image:
-                linear-gradient(to left, #003399ff, #ffffff00),
+                linear-gradient(to right, #00339950, #003399ff),
                 url(/asset/image/51589.jpg);
+            background-size: contain;
+            background-position: left;
             color: #ffffff;
+            padding: 5rem 0;
+            margin-top: 0.5rem;
         }
 
         #solutions {
@@ -74,7 +78,9 @@
         #members {
             display: flex;
             align-items: center;
+            margin-top: var(--nav-height);
             background-color: var(--color-gray);
+            padding-bottom: 3rem;
         }
         #members > div {
             flex: 1rem 1 1;
@@ -111,6 +117,7 @@
         }
 
         #opportunity > div {
+            padding: 1rem var(--nav-height);
             background-color: var(--color-theme-light);
         }
         #opportunity > div > h1 {
@@ -132,9 +139,9 @@
 
         <div id="banner-whois" class="banner">
             <div><!-- Div for left-align --></div>
-            <div>
+            <div style="flex-basis: 40rem;">
                 <h1>Brand Doctor Group là ai?</h1>
-                <p>Với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng và phát triển thương hiệu mạnh và trường tồn,<br>Brand Doctor không ngừng nỗ lực hỗ trợ các doanh nghiệp nhận ra chiều sâu của thương hiệu.<br>Chúng tôi tự hào là điểm tựa vàng để doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn.</p>
+                <p>Với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng và phát triển thương hiệu mạnh và trường tồn, Brand Doctor không ngừng nỗ lực hỗ trợ các doanh nghiệp nhận ra chiều sâu của thương hiệu. Chúng tôi tự hào là điểm tựa vàng để doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn.</p>
                 <a class="btn">Xem thêm</a>
             </div>
         </div>
@@ -223,7 +230,7 @@
         </div>
 
         <h1>DỰ ÁN cùng ecosBDG</h1>
-        <p style="margin: auto 5rem; text-align: center;">Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
+        <p style="margin: auto 5rem var(--nav-height) 5rem; text-align: center;">Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
         <div class="browser-list">
             <a>
                 <img src="/asset/projects/61fce.jpg" alt="">

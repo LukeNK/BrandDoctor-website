@@ -55,10 +55,12 @@ details[open] > summary {
 
 form button {
     margin-top: 1rem;
+    padding: 0.5rem;
     width: 100%;
 }
 form input, form textarea {
     width: 100%;
+    padding: 0.5rem;
     border: 2px solid var(--color-theme);
     border-radius: var(--border-radius);
     background-color: white;
@@ -88,6 +90,16 @@ input, textarea {
     font-size: 1rem;
 }
 
+p {
+    color: var(--color-gray-dark);
+    line-height: 2rem;
+}
+p br {
+    display: block;
+    content: "";
+    margin: 1rem 0;
+}
+
 summary {
     cursor: pointer;
 }
@@ -98,7 +110,10 @@ textarea {
 }
 
 /* --------------------------------------------------------------------Layout */
-body { margin: 0; }
+body {
+    margin: 0;
+    font-size: 18px;
+}
 
 nav {
     position: fixed;
@@ -134,6 +149,7 @@ main { margin-top: var(--nav-height); }
 main > h1 {
     text-align: center;
     color: var(--color-theme);
+    margin-top: 5rem;
 }
 main > p {
     margin: 1rem 5rem;
@@ -144,8 +160,9 @@ footer {
     background-color: var(--color-theme);
     display: flex;
     flex-direction: column;
-    color: white;
+    color: white
 }
+footer p { color: white; }
 footer > div {
     display: flex;
     justify-content: space-around;
@@ -158,6 +175,7 @@ footer > div > ul {
 footer > div > ul > li {
     margin-left: 0;
     text-indent: 0;
+    line-height: 2rem;
 }
 footer > div > ul > li > a { text-decoration: none; }
 footer > div > form {
@@ -166,6 +184,10 @@ footer > div > form {
 }
 footer > p {
     text-align: center;
+}
+footer .info {
+    font-size: 11px;
+    margin-top: 0.75rem;
 }
 
 /* -------------------------------------------------------------------Classes */
@@ -199,7 +221,7 @@ div.banner.full h2 {
     text-align: center;
     border-radius: var(--border-radius);
     margin: 0.5rem;
-    padding: 0.25rem;
+    padding: 0.5rem 1rem;
     background-color: var(--color-theme);
 }
 
@@ -216,6 +238,9 @@ div.divCol {
     padding: 1rem;
     align-self: center;
 }
+.divCol > div.text h1 {
+    text-align: center;
+}
 .divCol > .noPadding { padding: 0; }
 .divCol > .right {
     /* Allign items to the right */
@@ -225,12 +250,12 @@ div.divCol {
 .divCol.divBox {
     /* Surrounding divBox elements */
     padding: 0 5rem;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
 }
 .divCol > .divBox {
     /* Create a box for contents */
-    flex: 0 0 20rem;
+    flex: 0 0 20em;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--color-gray);
@@ -250,7 +275,7 @@ div.divCol {
     top: -7.5rem;
 }
 .divBox.img > h2 {
-    margin-top: -7.5rem;
+    margin-top: -6rem;
 }
 .divBox h1, .divBox h2 {
     color: var(--color-theme);
