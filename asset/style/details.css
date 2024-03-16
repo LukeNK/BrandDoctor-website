@@ -21,7 +21,7 @@
 .details-title img { width: 100%; }
 
 section {
-    padding: 3rem;
+    padding: 3rem var(--side-padding);
     display: flex;
     gap: 3rem;
 }

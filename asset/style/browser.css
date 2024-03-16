@@ -2,9 +2,6 @@
     Use to create multiple items browser in a grid format
     Example from the project page
 */
-.browser-filter {
-    margin: 0 5vw;
-}
 .browser-filter button {
     background-color: transparent;
     color: var(--color-theme);

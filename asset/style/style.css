@@ -5,6 +5,7 @@
     font-family: 'Be Vietnam Pro', sans-serif;
     --border-radius: 0.5rem;
     --nav-height: 3rem;
+    --side-padding: 10vw; /* padding to both side of text */
 
     /* Color vars */
     --color-theme: #003399;
@@ -83,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-    margin: 1rem 3rem;
+    margin: 1rem var(--side-padding);
 }
 
 input, textarea {
@@ -152,14 +153,19 @@ main > h1 {
     margin-top: 5rem;
 }
 main > p {
-    margin: 1rem 5rem;
+    margin: 1rem var(--side-padding);
     text-align: center;
+}
+main > div:not([html-src]) {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
 }
 
 footer {
     background-color: var(--color-theme);
     display: flex;
     flex-direction: column;
+    padding: var(--nav-height) var(--side-padding);
     color: white
 }
 footer p { color: white; }
@@ -179,7 +185,7 @@ footer > div > ul > li {
 }
 footer > div > ul > li > a { text-decoration: none; }
 footer > div > form {
-    flex: 0 1 20rem;
+    flex: 0 1 22rem;
     padding-top: 1rem;
 }
 footer > p {
@@ -191,12 +197,18 @@ footer .info {
 }
 
 /* -------------------------------------------------------------------Classes */
+/* Generally good classes to have */
+.noPadding { padding: 0 !important; }
+
+/* Repetive component classes */
 div.banner {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-div.banner > div { padding: 3rem; }
+div.banner > div {
+    padding: var(--nav-height);
+}
 div.banner h1,
 div.banner h2 { color: var(--color-light); }
 
@@ -241,7 +253,6 @@ div.divCol {
 .divCol > div.text h1 {
     text-align: center;
 }
-.divCol > .noPadding { padding: 0; }
 .divCol > .right {
     /* Allign items to the right */
     text-align: right;
