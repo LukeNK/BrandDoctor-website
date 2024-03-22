@@ -44,20 +44,32 @@ a.btn.dark, button.dark {
     background-color: var(--color-theme-light);
 }
 
+main > details {
+    margin: 3rem var(--side-padding);
+}
 details > summary {
-    list-style-type: '+';
+    list-style-type: none;
+    width: 100%;
     color: var(--color-theme);
     font-weight: bold;
     font-size: 1.5rem;
 }
-details[open] > summary {
-    list-style-type: '-';
+details > summary::after {
+    content: '◀';
+    position: absolute;
+    right: var(--side-padding);
+}
+details[open] > summary::after {
+    content: '▼';
 }
 
 form button {
     margin-top: 1rem;
     padding: 0.5rem;
     width: 100%;
+    line-height: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 form input, form textarea {
     width: 100%;
@@ -132,8 +144,17 @@ nav > div {
     justify-content: space-around;
     width: 20%;
 }
+nav .selected {
+    border-top: 0.5rem solid var(--color-theme);
+    border-bottom: 0.6rem solid transparent;
+}
 nav > div img { height: 100%; }
-#nav-logo { padding: 0.5rem; }
+#nav-logo {
+    width: min-content;
+    padding: 0.5rem;
+    padding-left: var(--side-padding);
+    padding-right: 3rem;
+}
 #nav-center { flex-grow: 2; }
 #nav-center > a {
     /* ALign text to vertical center */
@@ -153,7 +174,7 @@ main > h1 {
     margin-top: 5rem;
 }
 main > p {
-    margin: 1rem var(--side-padding);
+    margin: var(--nav-height) var(--side-padding);
     text-align: center;
 }
 main > div:not([html-src]) {
@@ -171,7 +192,7 @@ footer {
 footer p { color: white; }
 footer > div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 footer > div > ul {
     list-style-type: none;
@@ -190,9 +211,11 @@ footer > div > form {
 }
 footer > p {
     text-align: center;
+    margin-top: var(--nav-height);
+    font-size: 0.75rem;
 }
 footer .info {
-    font-size: 11px;
+    font-size: 0.75rem;
     margin-top: 0.75rem;
 }
 
@@ -247,8 +270,9 @@ div.divCol {
 .divCol > div { flex: 1 1 10rem; }
 
 .divCol > div.text {
-    padding: 1rem;
+    padding: 3rem;
     align-self: center;
+    text-align: justify;
 }
 .divCol > div.text h1 {
     text-align: center;

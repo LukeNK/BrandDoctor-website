@@ -25,9 +25,12 @@
 
         #solutions {
             display: flex;
-            padding: 0 10%;
+            padding: 0 var(--side-padding);
         }
-        #solutions > div { flex: 1; }
+        #solutions > div {
+            flex: 1;
+            padding: var(--nav-height);
+        }
 
         #solutions-texts {
             --bg-color: #003399cc;
@@ -45,6 +48,7 @@
             background-color: var(--color-gray);
             display: flex;
             flex-direction: column;
+            /* justify-content: space-around; */
         }
         #solutions-btns button {
             display: block;
@@ -87,6 +91,7 @@
         #members > div {
             flex: 1rem 1 1;
             padding: 1rem;
+            padding-bottom: var(--nav-height);
             text-align: center;
         }
         #members > .members-logo {
@@ -119,7 +124,7 @@
         }
 
         #opportunity > div {
-            padding: 1rem var(--nav-height);
+            padding: 1rem var(--nav-height) var(--nav-height) var(--nav-height);
             background-color: var(--color-theme-light);
         }
         #opportunity > div > h1 {

@@ -10,16 +10,25 @@
             flex: 0 1 30rem;
             display: flex;
             align-items: end;
-            padding-left: 3rem;
+            padding-left: var(--side-padding);
             padding-right: 1rem;
+            padding-bottom: var(--nav-height);
             background-image: url(/asset/image/contact.jpg);
         }
-        #form-pic p { color: white; }
+        #form-pic p {
+            color: white;
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
         #form-form {
-            flex: 2 1 77%;
-            padding: 0 10%;
+            flex: 2 1 60%;
+            padding: var(--nav-height) 10%;
             text-align: center;
             background-color: var(--color-gray);
+        }
+        #form-form form {
+            width: 25rem;
+            margin: 0 auto;
         }
         #form-form h1 { color: var(--color-theme); }
 
@@ -33,8 +42,6 @@
                 url(/asset/image/banner_bg.jpg);
             color: var(--color-bright);
         }
-
-        details { margin: 3rem 5rem; }
     </style>
 <body>
     <nav html-src="/comp/nav.html"></nav>
@@ -44,15 +51,16 @@
         <div id="form">
             <div id="form-pic">
                 <p>
-                    Địa chỉ: 87 Đường 14, Phường Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh<br>
+                    Địa chỉ: 87 Đường 14, Phường Linh Chiểu,<br>
+                    TP. Thủ Đức, TP. Hồ Chí Minh<br>
                     Email: branddoctor.info@gmail.com<br>
                     Điện thoại: (028) 398 404 12
                 </p>
             </div>
             <div id="form-form">
                 <h1>Đồng hành cùng Brand Doctor</h1>
+                <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
                 <form>
-                    <p>Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit</p>
                     <input type="text" placeholder="Họ & Tên">
                     <input type="text" placeholder="Tên Doanh Nghiệp">
                     <input type="email" placeholder="Email">
