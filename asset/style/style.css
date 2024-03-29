@@ -113,9 +113,6 @@ p br {
     content: "";
     margin: 1rem 0;
 }
-p > a {
-
-}
 
 summary {
     cursor: pointer;
