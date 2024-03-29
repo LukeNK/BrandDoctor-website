@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head html-src="/comp/head.html">
+    <style>
+        main {
+            padding-top: var(--nav-height);
+        }
+
+        .red {
+            color: var(--color-red);
+        }
+
+        .invite {
+            color: var(--color-theme);
+        }
+
+        .divCol > div {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <nav html-src="/comp/nav.html"></nav>
+    <main>
+        <div class="divCol">
+            <div>
+                <img src="/asset/ecosBDG/dotha lotus.png" alt="">
+            </div>
+            <div>
+                <img src="/asset/ecosBDG/dotha lotus.png" alt="">
+            </div>
+        </div>
+        <p class="red">Rất tiếc, trang bạn muốn truy cập không tồn tại</p>
+        <p class="invite">
+            Mời bạn tìm kiếm các thông tin hữu ích từ Brand Doctor:<br>
+            <b>Ghé thăm <a href="/trang-chu/">Trang chủ</a> của chúng tôi</b>
+        </p>
+        <div>
+            <!-- Div to remove centering -->
+            <p>
+                Nếu bạn muốn tìm kiếm các giải pháp cho cá nhân và Doanh nghiệp hãy ghé thăm <a>Giải pháp</a><br>
+                Nếu bạn muốn xem các thông tin và kiến thức mới nhất, hãy ghé thăm <a>Tin tức</a> của chúng tôi.<br>
+                Nếu bạn muốn trao đổi thêm cùng Brand Doctor, hãy <a>Liên hệ</a> với chúng tôi
+            </p>
+        </div>
+    </main>
+    <footer html-src="/comp/footer.html"></footer>
+</body>
+
+<script src="/asset/script/script.js"></script>
+<script src="/asset/preview.js"></script>
+</html>

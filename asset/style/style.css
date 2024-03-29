@@ -12,6 +12,7 @@
     --color-theme-light: #0055ff;
     --color-light: #fcf0ce;
     --color-bright: #ffbb33;
+    --color-red: #ff3377;
     --color-gray: #ededed;
     --color-gray-light: #ababab;
     --color-gray-dark: #5d5d5d;
@@ -111,6 +112,9 @@ p br {
     display: block;
     content: "";
     margin: 1rem 0;
+}
+p > a {
+
 }
 
 summary {
@@ -314,4 +318,8 @@ div.divCol {
 }
 .divBox h1, .divBox h2 {
     color: var(--color-theme);
+}
+
+.text-center {
+    text-align: center;
 }
