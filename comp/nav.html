@@ -4,7 +4,7 @@
     </a>
 </div>
 <div id="nav-center">
-    <a href="/about-us" class="selected">Về chúng tôi</a>
+    <a href="/about-us">Về chúng tôi</a>
     <a href="">Giải pháp</a>
     <a href="/news">Tin tức</a>
     <a href="">ecosBDG</a>
@@ -13,4 +13,20 @@
     <a href="">Đào tạo</a>
     <a href="/lien-he">Liên hệ</a>
 </div>
-<div></div>
+<div>
+    <!-- Space for language -->
+</div>
+
+<!-- Script only work when build -->
+<script>
+    // Find nav links to highlight
+    let curPage = '/' + document.location.pathname.split('/')[1],
+        anchors = [...document.querySelectorAll('#nav-center > a')];
+    for (const link of anchors) {
+        console.log(curPage + link.getAttribute('href'))
+        if (link.getAttribute('href') == curPage) {
+            link.classList.add('selected')
+            break;
+        }
+    }
+</script>
