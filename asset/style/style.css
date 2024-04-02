@@ -178,7 +178,7 @@ main > p {
     margin: var(--nav-height) var(--side-padding);
     text-align: center;
 }
-main > div:not([html-src]) {
+main > div {
     padding-left: var(--side-padding);
     padding-right: var(--side-padding);
 }
