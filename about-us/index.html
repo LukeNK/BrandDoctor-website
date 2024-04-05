@@ -24,6 +24,7 @@
         #values .float {
             flex: 77%;
             padding: 3rem;
+            padding-right: var(--side-padding);
             background-color: var(--color-gray);
         }
         #values .float h1 { color: var(--color-theme); }
@@ -35,7 +36,7 @@
         #values details summary::after {
             content: '◀';
             position: absolute;
-            right: 3rem;
+            right: var(--side-padding);
         }
         #values details[open] summary::after {
             content: '▼';
