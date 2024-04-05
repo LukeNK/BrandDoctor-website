@@ -6,6 +6,13 @@
             padding-top: var(--nav-height);
         }
 
+        #img {
+            width: 100%;
+        }
+        #img > img {
+            width: 100%;
+        }
+
         .red {
             color: var(--color-red);
         }
@@ -13,24 +20,14 @@
         .invite {
             color: var(--color-theme);
         }
-
-        .divCol > div {
-            display: flex;
-            justify-content: space-around;
-        }
     </style>
 </head>
 
 <body>
     <nav html-src="/comp/nav.html"></nav>
     <main>
-        <div class="divCol">
-            <div>
-                <img src="/asset/ecosBDG/dotha lotus.png" alt="">
-            </div>
-            <div>
-                <img src="/asset/ecosBDG/dotha lotus.png" alt="">
-            </div>
+        <div id="img">
+            <img src="/asset/icon/404.png" alt="">
         </div>
         <p class="red">Rất tiếc, trang bạn muốn truy cập không tồn tại</p>
         <p class="invite">
