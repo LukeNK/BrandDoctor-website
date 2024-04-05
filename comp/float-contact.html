@@ -1,0 +1,70 @@
+<style>
+    #float-contact {
+        z-index: 3;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    #fcon-con {
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        border: 0.5rem solid var(--color-gray);
+        border-radius: var(--border-radius);
+        background-color: white;
+    }
+    #fcon-con div {
+        display: flex;
+    }
+    #fcon-con div img {
+        margin: auto 1rem;
+        height: 2rem;
+    }
+
+    #fcon-img {
+        display: flex;
+        justify-content: right;
+    }
+    #fcon-img img {
+        width: 5rem;
+    }
+</style>
+
+<!-- Default style at none for the script to remove when clicked -->
+<div id="float-contact" style="display: none;">
+    <div id="fcon-con">
+        <div>
+            <img src="/asset/icon/live chat messenger icon.png" alt="">
+            <p>Messenger</p>
+        </div>
+        <div>
+            <img src="/asset/icon/live chat zalo icon.png" alt="">
+            <p>Zalo Chat</p>
+        </div>
+        <div>
+            <img src="/asset/icon/live chat email icon.png" alt="">
+            <p>Send Email</p>
+        </div>
+        <div>
+            <img src="/asset/icon/live chat phone icon.png" alt="">
+            <p>(028) 398 404 12</p>
+        </div>
+    </div>
+    <div id="fcon-img">
+        <!-- <div>
+            <img onclick="floatContact(1)" style="display: block;" src="/asset/icon/live chat button1.png">
+        </div> -->
+        <div>
+            <img onclick="floatContact()" style="display: block;" src="/asset/icon/contact button.png">
+        </div>
+    </div>
+</div>
+
+<!-- Script only work when being built -->
+<script>
+    function floatContact(btn) {
+        let con = document.getElementById('fcon-con').style; // use as reference
+        con.display = con.display? '' : 'none'; // hide if there is no style
+    }
+</script>
