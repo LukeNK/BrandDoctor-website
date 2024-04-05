@@ -2,6 +2,10 @@
     Use to create multiple items browser in a grid format
     Example from the project page
 */
+
+.browser-filter {
+    padding: var(--nav-height) var(--side-padding);
+}
 .browser-filter button {
     background-color: transparent;
     color: var(--color-theme);
@@ -24,8 +28,8 @@
 }
 .browser-list > a {
     display: block;
-    flex: 0 1 20rem;
-    width: 20rem;
+    flex: 1 1 15rem;
+    max-width: 30rem;
     text-decoration: none;
 }
 .browser-list > a img {
