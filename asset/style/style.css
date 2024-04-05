@@ -226,8 +226,17 @@ footer .info {
 footer .info div {
     display: flex;
 }
-footer .info div img {
+footer .info div > img {
     width: 1.5rem;
+    margin: auto 1rem auto 0;
+}
+footer .info .social a {
+    height: 2rem;
+    margin-bottom: 0.5rem; /* to match with the send button */
+}
+footer .info .social img {
+    /* Specific to overdrive the rules above */
+    height: 100%;
     margin: auto 1rem auto 0;
 }
 
