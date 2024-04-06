@@ -6,11 +6,23 @@
         right: 1rem;
     }
 
+    /* Border warper */
+    #fcon-bor{
+        padding: var(--border-radius);
+        border-radius: var(--border-radius);
+        background: linear-gradient(
+            0.13turn,
+            var(--color-theme),
+            #ffffff00,
+            var(--color-theme));
+    }
+
+    /* Contact content */
     #fcon-con {
         display: flex;
         flex-direction: column;
         /* width: 25vw; */
-        border: 0.5rem solid var(--color-gray);
+        border: 2px solid var(--color-gray);
         border-radius: var(--border-radius);
         background: var(--color-glass-white);
         backdrop-filter: blur(5px);
@@ -39,24 +51,29 @@
 </style>
 
 <div id="float-contact">
-    <!-- Default style at none for the script to remove when clicked -->
-    <div id="fcon-con" style="display: none;">
-        <a>
-            <img src="/asset/icon/contact messenger icon.png">
-            <p>Messenger</p>
-        </a>
-        <a>
-            <img src="/asset/icon/contact zalo icon.png">
-            <p>Zalo Chat</p>
-        </a>
-        <a href="mailto:branddoctor.info@gmail.com">
-            <img src="/asset/icon/contact email icon.png">
-            <p>Send Email</p>
-        </a>
-        <a href="tel:+842839840412">
-            <img src="/asset/icon/contact phone icon.png">
-            <p>(028) 398 404 12</p>
-        </a>
+    <!--
+        Default style at none for the script to remove when clicked
+        Warper to create background effect
+    -->
+    <div id="fcon-bor" style="display: block;">
+        <div id="fcon-con">
+            <a>
+                <img src="/asset/icon/contact messenger icon.png">
+                <p>Messenger</p>
+            </a>
+            <a>
+                <img src="/asset/icon/contact zalo icon.png">
+                <p>Zalo Chat</p>
+            </a>
+            <a href="mailto:branddoctor.info@gmail.com">
+                <img src="/asset/icon/contact email icon.png">
+                <p>Send Email</p>
+            </a>
+            <a href="tel:+842839840412">
+                <img src="/asset/icon/contact phone icon.png">
+                <p>(028) 398 404 12</p>
+            </a>
+        </div>
     </div>
     <div id="fcon-img">
         <!-- <div>
