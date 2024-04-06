@@ -83,6 +83,9 @@
             background-color: var(--color-gray);
             padding-bottom: 3rem;
         }
+        #members h1 {
+            color: var(--color-theme);
+        }
         #members > div {
             flex: 1rem 1 1;
             padding: 1rem;
@@ -119,7 +122,7 @@
         }
 
         #opportunity > div {
-            padding: 1rem var(--nav-height) var(--nav-height) var(--nav-height);
+            padding: 1rem var(--nav-height) var(--nav-height) var(--side-padding);
             background-color: var(--color-theme-light);
         }
         #opportunity > div > h1 {
@@ -131,6 +134,10 @@
             padding: 1rem;
             color: white;
         }
+
+        #academic > div { padding-right: var(--side-padding); }
+        #academic h1 { color: var(--color-theme); }
+        #academic h2 { color: var(--color-theme-light); }
     </style>
 </head>
 
@@ -267,7 +274,7 @@
             </div>
             <div class="img" style="background-image: url(/asset/image/c0db8.jpg);"></div>
         </div>
-        <div class="divCol reverse noPadding">
+        <div id="academic" class="divCol reverse noPadding">
             <div class="text">
                 <h1>Học thuật</h1>
                 <h2>Nền tảng Thương hiệu thật, Giá trị thật:</h2>
