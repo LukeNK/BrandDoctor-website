@@ -67,7 +67,7 @@ details[open] > summary::after {
 
 form button {
     margin-top: 1rem;
-    padding: 0.5rem;
+    padding: var(--border-radius);
     width: 100%;
     line-height: 1.4rem;
     font-size: 1.5rem;
@@ -75,14 +75,14 @@ form button {
 }
 form input, form textarea {
     width: 100%;
-    padding: 0.5rem;
+    padding: var(--border-radius);
     border: 2px solid var(--color-theme);
     border-radius: var(--border-radius);
     background-color: white;
 }
 form label {
     display: block;
-    margin: 0.5rem 0 0.25rem;
+    margin: var(--border-radius) 0 0.25rem;
     color: var(--color-theme-light);
     font-weight: bold;
 }
@@ -90,7 +90,7 @@ form > button,
 form > input,
 form > textarea {
     /* If the input is not inside a label (free floating) */
-    margin: 0.5rem 0;
+    margin: var(--border-radius) 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
