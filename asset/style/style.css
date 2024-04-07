@@ -191,7 +191,10 @@ footer {
     padding: var(--nav-height) var(--side-padding);
     color: white
 }
-footer p { color: white; }
+footer p {
+    color: white;
+    margin: 0;
+}
 footer > div {
     display: flex;
     justify-content: space-between;
