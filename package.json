@@ -3,6 +3,7 @@
     "servePreview": "cd Static-Wind && npm run servePreview",
     "build": "cd Static-Wind && node build.js",
     "serveBuild": "cd Static-Wind && npm run serveBuild",
-    "test": "cd Static-Wind && node build.js && npm run serveBuild"
+    "test": "cd Static-Wind && node build.js && npm run serveBuild",
+    "release": "cd Static-Wind && node build.js R"
   }
 }
