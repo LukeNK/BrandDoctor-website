@@ -309,12 +309,13 @@ div.divCol {
 .divCol.divBox {
     /* Surrounding divBox elements */
     padding: 0 5rem;
-    justify-content: center;
+    justify-content: space-around;
     gap: 1rem;
 }
 .divCol > .divBox {
     /* Create a box for contents */
-    flex: 0 0 20em;
+    flex: 1 1 20rem;
+    max-width: 30rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--color-gray);
