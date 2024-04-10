@@ -75,7 +75,7 @@ function buildPosts(folder, config) {
 
         build = join('build', build)
 
-        fs.mkdirSync(join('build', folder), { recursive: true })
+        fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
             join(build, 'index.html'),
             template.documentElement.outerHTML,
