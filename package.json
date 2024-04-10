@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "servePreview": "cd Static-Wind && npm run servePreview",
+    "servePreview": "npx http-server ./",
     "build": "cd Static-Wind && node build.js",
     "serveBuild": "cd Static-Wind && npm run serveBuild",
     "test": "cd Static-Wind && node build.js && npm run serveBuild",
