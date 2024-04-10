@@ -26,7 +26,7 @@ section {
     gap: 3rem;
 }
 
-section > div h4 {
+section > div h3 {
     color: var(--color-theme);
 }
 section > div p,
