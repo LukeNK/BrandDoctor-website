@@ -19,16 +19,18 @@ function buildPosts(folder, config) {
             join('../', folder, '../', 'index.html'),
             'utf-8'
         )),
-        template = new JSDOM(fs.readFileSync(
+        freshTemplate = fs.readFileSync(
             join('../', folder, 'template.html'),
             'utf-8'
-        ));
+        )
 
     browser = browser.window.document
-    template = template.window.document;
 
     fs.readdirSync(join('../', folder), 'utf-8').forEach(post => {
         if (post == 'template.html') return; // skip template
+
+        let template = new JSDOM(freshTemplate);
+        template = template.window.document;
 
         let data = new JSDOM(fs.readFileSync(
             join('../', folder, post),
