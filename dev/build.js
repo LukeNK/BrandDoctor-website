@@ -1,6 +1,6 @@
 const fs = require('fs'),
     { join } = require('path'),
-    { JSDOM } = require('../Static-Wind/node_modules/jsdom');
+    { JSDOM } = require('../node_modules/jsdom');
 
 module.exports = {
     onBuild: onBuild
