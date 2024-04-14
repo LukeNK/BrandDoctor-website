@@ -61,10 +61,10 @@
                 <img src="/asset/icon/contact messenger icon.png">
                 <p>Messenger</p>
             </a>
-            <a>
+            <!-- <a>
                 <img src="/asset/icon/contact zalo icon.png">
                 <p>Zalo Chat</p>
-            </a>
+            </a> -->
             <a href="mailto:branddoctor.info@gmail.com">
                 <img src="/asset/icon/contact email icon.png">
                 <p>Send Email</p>
@@ -76,11 +76,11 @@
         </div>
     </div>
     <div id="fcon-img">
-        <!-- <div>
-            <img onclick="floatContact(1)" style="display: block;" src="/asset/icon/live chat button1.png">
-        </div> -->
         <div>
-            <img onclick="floatContact()" style="display: block;" src="/asset/icon/contact button.png">
+            <img onclick="floatContact()" src="/asset/icon/contact button chat.png">
+        </div>
+        <div style="display: none;">
+            <img onclick="floatContact()" src="/asset/icon/contact button.png">
         </div>
     </div>
 </div>
@@ -88,8 +88,11 @@
 <!-- Script only work when being built -->
 <script>
     function floatContact(btn) {
-        console.log('a')
         let con = document.getElementById('fcon-bor').style; // use as reference
         con.display = con.display? '' : 'none'; // hide if there is no style
+
+        [...document.getElementById('fcon-img').children].forEach(btn => {
+            btn.style.display = btn.style.display? '' : 'none';
+        })
     }
 </script>
