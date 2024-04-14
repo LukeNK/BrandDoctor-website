@@ -6,6 +6,7 @@ module.exports = {
     onBuild: onBuild
 }
 
+// Function that run before build
 function onBuild(config) {
     buildPosts('tin-tuc', config)
     // buildPosts('du-an')
@@ -16,24 +17,24 @@ function buildPosts(folder, config) {
 
     let postList = [],
         browser = new JSDOM(fs.readFileSync(
-            join('../', folder, '../', 'index.html'),
+            join('build', folder, '../', 'index.html'),
             'utf-8'
         )),
         freshTemplate = fs.readFileSync(
-            join('../', folder, 'template.html'),
+            join('build', folder, 'template.html'),
             'utf-8'
         )
 
     browser = browser.window.document
 
-    fs.readdirSync(join('../', folder), 'utf-8').forEach(post => {
+    fs.readdirSync(join('build', folder), 'utf-8').forEach(post => {
         if (post == 'template.html') return; // skip template
 
         let template = new JSDOM(freshTemplate);
         template = template.window.document;
 
         let data = new JSDOM(fs.readFileSync(
-            join('../', folder, post),
+            join('build', folder, post),
             'utf-8')
         ).window.document;
 
