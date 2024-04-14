@@ -6,6 +6,7 @@
     --border-radius: 0.5rem;
     --nav-height: 3rem;
     --side-padding: 10vw; /* padding to both side of text */
+    --flex-gap: 2rem;
 
     /* Color vars */
     --color-theme: #003399;
@@ -308,9 +309,9 @@ div.divCol {
 
 .divCol.divBox {
     /* Surrounding divBox elements */
-    padding: 0 5rem;
+    padding: 0 var(--side-padding);
     justify-content: space-around;
-    gap: 1rem;
+    gap: var(--flex-gap);
 }
 .divCol > .divBox {
     /* Create a box for contents */
