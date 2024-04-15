@@ -53,10 +53,19 @@ section aside h2 {
     padding-left: 0.5rem;
 }
 
+section aside a { text-decoration: none; }
+section aside a:hover { text-decoration: underline; }
 section aside .current {
     color: var(--color-theme-light);
 }
 
+
 section > article { flex: 1 1 100%; }
-section > article h2 { color: var(--color-gray-dark); }
+section > article h2 {
+    /* This to ensure when scrolling to ID
+    the nav bar does not cover the heading */
+    padding-top: var(--nav-height);
+    margin-top: calc(-1 * var(--nav-height));
+    color: var(--color-gray-dark);
+}
 section > article > hr { margin: 1rem 0; }

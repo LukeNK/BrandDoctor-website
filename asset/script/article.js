@@ -2,9 +2,12 @@
 (() => {
     let list = document.createElement('ol');
 
-    document.querySelectorAll('section > article > h2').forEach(heading => {
+    document.querySelectorAll('section > article > h2')
+    .forEach((heading, key) => {
+        heading.setAttribute('id', key)
         let li = document.createElement('li');
-        li.innerText = heading.innerText;
+        li.innerHTML =
+            `<a href="#${key}">${heading.innerHTML}</a>`;
         list.append(li);
     });
 
