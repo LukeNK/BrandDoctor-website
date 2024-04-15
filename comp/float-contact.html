@@ -50,6 +50,7 @@
     }
 </style>
 
+<!-- Loading eager to make sure the list is ready when user open -->
 <div id="float-contact">
     <!--
         Default style at none for the script to remove when clicked
@@ -57,7 +58,6 @@
     -->
     <div id="fcon-bor" style="display: none;">
         <div id="fcon-con">
-            <!-- Loading eager to make sure the list is ready when user open -->
             <a href="https://m.me/BrandDoctorGroup">
                 <img src="/asset/icon/contact messenger icon.png" loading="eager">
                 <p>Messenger</p>
@@ -78,10 +78,10 @@
     </div>
     <div id="fcon-img">
         <div>
-            <img onclick="floatContact()" src="/asset/icon/contact button chat.png">
+            <img onclick="floatContact()" src="/asset/icon/contact button chat.png" loading="eager">
         </div>
         <div style="display: none;">
-            <img onclick="floatContact()" src="/asset/icon/contact button.png">
+            <img onclick="floatContact()" src="/asset/icon/contact button.png" loading="eager">
         </div>
     </div>
 </div>
