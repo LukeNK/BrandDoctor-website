@@ -2,14 +2,27 @@ const fs = require('fs'),
     { join } = require('path'),
     { JSDOM } = require('../node_modules/jsdom');
 
-module.exports = {
-    onBuild: onBuild
-}
 
-// Function that run before build
-function onBuild(config) {
-    buildPosts('tin-tuc', config)
-    // buildPosts('du-an')
+module.exports = {
+    onBuild: (config) => {
+        buildPosts('tin-tuc', config)
+        // buildPosts('du-an')
+
+    },
+    /**
+     * Build each individual file before translating
+     * @param {Document} dom The document tree of the building file
+     * @param {String} item The item name of the building target
+     * @param {Object} config The config file
+     */
+    onTranslationBuild: (dom, item, config) => {
+        // add lazy loading to images
+        dom.querySelectorAll('img').forEach(elm => {
+            // if the image does not specified loading attr before hand
+            if (!elm.getAttribute('loading'))
+                elm.setAttribute('loading', 'lazy')
+        })
+    },
 }
 
 function buildPosts(folder, config) {
