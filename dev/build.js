@@ -81,8 +81,10 @@ function buildPosts(folder, config) {
             + template.querySelector('section > div').innerHTML;
 
         // post content
-        template.querySelector('section > article').innerHTML =
-            data.querySelector('article').innerHTML;
+        let content = template.querySelector('section > article');
+        content.innerHTML =
+            data.querySelector('article').innerHTML
+            + content.innerHTML;
 
         // save to build
         let build = join(folder, '../', post.split('.')[0]);
