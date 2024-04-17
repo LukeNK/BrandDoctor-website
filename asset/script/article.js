@@ -17,12 +17,14 @@
 
     // scroll detection to highlight table of content
     document.addEventListener('scroll', () => {
-        [...list.children].forEach(anchor => anchor.classList.remove('active'))
+        [...list.children].forEach(anchor =>
+            anchor.classList.remove('current')
+        )
 
-        for (let l1 = 0; l1 < headings.length; l1--) {
+        for (let l1 = headings.length - 1; l1 >= 0; l1--) {
             let loc = headings[l1].getBoundingClientRect();
-            if (loc.top + loc.height > 0) {
-                list.children[l1].classList.add('active');
+            if (loc.top + loc.height < 0) {
+                list.children[l1].classList.add('current');
                 break
             }
         }
