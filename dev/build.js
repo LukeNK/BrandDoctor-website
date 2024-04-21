@@ -2,6 +2,7 @@ const fs = require('fs'),
     { join } = require('path'),
     { JSDOM } = require('../node_modules/jsdom');
 
+const postPerBrowser = 12;
 
 module.exports = {
     onBuild: (config) => {
@@ -29,16 +30,12 @@ function buildPosts(folder, config) {
     folder = join(folder, 'posts');
 
     let postList = [],
-        browser = new JSDOM(fs.readFileSync(
-            join('build', folder, '../', 'index.html'),
-            'utf-8'
-        )),
         freshTemplate = fs.readFileSync(
             join('build', folder, 'template.html'),
             'utf-8'
         )
 
-    browser = browser.window.document
+    console.time('Build posts')
 
     fs.readdirSync(join('build', folder), 'utf-8').forEach(post => {
         if (post == 'template.html') return; // skip template
@@ -104,20 +101,60 @@ function buildPosts(folder, config) {
         // process read time
         data.querySelector('a p').innerHTML +=
             `<span>${readTime}</span>`
+
         // add to browser
-        browser.querySelector('.browser-list').innerHTML +=
+        postList.push(
             `<a href="${post.split('.')[0]}">`
             + data.querySelector('a').innerHTML
-            + '</a>';
+            + '</a>'
+        );
     });
 
-    // write browser file
-    fs.writeFileSync(
-        join('build', folder, '../', 'index.html'),
-        browser.documentElement.outerHTML,
-        'utf-8'
-    )
+    console.timeEnd('Build posts')
+    console.info(`Found ${postList.length} posts`)
 
-    // remove original post file
+    let freshBrowser = fs.readFileSync(
+        join('build', folder, '../', 'index.html'),
+        'utf-8'
+    ); // save to RAM to increase speed
+
+    // because splice() is in place, only need to check the length
+    // 1 index because the user is not a programmer
+    for (let index = 1; postList.length > 0; index++) {
+        let browser = new JSDOM(freshBrowser);
+        browser = browser.window.document
+
+        // add the list of posts
+        browser.querySelector('.browser-list').innerHTML +=
+            postList.splice(0, postPerBrowser).join('');
+
+        // fix URL so it go to /tin-tuc/{post-title}
+        browser.querySelectorAll('.browser-list > a').forEach(elm =>
+            elm.setAttribute(
+                'href',
+                `../${elm.getAttribute('href')}`
+            )
+        )
+
+        // write browser file
+        let browserPath = join(folder, '../', index.toString());
+        fs.mkdirSync(join('build', browserPath));
+        fs.writeFileSync(
+            join('build', browserPath, 'index.html'),
+            browser.documentElement.outerHTML,
+            'utf-8'
+        )
+
+        // copy translation from mother folder
+        fs.copyFileSync(
+            join('build', browserPath, '../', 'vi.json'),
+            join('build', browserPath, 'vi.json')
+        )
+
+        // add to release
+        config.releaseItems.push(browserPath)
+    }
+
+    // remove original post folder from build
     fs.rmSync(join('build', folder), { recursive: true })
 }

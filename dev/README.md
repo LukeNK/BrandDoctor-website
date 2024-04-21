@@ -5,7 +5,7 @@ Similarly, the `float-contact` only work when being built because the script is 
 
 # `dev/build.js`
 This script contains all of the functions that will run when the website being built by Static Wind. Things that this script do
-- Compose posts
+- Compose posts and post browsers
 - Set images without `loading` attribute to lazy load (therefore you need to specify `loading="eager"` if needed)
 
 # Things to check before release
