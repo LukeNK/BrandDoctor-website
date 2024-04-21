@@ -6,6 +6,7 @@ const postPerBrowser = 12;
 
 module.exports = {
     onBuild: (config) => {
+        console.log('Building posts')
         buildPosts('tin-tuc', config)
         // buildPosts('du-an')
 
@@ -27,8 +28,6 @@ module.exports = {
 }
 
 function buildPosts(folder, config) {
-    console.time('Build ' + folder)
-
     let postList = [],
         freshTemplate = fs.readFileSync(
             join('build', folder, 'posts', 'template.html'),
@@ -111,7 +110,7 @@ function buildPosts(folder, config) {
         );
     });
 
-    console.timeLog('Build ' + folder, postList.length, 'posts')
+    console.log(`- built ${postList.length} posts of ${folder}`)
 
     // save to reduce fs.readFile() call for each browser
     let freshBrowser = fs.readFileSync(
