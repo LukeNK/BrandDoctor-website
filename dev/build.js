@@ -178,7 +178,7 @@ function buildPosts(folder, config) {
         )
 
         // add to release
-        config.releaseItems.push(browserPath)
+        config.releaseItems.push(browserPath.replaceAll('\\', '/'))
     }
 
     // write the parent main page as the first page
