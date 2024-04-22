@@ -142,11 +142,6 @@ nav {
     background: var(--color-glass-white);
     backdrop-filter: blur(5px);
 }
-nav > div {
-    display: flex;
-    justify-content: space-around;
-    width: 20%;
-}
 nav .selected {
     border-top: 0.5rem solid var(--color-theme);
     border-bottom: 0.6rem solid transparent;
