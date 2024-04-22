@@ -1,5 +1,5 @@
 const fs = require('fs'),
-    { JSDOM } = require('../node_module/jsdom');
+    { JSDOM } = require('jsdom');
 
 const DOMParser = new JSDOM().window.DOMParser;
 
