@@ -15,11 +15,11 @@
     <a href="/lien-he/">Liên hệ</a>
 </div>
 <div id="nav-lang">
-    <!-- Space for language -->
-    <span class="fi fi-ca"></span>
+    <!-- Space for language, auto by the script -->
+    <span></span>
     <ul style="display: none;">
-        <li><a><span class="fi fi-ca"></span>English</a></li>
-        <li><a><span class="fi fi-vn"></span>Vietnamese</a></li>
+        <li lang="vi"><a>Tiếng Việt</a></li>
+        <!-- <li><a href="#" onclick="langList.display = 'none';"></a></li> -->
     </ul>
 </div>
 
@@ -36,12 +36,33 @@
         }
 
     // handle language selection
-    {
-        let langList = [...document.querySelectorAll('#nav-lang li')];
+    const langToFlag = {
+        // list of flag representing each language
+        vi: 'vn',
+        en: 'gb',
+        fr: 'fr'
+    }
 
-        // first element is the button to pop-up
-        document.querySelector('#nav-lang *').onclick = () => {
-            document.querySelector('#nav-lang ul').style.display = '';
-        }
+    // hangle icon
+    let langList = document.querySelector('#nav-lang ul');
+    [...langList.children].forEach(elm => {
+        let flag = langToFlag[elm.getAttribute('lang')];
+        if (!flag) return; // skip no language
+        // add to the anchor itself
+        elm.firstChild.innerHTML =
+            `<span class="fi fi-${flag}"></span>`
+            + elm.innerHTML
+    });
+
+    // first element is the button to pop-up selection
+    let langBtn = document.querySelector('#nav-lang *');
+    // set language from the <html> lang attr
+    langBtn.innerHTML =
+        `<span class="fi fi-${
+            langToFlag[document.querySelector('html').getAttribute('lang')]
+        }"></span>`;
+    // open pop-up
+    langBtn.onclick = () => {
+       langList.style.display = '';
     }
 </script>

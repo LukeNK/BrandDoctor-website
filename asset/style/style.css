@@ -177,10 +177,10 @@ nav .selected {
     justify-content: space-around;
     padding-left: 3rem;
     padding-right: var(--side-padding);
-    cursor: pointer;
 }
 #nav-lang span {
     font-size: 1.5rem;
+    cursor: pointer;
 }
 #nav-lang ul {
     z-index: 10;
@@ -189,16 +189,14 @@ nav .selected {
     top: var(--nav-height);
     margin: 0;
     padding: 0.5rem;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: 0 0 0 var(--border-radius);
     background: var(--color-glass-white);
     backdrop-filter: blur(5px); /* TODO: does not work */
 }
-#nav-lang li {
-    margin: 0.5rem;
-}
-#nav-lang li::marker {
-    content: none;
-}
+#nav-lang li { margin: 0.5rem; }
+#nav-lang li a { text-decoration: none; }
+#nav-lang li span { margin-right: 0.5rem; }
+#nav-lang li::marker { content: none; }
 
 main { margin-top: var(--nav-height); }
 
