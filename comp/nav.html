@@ -15,10 +15,16 @@
     <a href="/lien-he/">Liên hệ</a>
 </div>
 <div id="nav-lang">
-    <!-- Space for language, auto by the script -->
-    <span></span>
+    <span>
+        <!-- Space for language, auto by the script -->
+    </span>
     <ul style="display: none;">
-        <li lang="vi"><a>Tiếng Việt</a></li>
+        <!--
+            Language menu will be composed page-by-page by dev/build.js
+            Leave one tag here as an example, but if you want to edit
+            please edit it in the build script dev/build.js:onTranslationBuild()
+        -->
+        <!-- <li lang="vi"><a>Tiếng Việt</a></li> -->
         <!-- <li><a href="#" onclick="langList.display = 'none';"></a></li> -->
     </ul>
 </div>
@@ -63,6 +69,6 @@
         }"></span>`;
     // open pop-up
     langBtn.onclick = () => {
-       langList.style.display = '';
+       langList.style.display = langList.style.display? '' : 'none';
     }
 </script>
