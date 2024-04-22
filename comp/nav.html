@@ -14,8 +14,13 @@
     <a href="">Đào tạo</a> -->
     <a href="/lien-he/">Liên hệ</a>
 </div>
-<div>
+<div id="nav-lang">
     <!-- Space for language -->
+    <span class="fi fi-ca"></span>
+    <ul style="display: none;">
+        <li><a><span class="fi fi-ca"></span>English</a></li>
+        <li><a><span class="fi fi-vn"></span>Vietnamese</a></li>
+    </ul>
 </div>
 
 <!-- Script only work when build -->
@@ -29,4 +34,14 @@
             link.classList.add('selected')
             break;
         }
+
+    // handle language selection
+    {
+        let langList = [...document.querySelectorAll('#nav-lang li')];
+
+        // first element is the button to pop-up
+        document.querySelector('#nav-lang *').onclick = () => {
+            document.querySelector('#nav-lang ul').style.display = '';
+        }
+    }
 </script>
