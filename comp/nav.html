@@ -69,6 +69,7 @@
         }"></span>`;
     // open pop-up
     langBtn.onclick = () => {
-       langList.style.display = langList.style.display? '' : 'none';
+        langBtn.classList.toggle('open')
+        langList.style.display = langList.style.display? '' : 'none';
     }
 </script>
