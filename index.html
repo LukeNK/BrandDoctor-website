@@ -14,9 +14,13 @@
     // script to auto-detect language
     let lang = navigator.language || navigator.userLanguage;
     lang = lang.split('-')[0];
-    window.location.replace(
-        document.querySelector(`body *[lang="${lang}"] a`)
-        .getAttribute('href')
-    )
+
+    // find link to navigate to, else get Vietnamese version
+    lang = document.querySelector(`body *[lang="${lang}"] a`);
+    lang = lang?
+        lang
+        : document.querySelector(`body *[lang="vi"] a`);
+
+    window.location.replace(lang.getAttribute('href'))
 </script>
 </html>
