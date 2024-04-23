@@ -17,9 +17,7 @@
 
     // find link to navigate to, else get Vietnamese version
     lang = document.querySelector(`body *[lang="${lang}"] a`);
-    lang = lang?
-        lang
-        : document.querySelector(`body *[lang="vi"] a`);
+    lang = lang || document.querySelector(`body *[lang="vi"] a`);
 
     window.location.replace(lang.getAttribute('href'))
 </script>
