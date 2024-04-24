@@ -1,5 +1,6 @@
 const fs = require('fs'),
-    { JSDOM } = require('jsdom');
+    { JSDOM } = require('jsdom'),
+    https = require('https');
 
 const DOMParser = new JSDOM().window.DOMParser;
 
@@ -30,7 +31,7 @@ for (const key in posts) {
     content = content
         .replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 
-    let output = `<a href="/${url}">
+    content = `<a href="/${url}">
     <img src="/asset/project/61fce.jpg">
     <h4>Category</h4>
     <h2>${title}</h2>
@@ -41,7 +42,34 @@ for (const key in posts) {
 <aside>
 </aside>
 
-<article>${content}</article>`
+<article>${content}</article>`;
 
-    fs.writeFileSync(`./tin-tuc/posts/${url}.html`, output, 'utf-8');
+    content = new JSDOM(content);
+    content = content.window.document;
+
+    for (let elm of [...content.querySelectorAll('article img[src]')]) {
+        // change URL to events
+        let imgUrl = elm.getAttribute('src');
+        imgUrl = imgUrl.split('.');
+        imgUrl[0] = 'https://events';
+        imgUrl = imgUrl.join('.');
+
+        const imgPath = '/tin-tuc/img/' + imgUrl.split('/').at(-1);
+
+        elm.setAttribute('src', imgPath)
+
+        // download image with relative path
+        let img = fs.createWriteStream('.' + imgPath, {autoClose: true});
+        https.get(imgUrl, res => {
+            res.pipe(img);
+
+            img.on('finish', () => {
+                img.close();
+            });
+        }).on('error', err => {
+            console.error(`Error downloading image: ${imgUrl}`);
+        });
+    }
+
+    fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.documentElement.outerHTML, 'utf-8');
 }
