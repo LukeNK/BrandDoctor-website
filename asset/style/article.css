@@ -61,7 +61,9 @@ section aside .current {
     color: var(--color-theme-light);
 }
 
+/* ---------------------------------------------------------- Article content */
 section > article { flex: 1 1 100%; }
+
 section > article h2 {
     /* This to ensure when scrolling to ID
     the nav bar does not cover the heading */
@@ -69,8 +71,21 @@ section > article h2 {
     margin-top: calc(-1 * var(--nav-height));
     color: var(--color-gray-dark);
 }
+
+section > article figure {
+    margin: 0;
+}
+
 section > article img {
     display: block;
     width: 100%;
 }
+
+section > article figcaption {
+    padding: 1rem;
+    border-bottom: 2px solid var(--color-gray);
+    font-weight: bold;
+    color: var(--color-gray-dark);
+}
+
 section > article > hr { margin: 1rem 0; }
