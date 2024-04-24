@@ -31,7 +31,7 @@ for (const key in posts) {
 
     content = content
         .replaceAll('&lt;', '<').replaceAll('&gt;', '>')
-        .replaceAll('&nbsp;', '');
+        .replaceAll('&amp;', '&');
 
     content = `<a href="/${url}">
     <img src="/asset/project/61fce.jpg">
