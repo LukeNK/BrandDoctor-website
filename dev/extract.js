@@ -75,6 +75,8 @@ for (const key in posts) {
 
     // remove classes
     content.querySelectorAll('[class]').forEach(elm => elm.removeAttribute('class'))
+    content.querySelectorAll('[width]').forEach(elm => elm.removeAttribute('width'))
+    content.querySelectorAll('[height]').forEach(elm => elm.removeAttribute('height'))
 
     // remove strong in headings
     content.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(elm => {
