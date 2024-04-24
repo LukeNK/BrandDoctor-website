@@ -23,6 +23,7 @@
 section {
     padding: 3rem var(--side-padding);
     display: flex;
+    width: 100%;
     gap: 3rem;
 }
 
@@ -60,7 +61,6 @@ section aside .current {
     color: var(--color-theme-light);
 }
 
-
 section > article { flex: 1 1 100%; }
 section > article h2 {
     /* This to ensure when scrolling to ID
@@ -68,5 +68,9 @@ section > article h2 {
     padding-top: var(--nav-height);
     margin-top: calc(-1 * var(--nav-height));
     color: var(--color-gray-dark);
+}
+section > article img {
+    display: block;
+    width: 100%;
 }
 section > article > hr { margin: 1rem 0; }
