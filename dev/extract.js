@@ -30,7 +30,8 @@ for (const key in posts) {
     date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
     content = content
-        .replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+        .replaceAll('&lt;', '<').replaceAll('&gt;', '>')
+        .replaceAll('&nbsp;', '');
 
     content = `<a href="/${url}">
     <img src="/asset/project/61fce.jpg">
