@@ -1,6 +1,7 @@
 const fs = require('fs'),
     { JSDOM } = require('jsdom'),
     https = require('https');
+const { extname } = require('path');
 
 const DOMParser = new JSDOM().window.DOMParser;
 
@@ -51,7 +52,8 @@ for (const key in posts) {
         // change URL to events
         let imgUrl = elm.getAttribute('src');
         imgUrl = imgUrl.split('.');
-        imgUrl[0] = 'https://events';
+        // only migrate old database to the new one
+        if (imgUrl[0] == 'https://sever') imgUrl[0] = 'https://events';
         imgUrl = imgUrl.join('.');
 
         const imgPath = '/tin-tuc/img/' + imgUrl.split('/').at(-1);
@@ -70,6 +72,15 @@ for (const key in posts) {
             console.error(`Error downloading image: ${imgUrl}`);
         });
     }
+
+    // remove classes
+    content.querySelectorAll('[class]').forEach(elm => elm.removeAttribute('class'))
+
+    // remove strong in headings
+    content.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(elm => {
+        if (!elm.children[0]) return;
+        elm.innerHTML = elm.children[0].innerHTML;
+    })
 
     fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.documentElement.outerHTML, 'utf-8');
 }
