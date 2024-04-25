@@ -47,9 +47,11 @@ for (const key in posts) {
 <article>${content}</article>`;
 
     content = new JSDOM(content);
+    let window = content.window;
     content = content.window.document;
 
     for (let elm of [...content.querySelectorAll('article img[src]')]) {
+        break
         // change URL to events
         let imgUrl = elm.getAttribute('src');
         imgUrl = imgUrl.split('.');
@@ -85,5 +87,28 @@ for (const key in posts) {
         elm.innerHTML = elm.children[0].innerHTML;
     })
 
-    fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.documentElement.outerHTML, 'utf-8');
+    function textNodesUnder(el) {
+        let children = [], // Type: Node[]
+            textNode;
+        let walker = content.createNodeIterator(el, window.NodeFilter.SHOW_TEXT)
+        while((textNode = walker.nextNode()))
+            if (textNode.parentElement.nodeName == 'ARTICLE')
+                children.push(textNode);
+        return children
+    }
+
+    // clean up text nodes, require manual check
+    let nodes = textNodesUnder(content.querySelector('article')),
+        fixCount = 0;
+    nodes.forEach(textNode => {
+        if (!textNode.textContent.match(/\w+/)) return; // don't match empty space
+        fixCount++
+        let pNode = content.createElement('p');
+        pNode.innerHTML = textNode.textContent.replaceAll('\n\n', '<br>');
+        textNode.replaceWith(pNode);
+    })
+
+    if (fixCount) console.log(fixCount + ' ' + url)
+
+    fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.body.innerHTML, 'utf-8');
 }
