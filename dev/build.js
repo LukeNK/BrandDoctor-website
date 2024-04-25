@@ -65,13 +65,27 @@ function buildPosts(folder, config) {
             || post.startsWith('!')
         ) return; // skip template
 
-        let template = new JSDOM(freshTemplate);
-        template = template.window.document;
-
         let data = new JSDOM(fs.readFileSync(
             join('build', folder, 'posts', post),
             'utf-8')
         ).window.document;
+
+        // handle URL
+        data.querySelector('a').setAttribute('href', post.split('.')[0])
+
+        postList.push(data);
+    })
+
+    // sort by date
+    postList.sort((a, b) =>
+        // reverse date sort
+        Number(b.querySelector('a p').innerHTML)
+        - Number(a.querySelector('a p').innerHTML)
+    )
+
+    postList.forEach((data, index) => {
+        let template = new JSDOM(freshTemplate);
+        template = template.window.document;
 
         let title = data.querySelector('a h2').innerHTML;
         template.querySelector('.article-title h1').innerHTML = title;
@@ -96,6 +110,7 @@ function buildPosts(folder, config) {
         let date = Number(data.querySelector('a p').innerHTML);
         date = new Date(date);
         date = date.toLocaleDateString('en-GB');
+        data.querySelector('a p').innerHTML = date; // set back for the browser
 
         // metadata
         template.querySelector('section > div').innerHTML =
@@ -111,7 +126,7 @@ function buildPosts(folder, config) {
             + content.innerHTML;
 
         // save to build
-        let build = join(folder, post.split('.')[0]);
+        let build = join(folder, data.querySelector('a').getAttribute('href'));
 
         config.releaseItems.push(build.replaceAll('\\', '/'));
 
@@ -130,11 +145,7 @@ function buildPosts(folder, config) {
             `<span>${readTime}</span>`
 
         // add to browser
-        postList.push(
-            `<a href="${post.split('.')[0]}">`
-            + data.querySelector('a').innerHTML
-            + '</a>'
-        );
+        postList[index] = data.querySelector('a').outerHTML;
     });
 
     console.log(`- built ${postList.length} posts of ${folder}`)

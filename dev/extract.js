@@ -36,6 +36,7 @@ for (const key in posts) {
         table.querySelector('column[name="post_date_gmt"]').innerHTML
     ))
     date = date.valueOf();
+    if (isNaN(date)) continue; // skip faulty date
 
     let thumbnail = table.querySelector('column[name="ID"]').innerHTML; // post ID
     for (const row of postmeta)
@@ -63,7 +64,7 @@ for (const key in posts) {
         .replaceAll('&lt;', '<').replaceAll('&gt;', '>')
         .replaceAll('&amp;', '&');
 
-    content = `<a href="/${url}">
+    content = `<a>
     <img src="${thumbnail}">
     <h4>Category</h4>
     <h2>${title}</h2>
@@ -81,6 +82,7 @@ for (const key in posts) {
     content = content.window.document;
 
     for (let elm of [...content.querySelectorAll('img[src]')]) {
+        break
         // change URL to events
         let imgUrl = elm.getAttribute('src');
         imgUrl = imgUrl.split('.');
@@ -144,5 +146,4 @@ for (const key in posts) {
     if (fixCount) console.log(fixCount + ' ' + url)
 
     fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.body.innerHTML, 'utf-8');
-    break
 }
