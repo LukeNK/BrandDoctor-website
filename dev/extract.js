@@ -10,6 +10,8 @@ let dom = new DOMParser().parseFromString(
     fs.readFileSync('C:/Users/luken/Downloads/iVNgB_posts.xml', 'utf-8'),
     'text/xml'
 );
+let postmeta = require('C:/Users/luken/Downloads/iVNgB_postmeta.json');
+postmeta = postmeta[2].data;
 
 let posts = [...dom.querySelectorAll('table column[name="post_type"]')];
 
@@ -19,7 +21,13 @@ posts = posts.filter(e => e.innerHTML == 'post');
 console.log('Writing posts')
 for (const key in posts) {
     let table = posts[key].parentNode;
-    let url = table.querySelector('column[name="post_name"]').innerHTML || `${Math.random()}`,
+
+    // if (
+    //     table.querySelector('column[name="post_status"]').innerHTML
+    //     != 'publish'
+    // ) continue;
+
+    let url = table.querySelector('column[name="post_name"]').innerHTML || `${0}`,
         title = table.querySelector('column[name="post_title"]').innerHTML,
         date = new Date(),
         content = table.querySelector('column[name="post_content"]').innerHTML;
@@ -29,12 +37,34 @@ for (const key in posts) {
     ))
     date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
+    let thumbnail = table.querySelector('column[name="ID"]').innerHTML; // post ID
+    for (const row of postmeta)
+        if (
+            row.post_id == thumbnail
+            && row.meta_key == '_thumbnail_id'
+        ) {
+            thumbnail = row.meta_value;
+            break
+        }
+    for (const row of postmeta)
+        if (
+            row.post_id == thumbnail
+            && row.meta_key == '_wp_attached_file'
+        ) {
+            thumbnail = row.meta_value;
+            break
+        }
+    thumbnail = thumbnail.replaceAll('\/', '/');
+    thumbnail =
+        'https://events.branddoctorgroup.com/wp-content/uploads/'
+        + thumbnail;
+
     content = content
         .replaceAll('&lt;', '<').replaceAll('&gt;', '>')
         .replaceAll('&amp;', '&');
 
     content = `<a href="/${url}">
-    <img src="/asset/project/61fce.jpg">
+    <img src="${thumbnail}">
     <h4>Category</h4>
     <h2>${title}</h2>
     <h3>Nguyễn Khánh Trung</h3>
@@ -50,7 +80,7 @@ for (const key in posts) {
     let window = content.window;
     content = content.window.document;
 
-    for (let elm of [...content.querySelectorAll('article img[src]')]) {
+    for (let elm of [...content.querySelectorAll('img[src]')]) {
         // change URL to events
         let imgUrl = elm.getAttribute('src');
         imgUrl = imgUrl.split('.');
