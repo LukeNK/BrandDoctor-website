@@ -67,6 +67,10 @@ for (const key in posts) {
         https.get(imgUrl, res => {
             res.pipe(img);
 
+            res.on('end', () => {
+                if (res.statusCode > 400) console.warn(imgUrl)
+            })
+
             img.on('finish', () => {
                 img.close();
             });
