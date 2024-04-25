@@ -22,10 +22,10 @@ console.log('Writing posts')
 for (const key in posts) {
     let table = posts[key].parentNode;
 
-    // if (
-    //     table.querySelector('column[name="post_status"]').innerHTML
-    //     != 'publish'
-    // ) continue;
+    if (
+        table.querySelector('column[name="post_status"]').innerHTML
+        == 'draft'
+    ) continue;
 
     let url = table.querySelector('column[name="post_name"]').innerHTML || `${0}`,
         title = table.querySelector('column[name="post_title"]').innerHTML,
