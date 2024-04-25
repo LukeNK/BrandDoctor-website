@@ -35,7 +35,7 @@ for (const key in posts) {
     date.setTime(Date.parse(
         table.querySelector('column[name="post_date_gmt"]').innerHTML
     ))
-    date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    date = date.valueOf();
 
     let thumbnail = table.querySelector('column[name="ID"]').innerHTML; // post ID
     for (const row of postmeta)
@@ -144,4 +144,5 @@ for (const key in posts) {
     if (fixCount) console.log(fixCount + ' ' + url)
 
     fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.body.innerHTML, 'utf-8');
+    break
 }

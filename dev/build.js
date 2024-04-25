@@ -93,13 +93,15 @@ function buildPosts(folder, config) {
         )
 
         let writer = data.querySelector('a h3').innerHTML;
-        let date = data.querySelector('a p').innerHTML
+        let date = Number(data.querySelector('a p').innerHTML);
+        date = new Date(date);
+        date = date.toLocaleDateString('en-GB');
 
         // metadata
         template.querySelector('section > div').innerHTML =
             `<h3>${writer}</h3>`
             + data.querySelector('aside').innerHTML
-            + `<p>${date}</p>`
+            + `<p>${date}</p>` // dd/mm/yyyy
             + template.querySelector('section > div').innerHTML;
 
         // post content
