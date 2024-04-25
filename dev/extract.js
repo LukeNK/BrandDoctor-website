@@ -51,7 +51,6 @@ for (const key in posts) {
     content = content.window.document;
 
     for (let elm of [...content.querySelectorAll('article img[src]')]) {
-        break
         // change URL to events
         let imgUrl = elm.getAttribute('src');
         imgUrl = imgUrl.split('.');
