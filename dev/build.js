@@ -93,7 +93,7 @@ function buildPosts(folder, config) {
         let readTime =
             Math.floor(
                 data.body.innerHTML.replaceAll(' ', '') // remove space
-                .length / 1000 + 1 // CPM, 1 minute is minimum
+                .length / 1500 + 1 // CPM, 1 minute is minimum
             )
             + ' phút đọc';
         [...template.querySelectorAll('.article-title p')]
