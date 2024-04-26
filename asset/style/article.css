@@ -27,8 +27,10 @@ section {
     gap: 3rem;
 }
 
-section > div h3 {
-    color: var(--color-theme);
+/* ----------------------------------------------------------------- Side bar */
+section > div { flex: 0 0 30%; }
+
+section > div h3 { color: var(--color-theme);
 }
 section > div p,
 section > div li {
@@ -37,8 +39,7 @@ section > div li {
     padding: 2rem 0;
 }
 
-section > div ol {
-    padding-left: 2rem;
+section > div ol { padding-left: 2rem;
 }
 
 section aside {
@@ -62,7 +63,7 @@ section aside .current {
 }
 
 /* ---------------------------------------------------------- Article content */
-section > article { flex: 1 1 100%; }
+section > article { flex: 1 0 50%; }
 
 section > article h2 {
     /* This to ensure when scrolling to ID
