@@ -66,7 +66,7 @@ for (const key in posts) {
 
     content = `<a>
     <img src="${thumbnail}">
-    <h4>Category</h4>
+    <h4></h4>
     <h2>${title}</h2>
     <h3>Nguyễn Khánh Trung</h3>
     <p>${date}</p>
