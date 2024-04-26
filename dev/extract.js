@@ -110,6 +110,9 @@ for (const key in posts) {
         });
     }
 
+    // POST HAS CATEGORY DATA, DO NOT WRITE
+    continue
+
     // remove classes
     content.querySelectorAll('[class]').forEach(elm => elm.removeAttribute('class'))
     content.querySelectorAll('[width]').forEach(elm => elm.removeAttribute('width'))
@@ -144,5 +147,6 @@ for (const key in posts) {
 
     if (fixCount) console.log(fixCount + ' ' + url)
 
-    fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.body.innerHTML, 'utf-8');
+    // POST HAS CATEGORY DATA, DO NOT WRITE
+    // fs.writeFileSync(`./tin-tuc/posts/${url}.html`, content.body.innerHTML, 'utf-8');
 }
