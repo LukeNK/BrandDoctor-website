@@ -89,7 +89,7 @@ for (const key in posts) {
         if (imgUrl[0] == 'https://sever') imgUrl[0] = 'https://events';
         imgUrl = imgUrl.join('.');
 
-        const imgPath = '/tin-tuc/img/' + imgUrl.split('/').at(-1);
+        const imgPath = '/tin-tuc/img/old/' + imgUrl.split('/').at(-1);
 
         elm.setAttribute('src', imgPath)
 
