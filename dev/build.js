@@ -97,8 +97,9 @@ function buildPosts(folder, config) {
             )
             + ' phút đọc';
         [...template.querySelectorAll('.article-title p')]
-        .at(-1).innerHTML =
-            readTime;
+        .at(-1).innerHTML = readTime; // article
+        data.querySelector('a p').innerHTML +=
+            `<span>${readTime}</span>`; // browser
 
         let thumbnail = data.querySelector('a img').getAttribute('src');
         template.querySelector('.article-title img').setAttribute(
@@ -125,8 +126,25 @@ function buildPosts(folder, config) {
             data.querySelector('article').innerHTML
             + content.innerHTML;
 
+        // add to browser
+        postList[index] = {
+            article: template,
+            browser: data.querySelector('a')
+        }
+    });
+
+    postList.forEach(post => {
+        // create post recomendation from random posts
+        for (let l1 = 0; l1 < 3; l1++)
+            post.article.querySelector('.browser-list').innerHTML +=
+                postList[Math.floor(Math.random() * postList.length)]
+                .browser.outerHTML;
+
         // save to build
-        let build = join(folder, data.querySelector('a').getAttribute('href'));
+        let build = join(
+            folder,
+            post.browser.getAttribute('href')
+        );
 
         config.releaseItems.push(build.replaceAll('\\', '/'));
 
@@ -135,17 +153,10 @@ function buildPosts(folder, config) {
         fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
             join(build, 'index.html'),
-            template.documentElement.outerHTML,
+            post.article.documentElement.outerHTML,
             'utf-8'
         )
         fs.writeFileSync(join(build, 'vi.json'), '{}', 'utf-8');
-
-        // process read time
-        data.querySelector('a p').innerHTML +=
-            `<span>${readTime}</span>`
-
-        // add to browser
-        postList[index] = data.querySelector('a').outerHTML;
     });
 
     console.log(`- built ${postList.length} posts of ${folder}`)
@@ -173,7 +184,13 @@ function buildPosts(folder, config) {
         freshBrowser = freshBrowser.documentElement.outerHTML;
     }
 
-    let parentPage = ''
+    // generate browser pages
+    postList.forEach((post, index) =>
+        // make postList only contains raw text
+        postList[index] = post.browser.outerHTML // save browser content
+    );
+
+    let parentPage = ''; // the content of {folder}/index.html
 
     // because splice() is in place, only need to check the length
     // 1 index because the user is not a programmer
