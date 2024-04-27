@@ -71,7 +71,10 @@ function buildPosts(folder, config) {
         ).window.document;
 
         // handle URL
-        data.querySelector('a').setAttribute('href', post.split('.')[0])
+        data.querySelector('a').setAttribute(
+            'href',
+            `/${folder}/${post.split('.')[0]}`
+        )
 
         postList.push(data);
     })
@@ -89,17 +92,6 @@ function buildPosts(folder, config) {
 
         let title = data.querySelector('a h2').innerHTML;
         template.querySelector('.article-title h1').innerHTML = title;
-
-        let readTime =
-            Math.floor(
-                data.body.innerHTML.replaceAll(' ', '') // remove space
-                .length / 1500 + 1 // CPM, 1 minute is minimum
-            )
-            + ' phút đọc';
-        [...template.querySelectorAll('.article-title p')]
-        .at(-1).innerHTML = readTime; // article
-        data.querySelector('a p').innerHTML +=
-            `<span>${readTime}</span>`; // browser
 
         let thumbnail = data.querySelector('a img').getAttribute('src');
         template.querySelector('.article-title img').setAttribute(
@@ -126,6 +118,18 @@ function buildPosts(folder, config) {
             data.querySelector('article').innerHTML
             + content.innerHTML;
 
+        // post read time
+        let readTime =
+            Math.floor(
+                data.body.innerHTML.replaceAll(' ', '') // remove space
+                .length / 1500 + 1 // CPM, 1 minute is minimum
+            )
+            + ' phút đọc';
+        [...template.querySelectorAll('.article-title p')]
+        .at(-1).innerHTML = readTime; // article
+        data.querySelector('a p').innerHTML +=
+            `<span>${readTime}</span>`; // browser
+
         // add to browser
         postList[index] = {
             article: template,
@@ -141,10 +145,7 @@ function buildPosts(folder, config) {
                 .browser.outerHTML;
 
         // save to build
-        let build = join(
-            folder,
-            post.browser.getAttribute('href')
-        );
+        let build = join('./', post.browser.getAttribute('href'));
 
         config.releaseItems.push(build.replaceAll('\\', '/'));
 
@@ -185,10 +186,10 @@ function buildPosts(folder, config) {
     }
 
     // generate browser pages
-    postList.forEach((post, index) =>
+    postList.forEach((post, index) => {
         // make postList only contains raw text
         postList[index] = post.browser.outerHTML // save browser content
-    );
+    });
 
     let parentPage = ''; // the content of {folder}/index.html
 
@@ -208,14 +209,6 @@ function buildPosts(folder, config) {
 
         // copy first page
         if (!parentPage) parentPage = browser.documentElement.outerHTML;
-
-        // fix URL so it go to /{folder}/{post-title}
-        browser.querySelectorAll('.browser-list > a').forEach(elm =>
-            elm.setAttribute(
-                'href',
-                `../${elm.getAttribute('href')}`
-            )
-        )
 
         // write browser file
         let browserPath = join(folder, index.toString());
