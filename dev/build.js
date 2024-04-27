@@ -1,6 +1,6 @@
 const fs = require('fs'),
     { join } = require('path'),
-    { JSDOM } = require('../node_modules/jsdom');
+    { JSDOM } = require('jsdom');
 
 // todo: consider move config to a different file
 const postPerBrowser = 12,
