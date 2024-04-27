@@ -3,7 +3,7 @@
     "servePreview": "npx http-server ./",
     "build": "cd Static-Wind && node build.js",
     "serveBuild": "cd Static-Wind && npm run serveBuild",
-    "test": "cd Static-Wind && node build.js && npm run serveBuild",
+    "test": "npm run build && node dev/test.js && cd Static-Wind/build && npx http-server ./",
     "release": "cd Static-Wind && node build.js R"
   },
   "devDependencies": {
