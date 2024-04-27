@@ -1,17 +1,18 @@
 const fs = require('fs'),
     { join } = require('path');
 
-const { readFileSync, writeFileSync } = fs;
+const { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } = fs;
 
 const logLevel = [
     // levels when logging
     'log', // informing the action
-    'info', // inform a positive result
+    'info', // inform an issue
     'warn', // a fail test but but the app still allows to work
     'error' // a fatal error
 ]
 
-let testScore = 0; // the lower the score, the better
+let testScore = 0, // the lower the score, the better
+    testReport = [];
 
 /**
  * Log a message
@@ -20,10 +21,12 @@ let testScore = 0; // the lower the score, the better
  */
 function log(level, msg) {
     testScore += level
+
     const prefix = logLevel[level];
     msg = `[${prefix}] ` + msg;
 
-    console[prefix](msg)
+    console[prefix](msg);
+    testReport.push(msg);
 }
 
 // ----------------------------------------------------------------- Start tests
@@ -33,14 +36,58 @@ const config = JSON.parse(readFileSync(
     'utf-8'
 ))
 
-// check the existence of the release items
-try {
-    config.releaseItems.forEach(item => {
-        if (!fs.existsSync(join(buildFolder, item)))
-            throw Error(item + ' does not exist')
-    })
-    log(1, 'Release items exists')
-} catch (err) {
-    log(3, err)
-    process.exit(1)
+// stats report
+{
+    log(0, readdirSync(buildFolder).length + ' items found in root')
 }
+
+log(0, 'Start file existence test');
+{
+    // important files to check
+    [
+        ...config.releaseItems,
+        'asset/script',
+        'asset/style',
+        'index.html',
+        '404.html',
+    ].forEach(item => {
+        if (!existsSync(join(buildFolder, item)))
+            log(3, item + ' does not exist')
+    })
+
+    if (!existsSync(join(buildFolder, 'sitemap.txt')))
+        log(2, 'sitemap.txt does not exist');
+
+    if (existsSync(join(buildFolder, 'dev')))
+        log(1, 'dev folder found in build')
+}
+
+// ----------------------------------------------------------------- Save result
+log(0, `Test completed with the score of ` + testScore);
+
+for (let l1 in testReport) {
+    let line = testReport[l1];
+    if (line.startsWith('[error]'))
+        testReport[l1] = `<strong>${line}</strong>`;
+    else if (line.startsWith('[warn]'))
+        testReport[l1] = `<b>${line}</b>`;
+    else if (line.startsWith('[info]'))
+        testReport[l1] = `<i>${line}</i>`;
+}
+
+testReport = `<!DOCTYPE html>
+    <style>
+        code * {background-color: black;}
+        strong {color: red;}
+        b {color: orange;}
+        i {color: cyan;}
+    </style>
+    <h1>Score: ${testScore}</h1>
+    <pre><code>${testReport.join('\n')}</code></pre>`;
+
+mkdirSync(join(buildFolder, 'status'));
+writeFileSync(
+    join(buildFolder, 'status', 'index.html'),
+    testReport,
+    'utf-8'
+)
