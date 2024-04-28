@@ -2,7 +2,7 @@
 module.exports = { onBuildComplete }
 
 const { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } = require('fs'),
-    { join } = require('path');
+    { join, extname } = require('path');
 
 const logLevel = [
     // levels when logging
@@ -35,8 +35,10 @@ function onBuildComplete(config) {
 
     // stats report
     {
+        log(0, 'Test performed at: ' + (new Date()).toISOString())
         if (config.release) log(0, 'Test for release ' + config.release);
-        log(0, readdirSync(buildFolder).length + ' items found in root')
+        log(0, readdirSync(buildFolder).length + ' items found in root');
+        log(0, config.releaseItems.length + ' release items');
     }
 
     log(0, 'Start file existence test');
@@ -50,15 +52,53 @@ function onBuildComplete(config) {
             '404.html',
         ].forEach(item => {
             if (!existsSync(join(buildFolder, item)))
-                log(3, item + ' does not exist');
+                return log(3, item + ' does not exist');
+
+            if (
+                extname(item) == ''
+                && existsSync(join(buildFolder, item, config.languages[0] + '.json'))
+            )
+                log(3, item + ' translation file still exist')
         })
 
         if (!existsSync(join(buildFolder, 'sitemap.txt')))
             log(2, 'sitemap.txt does not exist');
 
-        if (existsSync(join(buildFolder, 'dev')))
-            log(1, 'dev folder found in build')
+        // things you don't want to see
+        [
+            '.vscode',
+            '.GITIGNORE',
+            'comp',
+            'node_modules',
+            'status',
+            'package.json',
+            'README.md',
+        ].forEach(item => {
+            if (existsSync(join(buildFolder, item)))
+                log(1, item + ' folder found in build');
+        })
     }
+
+    log(0, 'Begin SEO test')
+    let cacheFiles = {}; // cache just in case other tests also need to read files
+    config.releaseItems.forEach(path => {
+        if (path == '') return; // skip removed file
+        path = join(buildFolder, path);
+        if (extname(path) == '')
+            path = join(path, 'index.html');
+        if (!existsSync(path))
+            return log(2, path + ' in sitemap, but not an HTML file');
+
+        // remove capitalization
+        cacheFiles[path] = readFileSync(path, 'utf-8').toLowerCase();
+
+        if (!cacheFiles[path].startsWith('<!doctype html>'))
+            log(1, path + ' does not start with doctype declaration');
+
+        if (!cacheFiles[path].includes('<title>'))
+            log(1, path + ' does not include title');
+
+    });
 
     // ------------------------------------------------------------- Save result
     log(0, `Test completed with the score of ` + testScore);
@@ -75,6 +115,7 @@ function onBuildComplete(config) {
 
     testReport = `<!DOCTYPE html>
         <style>
+            h1 {color: rgb(${Math.min(255, testScore)}, 0, 0);}
             code * {background-color: black;}
             strong {color: red;}
             b {color: orange;}
