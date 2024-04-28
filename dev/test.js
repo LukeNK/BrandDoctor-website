@@ -59,10 +59,7 @@ function onBuildComplete(config) {
                 && existsSync(join(buildFolder, item, config.languages[0] + '.json'))
             )
                 log(3, item + ' translation file still exist')
-        })
-
-        if (!existsSync(join(buildFolder, 'sitemap.txt')))
-            log(2, 'sitemap.txt does not exist');
+        });
 
         // things you don't want to see
         [
@@ -81,24 +78,37 @@ function onBuildComplete(config) {
 
     log(0, 'Begin SEO test')
     let cacheFiles = {}; // cache just in case other tests also need to read files
-    config.releaseItems.forEach(path => {
-        if (path == '') return; // skip removed file
-        path = join(buildFolder, path);
-        if (extname(path) == '')
-            path = join(path, 'index.html');
-        if (!existsSync(path))
-            return log(2, path + ' in sitemap, but not an HTML file');
+    {
+        if (!existsSync(join(buildFolder, 'sitemap.txt')))
+            log(2, 'sitemap.txt does not exist');
 
-        // remove capitalization
-        cacheFiles[path] = readFileSync(path, 'utf-8').toLowerCase();
+        config.releaseItems.forEach(path => {
+            if (path == '') return; // skip removed file
+            path = join(buildFolder, path);
+            if (extname(path) == '')
+                path = join(path, 'index.html');
+            if (!existsSync(path))
+                return log(2, path + ' in sitemap, but not an HTML file');
 
-        if (!cacheFiles[path].startsWith('<!doctype html>'))
-            log(1, path + ' does not start with doctype declaration');
+            // remove capitalization
+            cacheFiles[path] = readFileSync(path, 'utf-8').toLowerCase();
 
-        if (!cacheFiles[path].includes('<title>'))
-            log(1, path + ' does not include title');
+            if (!cacheFiles[path].startsWith('<!doctype html>'))
+                log(1, path + ' does not start with doctype declaration');
 
-    });
+            if (!cacheFiles[path].includes('<meta charset="utf-8">'))
+                log(1, path + ' does not set charset');
+
+            if (!cacheFiles[path].includes('<title>'))
+                log(2, path + ' does not include title');
+
+            if (
+                !cacheFiles[path].includes('<nav')
+                || !cacheFiles[path].includes('<footer')
+            )
+                log(2, path + ' does not include nav or footer')
+        });
+    }
 
     // ------------------------------------------------------------- Save result
     log(0, `Test completed with the score of ` + testScore);
