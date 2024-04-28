@@ -56,15 +56,12 @@ module.exports = {
 function buildPosts(folder, config) {
     let postList = [],
         freshTemplate = fs.readFileSync(
-            join('build', folder, 'posts', 'template.html'),
+            join('build', folder, 'posts', '!article.html'),
             'utf-8'
         )
 
     fs.readdirSync(join('build', folder, 'posts'), 'utf-8').forEach(post => {
-        if (
-            post == 'template.html'
-            || post.startsWith('!')
-        ) return; // skip template
+        if (post.startsWith('!')) return; // skip template
 
         let data = new JSDOM(fs.readFileSync(
             join('build', folder, 'posts', post),
