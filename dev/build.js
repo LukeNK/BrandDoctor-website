@@ -50,6 +50,7 @@ module.exports = {
             navLang.append(li);
         }
     },
+    onBuildComplete: require('./test').onBuildComplete,
 }
 
 function buildPosts(folder, config) {
