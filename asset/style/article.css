@@ -72,10 +72,9 @@ section > article h2 {
     margin-top: calc(-1 * var(--nav-height));
     color: var(--color-gray-dark);
 }
+section > article * { color: var(--color-gray-dark); }
 
-section > article figure {
-    margin: 0;
-}
+section > article figure { margin: 0; }
 
 section > article img {
     display: block;
