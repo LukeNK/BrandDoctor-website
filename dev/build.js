@@ -89,6 +89,7 @@ function buildPosts(folder, config) {
         template = template.window.document;
 
         let title = data.querySelector('a h2').innerHTML;
+        template.title = title;
         template.querySelector('.article-title h1').innerHTML = title;
 
         let thumbnail = data.querySelector('a img').getAttribute('src');
