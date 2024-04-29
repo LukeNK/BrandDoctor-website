@@ -332,7 +332,7 @@ div.divCol {
     flex-wrap: wrap;
 }
 .divCol.reverse { flex-direction: row-reverse; }
-.divCol > div { flex: 1 1 10rem; }
+.divCol > div { flex: 1 1 50%; }
 
 .divCol > div.text {
     padding: 3rem;
