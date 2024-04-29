@@ -3,6 +3,9 @@
     let list = document.createElement('ol'), // list in the table of content
         headings = document.querySelectorAll('section > article > h2');
 
+    if (headings.length == 0)
+        document.querySelector('section aside').style.display = 'none';
+
     headings.forEach((heading, key) => {
         // set heading id
         heading.setAttribute('id', key);
