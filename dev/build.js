@@ -14,7 +14,6 @@ module.exports = {
         console.log('Building posts')
         buildPosts('tin-tuc', config)
         // buildPosts('du-an')
-
     },
     /**
      * Build each individual file before translating
