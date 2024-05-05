@@ -124,6 +124,7 @@ function onBuildComplete(config) {
     }
 
     testReport = `<!DOCTYPE html>
+        <meta name="robots" content="noindex, nofollow">
         <style>
             h1 {color: rgb(${Math.min(255, testScore)}, 0, 0);}
             code * {background-color: black;}
