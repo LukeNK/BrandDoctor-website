@@ -18,11 +18,10 @@ module.exports = {
     },
     /**
      * Build each individual file before translating
-     * @param {Document} dom The document tree of the building file
      * @param {String} item The item name of the building target
-     * @param {Object} config The config file
+     * @param {Object} config The configuration data
      */
-    onTranslationBuild: (dom, item, config) => {
+    onTranslationBuild: (item, config) => {
         console.warn('onTranslationBuild() is currently being skipped for migration')
         return
         // add lazy loading to images
