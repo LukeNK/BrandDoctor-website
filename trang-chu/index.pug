@@ -1,4 +1,270 @@
 extend /layout/standard
 
+append head
+    title Brand Doctor Group
+
+    link(rel="stylesheet", href="/asset/style/browser.css")
+
+    style.
+        #banner-whois {
+            background-image:
+                linear-gradient(to right, #00339950, #003399ff),
+                url(/asset/image/51589.jpg);
+            background-size: contain;
+            background-position: left bottom;
+            padding: 6rem 0;
+            margin-top: 0.5rem;
+        }
+        #banner-whois p { color: #ffffff; }
+
+        #solutions {
+            display: flex;
+            padding: 0 var(--side-padding);
+        }
+        #solutions > div {
+            flex: 1;
+            padding: var(--nav-height);
+        }
+
+        #solutions-texts {
+            --bg-color: #003399cc;
+            background-image:
+                linear-gradient(to top, var(--bg-color), var(--bg-color)),
+                url(/asset/image/8e98c.jpg);
+            background-size: 1000px;
+            background-position: right;
+            color: white;
+            padding: 1rem;
+        }
+        #solutions-texts p { color: #ffffff; }
+
+        #solutions-btns {
+            background-color: var(--color-gray);
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+        }
+        #solutions-btns button {
+            display: block;
+            margin: 0.5rem;
+            background-color: transparent;
+            color: var(--color-theme);
+            text-align: left;
+            text-decoration: none;
+        }
+        #solutions-btns button.select {
+            background-color: var(--color-theme-light);
+            color: #ffffff;
+        }
+
+        #members {
+            display: flex;
+            align-items: center;
+            margin-top: var(--nav-height);
+            background-color: var(--color-gray);
+            padding-bottom: 3rem;
+        }
+        #members h1 {
+            color: var(--color-theme);
+        }
+        #members > div {
+            flex: 1rem 1 1;
+            padding: 1rem;
+            padding-bottom: var(--nav-height);
+            text-align: center;
+        }
+        #members > .members-logo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #members > .members-logo > div {
+            width: 22%;
+        }
+        #members > .members-logo img {
+            width: 100%;
+        }
+
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--flex-gap);
+        }
+        #projects > div {
+            flex: 1 1 30%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 10rem;
+            padding: 1rem;
+        }
+
+        #opportunity > div {
+            padding: 4rem;
+            padding-left: var(--side-padding);
+            background-color: var(--color-theme-light);
+        }
+        #opportunity > div > h1 {
+            margin-top: 0;
+            color: var(--color-light);
+        }
+        #opportunity > div > p {
+            border: 2px solid var(--color-gray);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: white;
+        }
+
+        #academic > div { padding-right: var(--side-padding); }
+        #academic h1 { color: var(--color-theme); }
+        #academic h2 { color: var(--color-theme-light); }
+
 append content
-    p I love pug at #{pageURL}
+    #banner-whois.banner
+        div
+            //- Div for left align
+        div(style="flex-basos: 40rem;")
+            h1 Brand Doctor Group là ai?
+            p Với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng và phát triển thương hiệu mạnh và trường tồn, Brand Doctor không ngừng nỗ lực hỗ trợ các doanh nghiệp nhận ra chiều sâu của thương hiệu. Chúng tôi tự hào là điểm tựa vàng để doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn.
+            a.btn Xem thêm
+
+    include /layout/banner-stats.html
+
+    h1 GIẢI PHÁP TỪ BRAND DOCTOR
+    #solutions
+        #solutions-texts
+            div
+                p Từ đánh giá toàn diện thương hiệu đến các bước đồng hành, Brand Doctor sẵn sàng lắng nghe và cùng Doanh nghiệp viết nên câu chuyện trường tồn
+            div
+                p Các khóa học đến từ Brand Doctor Academy giúp bạn trang bị kiến thức, kỹ năng và thái độ để sẵn sàng xây dựng sự nghiệp đúng với giá trị của mình
+        #solutions-btns
+            button(onclick="solutionsAnimation(0)") Đồng hành cùng Doanh nghiệp
+            button(onclick="solutionsAnimation(1)") Kiến tạo sự nghiệp
+
+    h1 Tin tức
+    .browser-list
+        //
+            TODO: auto-generate by build script
+            For now, the list was manually copied
+        a(href="/tin-tuc/khai-giang-chuyen-de-thcn-5-0")
+            img(src="/tin-tuc/img/old/BDA.Poster.THCN50.png", loading="lazy")
+            h4 Kiến thức thương hiệu, Sự kiện nổi bật
+            h2 Khai giảng chuyên đề đào tạo “Thương hiệu cá nhân 5.0 – Góc nhìn từ những điểm khác biệt”
+            h3 Nguyễn Khánh Trung
+            p 26/12/2021
+                span 3 phút đọc
+        a(href="/tin-tuc/hoi-thao")
+            img(src="/tin-tuc/img/old/BDG_Poster-4x3-BDGtv-so-01-Softdreams.png", loading="lazy")
+            h4 Kiến thức thương hiệu, Sự kiện nổi bật
+            h2 Favourite BDG TV #001: Lộ trình cấp thiết triển khai hoá đơn điện tử – Doanh nghiệp cần biết gì?
+            h3 Nguyễn Khánh Trung
+            p 08/11/2021
+                span 4 phút đọc
+        a(href="/tin-tuc/tong-giong-thuong-hieu")
+            img(src="/tin-tuc/img/old/Tong-giong-thuong-hieu.jpg", loading="lazy")
+            h4 Kiến thức thương hiệu
+            h2 Tông giọng thương hiệu là gì? 5 bước tạo tông giọng thương hiệu ấn tượng
+            h3 Nguyễn Khánh Trung
+            p 02/11/2021
+                span 14 phút đọc
+        a(href="/tin-tuc/dinh-vi-thuong-hieu")
+            img(src="/tin-tuc/img/old/BDG.WS-Dinh-vi-thuong-hieu.jpg", loading="lazy")
+            h4 Kiến thức thương hiệu
+            h2 Định vị thương hiệu? 9 phương pháp định vị thương hiệu cơ bản
+            h3 Nguyễn Khánh Trung
+            p 02/11/2021
+                span 15 phút đọc
+    p
+        a.btn(href="/tin-tuc") Xem thêm
+
+    #members.noPadding
+        .members-logo
+            div: img(src="/asset/ecosBDG/ptc.png")
+            div: img(src="/asset/ecosBDG/asc.png")
+            div: img(src="/asset/ecosBDG/trung nguyen.jpg")
+            div: img(src="/asset/ecosBDG/dotha lotus.png")
+            div: img(src="/asset/ecosBDG/mckenzie.png")
+            div: img(src="/asset/ecosBDG/niwaco.png")
+            div: img(src="/asset/ecosBDG/netalink.png")
+            div: img(src="/asset/ecosBDG/an giang.jpg")
+            div: img(src="/asset/ecosBDG/ksh.jpg")
+            div: img(src="/asset/ecosBDG/savico.png")
+            div: img(src="/asset/ecosBDG/viet huong.png")
+            div: img(src="/asset/ecosBDG/carndall.png")
+        div
+            h1 ecosBDG
+            p Các thành viên của Brand Doctor Group đã và đang có một hành trình hợp tác với các tổ chức/doanh nghiệp trong và ngoài nước. Chúng tôi tin rằng hành trình này sẽ tiếp tục mở rộng trong tương lai.
+            // <a class="btn dark" href="">Xem thêm</a>
+        .members-logo
+            div: img(src="/asset/ecosBDG/medapas.png")
+            div: img(src="/asset/ecosBDG/mb.png")
+            div: img(src="/asset/ecosBDG/dhera.jpg")
+            div: img(src="/asset/ecosBDG/almond.png")
+            div: img(src="/asset/ecosBDG/ischool.png")
+            div: img(src="/asset/ecosBDG/kien giang.png")
+            div: img(src="/asset/ecosBDG/tinnghia.jpg")
+            div: img(src="/asset/ecosBDG/188e6.png")
+            div: img(src="/asset/ecosBDG/tvq.jpg")
+            div: img(src="/asset/ecosBDG/megaon.png")
+            div: img(src="/asset/ecosBDG/8d32fb.jpg")
+            div: img(src="/asset/ecosBDG/lg.png")
+
+    //-
+        h1 DỰ ÁN cùng ecosBDG
+        p(style="margin-top: 0;") Voluptate sunt eu quis anim ea cillum enim ea labore eu laboris ipsum nostrud enim anim anim est exercitation exercitation eu id velit nostrud eiusmod mollit cupidatat et esse velit
+        .browser-list
+            a
+                img(src="/asset/project/61fce.jpg")
+                h2 Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit
+            a
+                img(src="/asset/project/8d9f4.jpg")
+                h2 Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit
+            a
+                img(src="/asset/project/ae247.jpg")
+                h2 Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit
+            a
+                img(src="/asset/project/e886d.jpg")
+                h2 Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit
+            a
+                img(src="/asset/project/e3d81.jpg")
+                h2 Tiêu đề của dự án, nostrud eius mod mollit cupidatat et esse velit
+        p
+            a.btn(href="/du-an/") Xem thêm
+
+    #opportunity.divCol.noPadding
+        .text
+            h1 Cơ hội sự nghiệp
+            p
+                | Với khao khát “Kiến tạo sự nghiệp” cho các cá nhân, Brand Doctor không ngừng đem đến các cơ hội về sự nghiệp ở từng vị trí. Cùng theo dõi Fanpage để cập nhật thông tin mới nhất về tuyển dụng từ chúng tôi.
+                br
+                a(style="color: var(--color-bright);") Xem thêm
+        .img(style="background-image: url(/asset/image/c0db8.jpg);")
+    #academic.divCol.reverse.noPadding
+        .text
+            h1 Nghiên cứu
+            p Đội ngũ khoa học dày dặn kinh nghiệm tại Brand Doctor không ngừng thực hiện các nghiên cứu mang tính ứng dụng, từ đó kết hợp với việc thấu hiểu Doanh nghiệp để cho ra đời những giải pháp độc đáo dựa trên nền tảng Thương hiệu thật, Giá trị thật nhằm phát huy điểm mạnh và cải thiện điểm yếu, khám phá điểm khác biệt của Doanh nghiệp.
+            // <a style="color: var(--color-bright);">Xem thêm</a>
+        .img(style="background-image: url(/asset/image/cb163.jpg);")
+
+    include /layout/form-signup.html
+
+append scripts
+    script.
+        // Switch solution banner based on button order
+        function solutionsAnimation(index) {
+            let texts = [...document.getElementById('solutions-texts').children],
+                btns = [...document.getElementById('solutions-btns').children];
+
+            for (let l1 = 0; l1 < texts.length; l1++)
+                if (l1 == index) {
+                    texts[l1].style.display = '';
+                    btns[l1].classList.add('select');
+                } else {
+                    texts[l1].style.display = 'none';
+                    btns[l1].classList.remove('select');
+                }
+        }
+        solutionsAnimation(0);
