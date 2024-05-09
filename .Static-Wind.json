@@ -1,0 +1,10 @@
+{
+    "languages": ["vi"],
+    "masterTranslation": "dev/",
+    "buildScript": "dev/build.js",
+    "sitemap": "https://branddoctorgroup.com/",
+    "releaseItems": [
+        "asset",
+        "tin-tuc"
+    ]
+}
