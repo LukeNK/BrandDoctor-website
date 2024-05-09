@@ -5,6 +5,8 @@
     "sitemap": "https://branddoctorgroup.com/",
     "releaseItems": [
         "asset",
-        "tin-tuc"
+        "tin-tuc",
+
+        "404.pug"
     ]
 }
