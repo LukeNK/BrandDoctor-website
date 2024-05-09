@@ -1,5 +1,6 @@
 const fs = require('fs'),
     { join } = require('path'),
+    pug = require('pug'),
     { JSDOM } = require('jsdom');
 
 // todo: consider move config to a different file
@@ -54,109 +55,58 @@ module.exports = {
 
 function buildPosts(folder, config) {
     let postList = [],
-        freshTemplate = fs.readFileSync(
-            join('build', folder, 'posts', '!article.html'),
-            'utf-8'
-        )
+        template = pug.compileFile(join('..', 'layout', 'post.pug'), {basedir: '../'});
 
     fs.readdirSync(join('build', folder, 'posts'), 'utf-8').forEach(post => {
-        if (post.startsWith('!')) return; // skip template
-
-        let data = new JSDOM(fs.readFileSync(
-            join('build', folder, 'posts', post),
-            'utf-8')
-        ).window.document;
-
-        // handle URL
-        data.querySelector('a').setAttribute(
-            'href',
-            `/${folder}/${post.split('.')[0]}`
-        )
-
-        postList.push(data);
+        if (
+            post.startsWith('!')
+            || !post.endsWith('.json')
+        ) return; // skip template
+        postList.push({
+            ...JSON.parse(fs.readFileSync(
+                join('build', folder, 'posts', post),
+                'utf-8'
+            )),
+            path: post
+        });
     })
 
-    // sort by date
-    postList.sort((a, b) =>
-        // reverse date sort
-        Number(b.querySelector('a p').innerHTML)
-        - Number(a.querySelector('a p').innerHTML)
-    )
+
+    // reverse date sort
+    postList.sort((a, b) => b.date - a.date)
 
     postList.forEach((data, index) => {
-        let template = new JSDOM(freshTemplate);
-        template = template.window.document;
-
-        let title = data.querySelector('a h2').innerHTML;
-        template.title = title;
-        template.querySelector('.article-title h1').innerHTML = title;
-
-        let thumbnail = data.querySelector('a img').getAttribute('src');
-        template.querySelector('.article-title img').setAttribute(
-            'src',
-            thumbnail
-        )
-
-        let writer = data.querySelector('a h3').innerHTML;
-        let date = Number(data.querySelector('a p').innerHTML);
-        date = new Date(date);
-        date = date.toLocaleDateString('en-GB');
-        data.querySelector('a p').innerHTML = date; // set back for the browser
-
-        // metadata
-        template.querySelector('section > div').innerHTML =
-            `<h3>${writer}</h3>`
-            + data.querySelector('aside').innerHTML
-            + `<p>${date}</p>` // dd/mm/yyyy
-            + template.querySelector('section > div').innerHTML;
-
-        // post content
-        let content = template.querySelector('section > article');
-        content.innerHTML =
-            data.querySelector('article').innerHTML
-            + content.innerHTML;
+        data.date = new Date(data.date);
+        data.date = data.date.toLocaleDateString('en-GB');
 
         // post read time
-        let readTime =
+        data.readTime =
             Math.floor(
-                data.body.innerHTML.replaceAll(' ', '') // remove space
-                .length / 1500 + 1 // CPM, 1 minute is minimum
+                data.content.length / 2000 + 1 // CPM, 1 minute is minimum
             )
             + ' phút đọc';
-        [...template.querySelectorAll('.article-title p')]
-        .at(-1).innerHTML = readTime; // article
-        data.querySelector('a p').innerHTML +=
-            `<span>${readTime}</span>`; // browser
 
         // add to browser
-        postList[index] = {
-            article: template,
-            browser: data.querySelector('a')
-        }
+        postList[index] = data
     });
 
     postList.forEach(post => {
-        // create post recomendation from random posts
-        for (let l1 = 0; l1 < 3; l1++)
-            post.article.querySelector('.browser-list').innerHTML +=
-                postList[Math.floor(Math.random() * postList.length)]
-                .browser.outerHTML;
-
         // save to build
-        let build = join('./', post.browser.getAttribute('href'));
+        let build = `/${folder}/${post.path.split('.')[0]}`;
 
-        config.releaseItems.push(build.replaceAll('\\', '/'));
+        config.releaseItems.push(build);
 
         build = join('build', build)
 
         fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
             join(build, 'index.html'),
-            post.article.documentElement.outerHTML,
+            template(post),
             'utf-8'
         )
         fs.writeFileSync(join(build, 'vi.json'), '{}', 'utf-8');
     });
+
 
     console.log(`- built ${postList.length} posts of ${folder}`)
 

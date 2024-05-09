@@ -14,7 +14,8 @@ for (let post of fs.readdirSync('tin-tuc/posts')) {
         title: data.querySelector('a h2').innerHTML,
         thumbnail: data.querySelector('a img').getAttribute('src'),
         category: data.querySelector('a h4').innerHTML,
-        date: data.querySelector('a p').innerHTML,
+        author: 'Nguyễn Khánh Trung',
+        date: Number(data.querySelector('a p').innerHTML),
         content: data.querySelector('article').innerHTML,
     }
 
