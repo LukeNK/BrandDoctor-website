@@ -21,3 +21,9 @@ append content
                 p #{post.date}<span>#{post.readTime}</span>
 
     .browser-nav
+        - for(let page = 1; page <= totalBrowserPage; page++)
+            - let href = `/${folder}/${page}`
+            if page == curBrowserPage
+                a.btn.current(href= href)= page
+            else
+                a.btn(href= href)= page

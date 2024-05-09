@@ -69,7 +69,7 @@ function buildPosts(folder, config) {
                 join('build', folder, 'posts', post),
                 'utf-8'
             )),
-            path: post
+            path: `/${folder}/${post.split('.')[0]}`
         });
     })
 
@@ -94,11 +94,9 @@ function buildPosts(folder, config) {
 
     postList.forEach(post => {
         // save to build
-        let build = `/${folder}/${post.path.split('.')[0]}`;
+        config.releaseItems.push(post.path);
 
-        config.releaseItems.push(build);
-
-        build = join('build', build)
+        let build = join('build', post.path)
 
         fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
@@ -112,15 +110,11 @@ function buildPosts(folder, config) {
     console.log(`- built ${postList.length} posts of ${folder}`)
 
     // generate browser pages
-    let parentPage = ''; // the content of {folder}/index.html
+    let totalBrowserPage = Math.floor(postList.length / postPerBrowser) + 1;
 
     // because splice() is in place, only need to check the length
     // 1 index because the user is not a programmer
     for (let index = 1; postList.length > 0; index++) {
-        // copy first page
-        // if (!parentPage) parentPage = browser();
-
-        // write data file
         let browserPath = join(folder, index.toString());
 
         fs.mkdirSync(join('build', browserPath));
@@ -128,8 +122,10 @@ function buildPosts(folder, config) {
             join('build', browserPath, 'vi.json'),
             JSON.stringify({
                 // TODO: Spread translation from the main folder
+                folder: folder,
                 postList: postList.splice(0, postPerBrowser),
-                browserPage: index - 1
+                curBrowserPage: index,
+                totalBrowserPage: totalBrowserPage
             }),
             'utf-8'
         )
