@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="/asset/style/circle-border.css">
+
+<style>
+    #banner-stats {
+        background-image:
+            linear-gradient(to bottom, #003399a0, #003399a0),
+            url(/asset/image/banner_bg.jpg);
+        margin: 0 calc(-1 * var(--side-padding));
+        padding: var(--nav-height) 0;
+    }
+
+    #banner-stats > h1 { margin: var(--nav-height) auto; }
+    #banner-stats > p {
+        margin: 1rem var(--side-padding);
+        color: white;
+    }
+
+    #banner-stats > div {
+        width: 100%;
+        justify-content: space-around;
+        align-items: start;
+        gap: 2rem;
+    }
+
+    #banner-stats > div > div {
+        padding: 0;
+        flex-basis: 0; /* Equal flex */
+    }
+
+    #banner-stats .circle-border {
+        width: 10rem;
+        height: 10rem;
+        border: 0.5rem solid white;
+    }
+
+    #banner-stats h2 { font-size: xx-large; }
+
+    #banner-stats h3 { color: white; }
+</style>
+
+<!-- Surround to have the heading inside the background -->
+<div id="banner-stats" class="banner col">
+    <h1>Những con số ấn tượng về Brand Doctor</h1>
+    <p>Với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng và phát triển thương hiệu mạnh và trường tồn, Brand Doctor không ngừng nỗ lực hỗ trợ các doanh nghiệp nhận ra chiều sâu của thương hiệu. Chúng tôi tự hào là điểm tựa vàng để doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn.</p>
+    <div class="banner">
+        <div>
+            <h2 id="stats-srv" class="circle-border">2</h2>
+            <h3>Dịch vụ chính</h3>
+        </div>
+        <div>
+            <h2 id="stats-rom" class="circle-border">7</h2>
+            <h3>Phòng, Ban</h3>
+        </div>
+        <div>
+            <h2 id="stats-exp" class="circle-border">267</h2>
+            <h3>Chuyên gia nghiên cứu</h3>
+        </div>
+        <div>
+            <h2 id="stats-tch" class="circle-border">1007</h2>
+            <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    const stats = {};
+    let statsAnimationTrigger = false; // if the has been triggered
+    document.querySelectorAll('#banner-stats > .banner h2').forEach(elm => {
+        // save stat numbers
+        stats[elm.id] = {
+            num: Number(elm.innerHTML),
+            elm: elm,
+            inc: 0, // increment
+        }
+        elm.innerHTML = 0;
+    });
+    document.addEventListener('scroll', () => {
+        // get surrounding div of the stats
+        const rect = document.querySelector('#banner-stats > .banner')
+            .getBoundingClientRect();
+
+        // run animation if in viewport
+        if (
+            statsAnimationTrigger
+            || rect.top > (
+                window.innerHeight
+                || document.documentElement.clientHeight
+            )
+        ) return
+        statsAnimationTrigger = true;
+        for (const id in stats) {
+            stats[id].interval = setInterval(() => {
+                let cur = Number(document.getElementById(id).innerHTML);
+                stats[id].inc = ~~((stats[id].num - cur) / 50) + 1;
+                // remove interval at number
+                if (cur >= stats[id].num)
+                    clearInterval(stats[id].interval);
+                else
+                    document.getElementById(id).innerHTML = cur + stats[id].inc;
+            }, 1000 / 60); // 60fps
+        }
+    });
+</script>
