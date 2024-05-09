@@ -1,0 +1,37 @@
+extend /layout/standard.pug
+
+block head
+    <link rel="stylesheet" href="/asset/style/browser.css">
+    <link rel="stylesheet" href="/asset/style/article.css">
+
+block content
+    .article-title.banner
+        div
+            p= category
+            h1= title
+            p= readTime
+        div
+            img(src= thumbnail)
+
+    section
+        div
+            // metadata will go here
+            aside
+                h2 Table of content
+        article
+            #{content}
+            hr
+            p Chia sẻ nếu bạn thấy hay:
+            <div class="fb-like" data-href="https://www.facebook.com/BrandDoctorGroup" data-width="" data-layout="button_count" data-action="" data-size="large" data-share="true"></div>
+
+    include /layout/banner-contact.html
+
+    h1 Bài viết cùng chủ đề
+    .browser-list
+        // Recomendation will be filled by dev-build
+
+    a.browser-return(href='../') Khám phá toàn bộ nội dung
+
+    include /layout/form-signup.html
+
+    script(src='/asset/script/article.js')
