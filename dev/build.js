@@ -71,7 +71,6 @@ function buildPosts(folder, config) {
         });
     })
 
-
     // reverse date sort
     postList.sort((a, b) => b.date - a.date)
 
@@ -134,11 +133,6 @@ function buildPosts(folder, config) {
     }
 
     // generate browser pages
-    postList.forEach((post, index) => {
-        // make postList only contains raw text
-        postList[index] = post.browser.outerHTML // save browser content
-    });
-
     let parentPage = ''; // the content of {folder}/index.html
 
     // because splice() is in place, only need to check the length
