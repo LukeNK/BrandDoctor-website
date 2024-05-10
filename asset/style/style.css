@@ -41,7 +41,7 @@ a.btn, button {
     background-color: var(--color-bright);
     color: white;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: inherit;
 }
 a.btn.dark, button.dark {
     background-color: var(--color-theme-light);
