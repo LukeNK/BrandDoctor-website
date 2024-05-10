@@ -19,11 +19,6 @@ const langToFlag = {
 // handle the button to open pop-up menu
 // first element is the button to pop-up selection
 let langBtn = document.querySelector('#nav-lang *');
-// set language from the <html> lang attr
-langBtn.innerHTML =
-    `<span class="fi fi-${
-        langToFlag[document.querySelector('html').getAttribute('lang')]
-    }"></span>`;
 
 // open pop-up
 langBtn.onclick = () => {

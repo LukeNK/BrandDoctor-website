@@ -38,14 +38,26 @@ html(lang=lang_code)
                 //- a Đào tạo
                 a(href="/lien-he/") Liên hệ
             #nav-lang
-                span
-                    // Space for language, auto by the script
+                -
+                    const langToFlag = {
+                        // list of flag representing each language
+                        vi: 'vn',
+                        en: 'gb',
+                        fr: 'fr'
+                    };
+                    //- For some reason insert lang_code here result in errors
+                    const languageNames = new Intl.DisplayNames(['en'], {
+                        type: 'language'
+                    });
+                span: span.fi(class= 'fi-' + langToFlag[lang_code])
                 ul(style="display: none;")
                     //
                         Language menu will be composed page-by-page by dev/build.js
                         Leave one tag here as an example, but if you want to edit
                         please edit it in the build script dev/build.js:onTranslationBuild()
-                    // <li lang="vi"><a>Tiếng Việt</a></li>
+                    for lang in config.languages
+                        li(lang= lang): a=languageNames.of(lang)
+
                     // <li><a href="#" onclick="langList.display = "none";"></a></li>
             script(src="/asset/script/nav.js" async)
 

@@ -45,26 +45,6 @@ module.exports = {
             if (!elm.getAttribute('loading'))
                 elm.setAttribute('loading', 'lazy')
         })
-
-        // load translation's URL to put it into the nav bar language selection
-        let navLang = dom.querySelector('#nav-lang ul');
-        if (!navLang) return console.warn(`- ${item} does not have #nav-lang`)
-
-        for (const lang of config.languages) {
-            let translation = join('build', item, lang + '.json');
-            if (!fs.existsSync(translation)) {
-                console.warn(`- ${item} ${lang} transaltion does not exist`);
-                continue
-            }
-
-            translation = fs.readFileSync(translation, 'utf-8');
-
-            let li = dom.createElement('li');
-            li.setAttribute('lang', lang);
-            li.innerHTML =
-                `<a href="${translation.URL || ''}">${languageName[lang]}</a>`;
-            navLang.append(li);
-        }
     },
     onBuildComplete: require('./test').onBuildComplete,
 }
@@ -121,7 +101,8 @@ function buildPosts(folder, config) {
             join(build, 'index.html'),
             template({
                 ...parentTranslation,
-                ...post
+                ...post,
+                config: config
             }),
             'utf-8'
         )
@@ -141,6 +122,7 @@ function buildPosts(folder, config) {
             join('build', browserPath, 'vi.json'),
             JSON.stringify({
                 ...parentTranslation,
+                config: config,
                 folder: folder,
                 postList: postList.splice(0, postPerBrowser),
                 curBrowserPage: index,
