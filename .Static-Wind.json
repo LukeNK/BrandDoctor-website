@@ -5,8 +5,17 @@
     "sitemap": "https://branddoctorgroup.com/",
     "releaseItems": [
         "asset",
-        "tin-tuc",
+
         "trang-chu",
-        "lien-he"
+        "lien-he",
+
+        "ve-chung-toi",
+        "ve-chung-toi/doi-ngu",
+        "ve-chung-toi/ten-ho",
+
+        "du-an",
+        "du-an/chi-tiet",
+
+        "tin-tuc"
     ]
 }

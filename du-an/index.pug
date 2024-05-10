@@ -4,29 +4,7 @@ append head
     <link rel="stylesheet" href="/asset/style/browser.css">
 
 append content
-    .browser-filter
-        <button onclick="browserFilter(this)" class="selected sep">Tất cả</button>
-        <button onclick="browserFilter(this)">Sự kiện nổi bật</button>
-        <button onclick="browserFilter(this)">Bí quyết kinh doanh</button>
-        <button onclick="browserFilter(this)">Kiến thức thương hiệu</button>
-        <button onclick="browserFilter(this)">Thị trường hôm nay</button>
-
-    .browser-list
-        for post in postList
-            a(href= post.path)
-                img(src= post.thumbnail)
-                h4= post.category
-                h2= post.title
-                h3= post.author
-                p Quốc gia: #{post.country}
-
-    .browser-nav
-        - for(let page = 1; page <= totalBrowserPage; page++)
-            - let href = `/${folder}/${page}`
-            if page == curBrowserPage
-                a.btn.current(href= href)= page
-            else
-                a.btn(href= href)= page
+    //- Use the browser system
 
 append scripts
     script(src="/asset/script/browser.js")
