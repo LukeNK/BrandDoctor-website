@@ -11,6 +11,18 @@ const postPerBrowser = 12,
 
 module.exports = {
     onBuild: (config) => {
+        console.log('Moving index and 404 page');
+        fs.copyFileSync(
+            join('..', 'dev', 'index.pug'),
+            join('build', 'index.pug')
+        );
+        fs.copyFileSync(
+            join('..', 'dev', '404.pug'),
+            join('build', '404.pug')
+        );
+        config.releaseItems.push('index.pug');
+        config.releaseItems.push('404.pug');
+
         console.log('Building posts')
         buildPosts('tin-tuc', config)
         // buildPosts('du-an')
