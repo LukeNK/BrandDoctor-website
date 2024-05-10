@@ -45,10 +45,10 @@ html(lang=lang_code)
                         en: 'gb',
                         fr: 'fr'
                     };
-                    //- For some reason insert lang_code here result in errors
-                    const languageNames = new Intl.DisplayNames(['en'], {
-                        type: 'language'
-                    });
+                    const languageNames = new Intl.DisplayNames(
+                        lang_code,
+                        {type: 'language'}
+                    );
                 span: span.fi(class= 'fi-' + langToFlag[lang_code])
                 ul(style="display: none;")
                     //
