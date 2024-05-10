@@ -20,8 +20,9 @@ block content
             p= date
             aside
                 h2 Nội dung
-        article
-            #{content}
+        //- Unescaped content because the content already have HTML
+        article !{content}
+            //- We don't put content variable here because it will generate a fake element
             hr
             p Chia sẻ nếu bạn thấy hay:
             <div class="fb-like" data-href="https://www.facebook.com/BrandDoctorGroup" data-width="" data-layout="button_count" data-action="" data-size="large" data-share="true"></div>

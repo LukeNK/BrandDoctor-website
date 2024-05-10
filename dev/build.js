@@ -1,7 +1,6 @@
 const fs = require('fs'),
     { join } = require('path'),
-    pug = require('pug'),
-    { JSDOM } = require('jsdom');
+    pug = require('pug');
 
 // todo: consider move config to a different file
 const postPerBrowser = 12,
@@ -90,6 +89,10 @@ function buildPosts(folder, config) {
         postList[index] = data
     });
 
+    const parentTranslation = JSON.parse(fs.readFileSync(
+        join('build', folder, 'vi.json'),
+        'utf-8'
+    ))
 
     postList.forEach(post => {
         // save to build
@@ -100,17 +103,18 @@ function buildPosts(folder, config) {
         fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
             join(build, 'index.html'),
-            template(post),
+            template({
+                ...parentTranslation,
+                ...post
+            }),
             'utf-8'
         )
-        fs.writeFileSync(join(build, 'vi.json'), '{}', 'utf-8');
     });
 
     console.log(`- built ${postList.length} posts of ${folder}`)
 
     // generate browser pages
     let totalBrowserPage = Math.floor(postList.length / postPerBrowser) + 1;
-
     // because splice() is in place, only need to check the length
     // 1 index because the user is not a programmer
     for (let index = 1; postList.length > 0; index++) {
@@ -120,7 +124,7 @@ function buildPosts(folder, config) {
         fs.writeFileSync(
             join('build', browserPath, 'vi.json'),
             JSON.stringify({
-                // TODO: Spread translation from the main folder
+                ...parentTranslation,
                 folder: folder,
                 postList: postList.splice(0, postPerBrowser),
                 curBrowserPage: index,
