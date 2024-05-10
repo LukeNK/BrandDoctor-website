@@ -1,0 +1,55 @@
+extend /layout/standard
+
+append head
+    link(rel="stylesheet", href="/asset/style/browser.css")
+
+append content
+    <div class="browser-filter">
+        <button onclick="browserFilter(0)" class="selected sep">Tất cả</button>
+        <button onclick="browserFilter(1)">Branding</button>
+        <button onclick="browserFilter(2)">Kinh doanh</button>
+        <button onclick="browserFilter(3)">Thương mại</button>
+    </div>
+
+    <div class="divCol divBox">
+        <div class="divBox img">
+            <div
+                class="img"
+                style="background-image: url(/asset/ecosBDG/niwaco.png);"
+            ></div>
+            <h2>Nguyễn Khánh Trung</h2>
+            <p>
+                Bác sĩ thương hiệu đầu tiên tại Việt Nam.<br>
+                Chủ tịch HĐQT Công ty Cổ phần Bác sĩ Thương hiệu.<br>
+                Viện trưởng Viện đào tạo Bác sĩ Thương hiệu
+            </p>
+        </div>
+        <div class="divBox img">
+            <div
+                class="img"
+                style="background-image: url(/asset/ecosBDG/niwaco.png);"
+            ></div>
+            <h2>Phạm Nguyễn Thụy Anh</h2>
+            <p>
+                Người viết câu chuyện Brand Doctor.<br>
+                Tổng GĐ Công ty Cổ phần Bác sĩ Thương hiệu.
+            </p>
+        </div>
+        <div class="divBox img">
+            <div
+                class="img"
+                style="background-image: url(/asset/ecosBDG/niwaco.png);"
+            ></div>
+            <h2>Nguyễn Thị Kim Chung</h2>
+            <p>
+                Giải pháp Tài chính thật.<br>
+                Giám đốc kinh doanh Công ty Cổ phần Bác sĩ Thương hiệu.
+            </p>
+        </div>
+    </div>
+
+    <div class="browser-nav">
+        <a class="btn current" href="">1</a>
+        <a class="btn" href="">2</a>
+        <a class="btn" href="">3</a>
+    </div>
