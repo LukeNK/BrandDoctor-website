@@ -68,11 +68,12 @@ function onBuildComplete(config) {
             'comp',
             'node_modules',
             'status',
+            'dev',
             'package.json',
             'README.md',
         ].forEach(item => {
             if (existsSync(join(buildFolder, item)))
-                log(1, item + ' folder found in build');
+                log(1, item + ' item found in build');
         })
     }
 
