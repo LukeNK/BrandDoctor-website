@@ -20,6 +20,10 @@ module.exports = {
             join('..', 'dev', '404.pug'),
             join('build', '404.pug')
         );
+        fs.copyFileSync(
+            join('..', 'dev', 'robots.txt'),
+            join('build', 'robots.txt')
+        );
         config.releaseItems.push('index.pug');
         config.releaseItems.push('404.pug');
 
