@@ -13,9 +13,19 @@ nav .selected {
     border-top: 0.5rem solid var(--color-theme);
     border-bottom: 0.6rem solid transparent;
 }
+nav .mobile {
+    display: none;
+}
+
+#nav-menu {
+    justify-content: right;
+    align-items: center;
+}
+#nav-menu img {
+    height: 2rem;
+}
 
 #nav-logo {
-    width: min-content;
     margin: 0.5rem auto;
     padding-left: var(--side-padding);
     padding-right: 3rem;
@@ -80,3 +90,26 @@ nav .selected {
 #nav-lang li a { text-decoration: none; }
 #nav-lang li span { margin-right: 0.5rem; }
 #nav-lang li::marker { content: none; }
+
+@media screen and (max-width: 60rem) {
+    nav .mobile {
+        flex: 1 1 0;
+        display: block;
+    }
+
+    #nav-menu {
+        display: flex;
+    }
+
+    #nav-logo {
+        padding-right: var(--side-padding) !important;
+    }
+
+    #nav-center {
+        display: none;
+    }
+
+    #nav-lang {
+        display: none;
+    }
+}

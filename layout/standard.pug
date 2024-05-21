@@ -26,9 +26,16 @@ html(lang=lang_code)
 
     body
         nav
+            #nav-menu.mobile
+                img(src="/asset/icon/nav menu.svg")
+
             #nav-logo
                 a(href="/trang-chu/")
                     img(src="/asset/image/logo_blue_cut.png", loading="eager", alt="Logo")
+
+            .mobile
+                //- Padding element
+
             #nav-center
                 // Footer copy its list from here (based on id)
                 a(href="/ve-chung-toi/") Về chúng tôi
@@ -39,6 +46,7 @@ html(lang=lang_code)
                 //- a Sự nghiệp
                 //- a Đào tạo
                 a(href="/lien-he/") Liên hệ
+
             #nav-lang
                 -
                     const langToFlag = {
