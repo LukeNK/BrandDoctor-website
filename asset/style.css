@@ -150,6 +150,14 @@ main > div {
 /* -------------------------------------------------------------------Classes */
 /* Generally good classes to have */
 .noPadding { padding: 0 !important; }
+div.gap {
+    /* empty gap */
+    height: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
 
 /* Repetive component classes */
 div.banner {
@@ -243,8 +251,4 @@ div.divCol {
 }
 .divBox h1, .divBox h2 {
     color: var(--color-theme);
-}
-
-.text-center {
-    text-align: center;
 }
