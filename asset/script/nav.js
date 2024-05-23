@@ -1,12 +1,14 @@
 // Find nav links to highlight
-let curPage = '/' + document.location.pathname.split('/')[1] + '/',
-    anchors = [...document.querySelectorAll('#nav-center > a')];
+{
+    let curPage = '/' + document.location.pathname.split('/')[1] + '/',
+        anchors = [...document.querySelectorAll('#nav-center > a')];
 
-for (const link of anchors)
-    if (link.getAttribute('href') == curPage) {
-        link.classList.add('selected')
-        break;
-    }
+    for (const link of anchors)
+        if (link.getAttribute('href') == curPage) {
+            link.classList.add('selected')
+            break;
+        }
+}
 
 // handle language selection
 const langToFlag = {
@@ -36,3 +38,11 @@ let langList = document.querySelector('#nav-lang ul');
         `<span class="fi fi-${flag}"></span>`
         + elm.innerHTML
 });
+
+// handle mobile
+{
+    document.getElementById('nav-menu').onclick = () => {
+        let nav = document.querySelector('nav');
+        nav.toggleAttribute('open');
+    }
+}

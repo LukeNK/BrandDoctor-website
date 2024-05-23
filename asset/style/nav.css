@@ -9,10 +9,6 @@ nav {
     background: var(--color-glass-white);
     backdrop-filter: blur(5px);
 }
-nav .selected {
-    border-top: 0.5rem solid var(--color-theme);
-    border-bottom: 0.6rem solid transparent;
-}
 nav .mobile {
     display: none;
 }
@@ -23,6 +19,7 @@ nav .mobile {
 }
 #nav-menu img {
     height: 2rem;
+    cursor: pointer;
 }
 
 #nav-logo {
@@ -37,18 +34,18 @@ nav .mobile {
 #nav-center {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-grow: 2;
     gap: 1rem;
-    width: 20%;
 }
 #nav-center > a {
     /* ALign text to vertical center */
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
     text-align: center;
-    height: 100%;
     text-decoration: none;
+}
+#nav-center .selected {
+    border-top: 0.5rem solid var(--color-theme);
+    border-bottom: 0.5rem solid transparent;
 }
 
 #nav-lang {
@@ -92,6 +89,13 @@ nav .mobile {
 #nav-lang li::marker { content: none; }
 
 @media screen and (max-width: 60rem) {
+    /* Open and close control */
+    #nav-center { display: none; }
+    [open] #nav-center { display: flex; }
+    #nav-lang { display: none; }
+    [open] #nav-lang { display: flex; }
+
+    /* Style control */
     nav .mobile {
         flex: 1 1 0;
         display: block;
@@ -105,11 +109,45 @@ nav .mobile {
         padding-right: var(--side-padding) !important;
     }
 
+    #nav-center,
+    #nav-lang {
+        /* display: none; */
+        position: fixed;
+        top: var(--nav-height);
+    }
+
     #nav-center {
+        /* Cover the entire length to act as the background for #nav-lang */
         display: none;
+        left: var(--side-padding);
+        right: var(--side-padding);
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+        background-color: var(--color-gray);
+    }
+    #nav-center a {
+        width: 50%;
+        padding: 0.5rem 1rem;
+        text-align: left;
+    }
+    #nav-center .selected{
+        padding: 0.25rem 1rem;
+        border-top: 0.25rem solid var(--color-theme);
+        border-bottom: 0.25rem solid var(--color-theme);
     }
 
     #nav-lang {
-        display: none;
+        right: var(--side-padding);
+        padding: 0;
+        margin: 0.5rem;
+    }
+    #nav-lang > span {
+        justify-content: right;
+    }
+    #nav-lang ul {
+        position: relative;
+        top: 0;
+        border-radius: 0;
     }
 }
