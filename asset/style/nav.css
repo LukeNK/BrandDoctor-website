@@ -1,7 +1,7 @@
 nav {
     position: fixed;
     top: 0; left: 0;
-    z-index: 1;
+    z-index: 10;
     height: var(--nav-height);
     width: 100%;
     display: flex;
@@ -83,6 +83,15 @@ nav .mobile { display: none; }
 #nav-lang li a { text-decoration: none; }
 #nav-lang li span { margin-right: 0.5rem; }
 #nav-lang li::marker { content: none; }
+
+#nav-menu-close {
+    z-index: 1;
+    position: fixed;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    display: none;
+}
+#nav-menu-close[open] { display: block; }
 
 @media screen and (max-width: 60rem) {
     /* Open and close control */

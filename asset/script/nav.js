@@ -41,8 +41,15 @@ let langList = document.querySelector('#nav-lang ul');
 
 // handle mobile
 {
+    let nav = document.querySelector('nav'),
+        navMenu = document.getElementById('nav-menu-close');
     document.getElementById('nav-menu').onclick = () => {
-        let nav = document.querySelector('nav');
         nav.toggleAttribute('open');
+        navMenu.toggleAttribute('open');
+    };
+
+    navMenu.onclick = () => {
+        nav.removeAttribute('open');
+        navMenu.removeAttribute('open')
     }
 }

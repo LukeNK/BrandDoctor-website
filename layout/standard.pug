@@ -71,7 +71,10 @@ html(lang=lang_code)
                         li(lang= lang): a=languageNames.of(lang)
 
                     // <li><a href="#" onclick="langList.display = "none";"></a></li>
-            script(src="/asset/script/nav.js" async)
+
+        //- Filler mobile to turn off menu
+        #nav-menu-close
+        script(src="/asset/script/nav.js" async)
 
         main
             //- p #{pageURL}
@@ -99,9 +102,7 @@ html(lang=lang_code)
                             img(src="/asset/icon/footer facebook icon.png")
                         a(href="https://www.youtube.com/@branddoctorgroup")
                             img(src="/asset/icon/footer youtube icon.png")
-                ul#quick-links
-                    li
-                        a(href="/trang-chu/") Trang chủ
+                ul#quick-links: li
                 form
                     <div class="fb-page" data-href="https://www.facebook.com/BrandDoctorGroup" data-tabs="posts" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/BrandDoctorGroup" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/BrandDoctorGroup">Brand Doctor Group</a></blockquote></div>
                     p Bắt đầu đồng hành cùng Brand Doctor
