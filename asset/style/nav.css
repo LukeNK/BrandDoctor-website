@@ -101,7 +101,10 @@ nav .mobile { display: none; }
     [open] #nav-lang { display: flex; }
 
     /* Style control */
-    nav .mobile { flex: 1 1 0; }
+    nav .mobile {
+        display: block;
+        flex: 1 1 0;
+    }
 
     #nav-menu { display: flex; }
 
