@@ -203,7 +203,7 @@ div.divCol {
     flex-wrap: wrap;
 }
 .divCol.reverse { flex-direction: row-reverse; }
-.divCol > div { flex: 1 1 50%; }
+.divCol > div { flex: 1 0 20rem; }
 
 .divCol > div.text {
     padding: 3rem;
@@ -212,6 +212,10 @@ div.divCol {
 }
 .divCol > div.text h1 {
     text-align: center;
+}
+.divCol > div.img {
+    /* Mobile when the div being warpped */
+    min-height: 10rem;
 }
 .divCol > .right {
     /* Allign items to the right */
