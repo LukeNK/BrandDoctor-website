@@ -13,6 +13,7 @@ footer p {
 footer > div {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 footer > div > ul {
@@ -27,7 +28,7 @@ footer > div > ul > li {
 }
 footer > div > ul > li > a { text-decoration: none; }
 footer > div > form {
-    flex: 0 1 22rem;
+    flex: 1 1 20rem;
     padding-top: 1rem;
 }
 
@@ -58,4 +59,8 @@ footer .info .social img {
     /* Specific to overdrive the rules above */
     height: 100%;
     margin: auto 1rem auto 0;
+}
+
+@media screen and (max-width: 60rem) {
+
 }
