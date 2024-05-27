@@ -21,9 +21,56 @@
     color: var(--color-light);
 }
 
-.dropdown-click div {
+.dropdown-click div div {
     padding: 0 1rem;
 }
 .dropdown-click p {
     color: #ffffff;
+}
+
+.dropdown-click .desktop {
+    display: none;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dropdown-click .desktop button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    color: var(--color-theme);
+    font-weight: bolder;
+}
+.dropdown-click .desktop button::after {
+    content: '◀';
+}
+.dropdown-click .desktop button[open] {
+    background-color: var(--color-theme-light);
+    color: #ffffff;
+}
+.dropdown-click .desktop button[open]::after {
+    content: '▼';
+}
+
+@media screen and (min-width: 60rem) {
+    .dropdown-click {
+        display: flex;
+    }
+    .dropdown-click > div {
+        flex: 1 1 0;
+    }
+
+    .dropdown-click summary {
+        display: none;
+    }
+    .dropdown-click details { display: none; }
+    .dropdown-click details[open] { display: block; }
+
+    .dropdown-click .desktop {
+        display: flex;
+    }
 }
