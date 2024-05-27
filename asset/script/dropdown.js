@@ -1,9 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-for(const dropdown of [...document.querySelectorAll('.dropdown-click')]) {
-    dropdown.onclick = () => {
-        [...dropdown.querySelectorAll('details')].forEach(e => {
-            e.removeAttribute('open')
-        })
-    }
-}
+// add to the end of the document
+document.querySelectorAll('.dropdown-click')
+.forEach(dropdown => {
+    dropdown.querySelectorAll('summary')
+    .forEach(sum =>
+        sum.onclick = () =>
+            dropdown.querySelectorAll('details')
+            .forEach(det =>
+                det.removeAttribute('open')
+            )
+    )
 })
