@@ -53,14 +53,15 @@ main > details {
 details > summary {
     list-style-type: none;
     width: 100%;
+    display: flex; /* Make the ::after at the end of the line */
+    justify-content: space-between;
     color: var(--color-theme);
     font-weight: bold;
     font-size: 1.5rem;
 }
 details > summary::after {
     content: '◀';
-    position: absolute;
-    right: var(--side-padding);
+    margin-right: 1rem;
 }
 details[open] > summary::after {
     content: '▼';

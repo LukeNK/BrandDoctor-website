@@ -16,43 +16,29 @@ append head
         }
         #banner-whois p { color: #ffffff; }
 
-        #solutions {
-            display: flex;
-            padding: 0 var(--side-padding);
+        .dropdown-click {
+            margin: 0 var(--side-padding);
+            padding: 0;
+            background-color: var(--color-gray)
         }
-        #solutions > div {
-            flex: 1;
-            padding: var(--nav-height);
-        }
-
-        #solutions-texts {
-            --bg-color: #003399cc;
-            background-image:
-                linear-gradient(to top, var(--bg-color), var(--bg-color)),
-                url(/asset/image/8e98c.jpg);
-            background-size: 1000px;
-            background-position: right;
-            color: white;
+        .dropdown-click details {
             padding: 1rem;
         }
-        #solutions-texts p { color: #ffffff; }
-
-        #solutions-btns {
-            background-color: var(--color-gray);
-            display: flex;
-            flex-direction: column;
-            /* justify-content: space-around; */
+        .dropdown-click details[open] {
+            background-image: linear-gradient(to top, #00339990, #00339990), url(/asset/image/BDG\ co\ 1.png);
         }
-        #solutions-btns button {
-            display: block;
-            margin: 0.5rem;
-            background-color: transparent;
-            color: var(--color-theme);
-            text-align: left;
-            text-decoration: none;
+        .dropdown-click details summary {
+            padding: 1rem;
         }
-        #solutions-btns button.select {
+        .dropdown-click details[open] summary {
+            border-radius: var(--border-radius);
             background-color: var(--color-theme-light);
+            color: var(--color-light);
+        }
+        .dropdown-click div {
+            padding: 0 1rem;
+        }
+        .dropdown-click p {
             color: #ffffff;
         }
 
@@ -135,13 +121,13 @@ append content
     include /layout/banner-stats.html
 
     h1 GIẢI PHÁP TỪ BRAND DOCTOR
-    #solutions
-        #solutions-texts
+    .dropdown-click
+        details
+            summary Đồng hành cùng Doanh nghiệp
             div: p Từ đánh giá toàn diện thương hiệu đến các bước đồng hành, Brand Doctor sẵn sàng lắng nghe và cùng Doanh nghiệp viết nên câu chuyện trường tồn
+        details
+            summary Kiến tạo sự nghiệp
             div: p Các khóa học đến từ Brand Doctor Academy giúp bạn trang bị kiến thức, kỹ năng và thái độ để sẵn sàng xây dựng sự nghiệp đúng với giá trị của mình
-        #solutions-btns
-            button(onclick="solutionsAnimation(0)") Đồng hành cùng Doanh nghiệp
-            button(onclick="solutionsAnimation(1)") Kiến tạo sự nghiệp
 
     h1 Tin tức
     .browser-list
