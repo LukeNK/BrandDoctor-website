@@ -1,0 +1,29 @@
+/* Remember to import script in order to auto-close dropdowns */
+.dropdown-click {
+    margin: 0 var(--side-padding);
+    padding: 0;
+    background-color: var(--color-gray)
+}
+
+.dropdown-click details {
+    padding: 1rem;
+}
+.dropdown-click details[open] {
+    background-image: linear-gradient(to top, #00339990, #00339990), url(/asset/image/BDG\ co\ 1.png);
+}
+
+.dropdown-click details summary {
+    padding: 1rem;
+}
+.dropdown-click details[open] summary {
+    border-radius: var(--border-radius);
+    background-color: var(--color-theme-light);
+    color: var(--color-light);
+}
+
+.dropdown-click div {
+    padding: 0 1rem;
+}
+.dropdown-click p {
+    color: #ffffff;
+}

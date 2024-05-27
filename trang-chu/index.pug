@@ -4,6 +4,7 @@ append head
     title Brand Doctor Group
 
     link(rel="stylesheet", href="/asset/style/browser.css")
+    link(rel="stylesheet", href="/asset/style/dropdown.css")
 
     style.
         #banner-whois {
@@ -15,32 +16,6 @@ append head
             padding: 6rem 0;
         }
         #banner-whois p { color: #ffffff; }
-
-        .dropdown-click {
-            margin: 0 var(--side-padding);
-            padding: 0;
-            background-color: var(--color-gray)
-        }
-        .dropdown-click details {
-            padding: 1rem;
-        }
-        .dropdown-click details[open] {
-            background-image: linear-gradient(to top, #00339990, #00339990), url(/asset/image/BDG\ co\ 1.png);
-        }
-        .dropdown-click details summary {
-            padding: 1rem;
-        }
-        .dropdown-click details[open] summary {
-            border-radius: var(--border-radius);
-            background-color: var(--color-theme-light);
-            color: var(--color-light);
-        }
-        .dropdown-click div {
-            padding: 0 1rem;
-        }
-        .dropdown-click p {
-            color: #ffffff;
-        }
 
         #members {
             display: flex;
@@ -122,7 +97,7 @@ append content
 
     h1 GIẢI PHÁP TỪ BRAND DOCTOR
     .dropdown-click
-        details
+        details(open)
             summary Đồng hành cùng Doanh nghiệp
             div: p Từ đánh giá toàn diện thương hiệu đến các bước đồng hành, Brand Doctor sẵn sàng lắng nghe và cùng Doanh nghiệp viết nên câu chuyện trường tồn
         details
@@ -236,19 +211,4 @@ append content
     include /layout/form-signup.html
 
 append scripts
-    script.
-        // Switch solution banner based on button order
-        function solutionsAnimation(index) {
-            let texts = [...document.getElementById('solutions-texts').children],
-                btns = [...document.getElementById('solutions-btns').children];
-
-            for (let l1 = 0; l1 < texts.length; l1++)
-                if (l1 == index) {
-                    texts[l1].style.display = '';
-                    btns[l1].classList.add('select');
-                } else {
-                    texts[l1].style.display = 'none';
-                    btns[l1].classList.remove('select');
-                }
-        }
-        solutionsAnimation(0);
+    script(src="/asset/script/dropdown.js")
