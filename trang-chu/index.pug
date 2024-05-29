@@ -29,9 +29,11 @@ append head
         }
         #members > div {
             flex: 1rem 1 1;
+            gap: 1rem;
             padding: 1rem;
             padding-bottom: var(--nav-height);
             text-align: center;
+            order: 1;
         }
         #members > .members-logo {
             display: flex;
@@ -40,10 +42,18 @@ append head
             align-items: center;
         }
         #members > .members-logo > div {
-            width: 22%;
+            flex-basis: 5rem;
         }
         #members > .members-logo img {
             width: 100%;
+        }
+        @media screen and (max-width: 60rem) {
+            #members {
+                flex-direction: column;
+            }
+            #members > .members-logo {
+                order: 2; /* logo after text */
+            }
         }
 
         #projects {
