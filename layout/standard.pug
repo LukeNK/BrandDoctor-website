@@ -63,10 +63,6 @@ html(lang=lang_code)
                     );
                 span: span.fi(class= 'fi-' + langToFlag[lang_code])
                 ul(style="display: none;")
-                    //
-                        Language menu will be composed page-by-page by dev/build.js
-                        Leave one tag here as an example, but if you want to edit
-                        please edit it in the build script dev/build.js:onTranslationBuild()
                     for lang in config.languages
                         li(lang= lang): a=languageNames.of(lang)
 
