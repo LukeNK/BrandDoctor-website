@@ -4,10 +4,11 @@ append head
     style.
         #values {
             display: flex;
+            flex-wrap: wrap;
             padding: 0;
         }
         #values .sticky {
-            flex: 50%;
+            flex: 1 0 20rem;
             text-align: center;
             background-image:
                 linear-gradient(to right, #0055ffe0, #0055ffe0),
@@ -22,25 +23,13 @@ append head
         #values aside h3 { color: white;}
         #values aside h2 { color: var(--color-light); }
         #values .float {
-            flex: 77%;
+            flex: 40rem;
             padding: 3rem;
             padding-right: var(--side-padding);
             background-color: var(--color-gray);
         }
         #values .float h1 { color: var(--color-theme); }
         #values .float summary { color: var(--color-bright); }
-        #values details summary {
-            list-style-type: none;
-            width: 100%;
-        }
-        #values details summary::after {
-            content: '◀';
-            position: absolute;
-            right: var(--side-padding);
-        }
-        #values details[open] summary::after {
-            content: '▼';
-        }
 
         .boxItem {
             background-color: var(--color-theme);
@@ -77,7 +66,8 @@ append content
             h1 Sứ mệnh
             p Điểm tựa vàng để mỗi cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn
             h1 Giá trị cốt lõi
-            details
+            //- Open an example so the user knows it can be opened
+            details(open)
                 summary Thương hiệu thật • Giá trị thật
                 p Mỗi người, mỗi tổ chức đều có giá trị của riêng mình, không nhầm lẫn với ai. Theo Brand Doctor, một thương hiệu thật cần có sức bật mạnh mẽ từ trong nội tại để tồn tại trên thị trường. Và sức bật ấy đến từ những “giá trị thật”, điều gắn kết giữa khách hàng và doanh nghiệp. Những giá trị này đều tồn tại trong mỗi người, mỗi tổ chức, chỉ là bạn có thể chưa tìm ra được nó. Vì điều ấy, chúng tôi luôn sát cánh với từng doanh nghiệp khám phá năng lực tiềm ẩn ấy.
             details
