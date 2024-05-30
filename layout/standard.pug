@@ -67,7 +67,7 @@ html(lang=lang_code)
 
                 details
                     summary: span.fi(class= 'fi-' + langToFlag[lang_code])
-                    for lang in ['vi','vi','vi','vi','vi','vi',]
+                    for lang in config.languages
                         a(lang= lang)
                             span.fi(class='fi-' + langToFlag[lang])
                             | #{languageNames.of(lang)}
