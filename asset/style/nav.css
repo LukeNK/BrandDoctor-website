@@ -34,6 +34,14 @@ nav .mobile { display: none; }
     flex-grow: 2;
     gap: 1rem;
 }
+#nav-center button {
+    width: 50%;
+    padding: 1rem;
+    font-size: xx-large;
+    text-align: left;
+    background-color: transparent;
+    color: red;
+}
 #nav-center > a {
     /* ALign text to vertical center */
     text-align: center;
@@ -139,7 +147,10 @@ nav .mobile { display: none; }
         right: var(--side-padding);
         padding: 0;
     }
-    #nav-lang summary { padding: 0.25rem; }
+    #nav-lang summary {
+        padding: 1rem;
+        font-size: xx-large;
+    }
     #nav-lang details {
         border-radius: 0;
         width: unset;
