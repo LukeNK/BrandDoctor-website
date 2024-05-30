@@ -26,7 +26,7 @@ html(lang=lang_code)
 
     body
         nav
-            #nav-menu.mobile
+            #nav-menu.mobile(onclick="toggleNav()")
                 img(src="/asset/icon/nav menu.svg")
 
             #nav-logo
@@ -38,8 +38,11 @@ html(lang=lang_code)
 
             #nav-center
                 // Footer copy its list from here (based on id)
+
                 // Hide homepage but available for mobile
+                button.mobile(onclick="toggleNav()") Close
                 a.mobile(href='/trang-chu/') Trang chủ
+
                 a(href="/ve-chung-toi/") Về chúng tôi
                 //- a Giải pháp
                 a(href="/tin-tuc/") Tin tức
@@ -61,15 +64,19 @@ html(lang=lang_code)
                         lang_code,
                         {type: 'language'}
                     );
-                span: span.fi(class= 'fi-' + langToFlag[lang_code])
-                ul(style="display: none;")
-                    for lang in config.languages
-                        li(lang= lang): a=languageNames.of(lang)
+
+                details
+                    summary: span.fi(class= 'fi-' + langToFlag[lang_code])
+                    for lang in ['vi','vi','vi','vi','vi','vi',]
+                        a(lang= lang)
+                            span.fi(class='fi-' + langToFlag[lang])
+                            | #{languageNames.of(lang)}
 
                     // <li><a href="#" onclick="langList.display = "none";"></a></li>
 
         //- Filler mobile to turn off menu
-        #nav-menu-close
+        #nav-menu-close(onclick="toggleNav()")
+
         script(src="/asset/script/nav.js" async)
 
         main
