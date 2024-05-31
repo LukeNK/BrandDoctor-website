@@ -118,6 +118,7 @@ html(lang=lang_code)
                 // copy from nav bar to footer quick links
                 let quickLinks = document.getElementById('quick-links');
                 [...document.getElementById('nav-center').children].forEach(elm => {
+                    if (!elm.getAttribute('href')) return; //skip empty links
                     quickLinks.innerHTML += `<li>
                         <a href="${elm.getAttribute('href')}">${elm.innerHTML}</a>
                     </li>`
