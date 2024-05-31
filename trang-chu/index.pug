@@ -16,6 +16,11 @@ append head
             padding: 6rem 0;
         }
         #banner-whois p { color: #ffffff; }
+        @media screen and (max-width: 40rem) {
+            #banner-whois .desktop {
+                display: none;
+            }
+        }
 
         #members {
             display: flex;
@@ -95,9 +100,9 @@ append head
 append content
     .gap
     #banner-whois.banner
-        div
+        div.desktop
             //- Div for left align
-        div(style="flex-basos: 40rem;")
+        div
             h1 Brand Doctor Group là ai?
             p Với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng và phát triển thương hiệu mạnh và trường tồn, Brand Doctor không ngừng nỗ lực hỗ trợ các doanh nghiệp nhận ra chiều sâu của thương hiệu. Chúng tôi tự hào là điểm tựa vàng để doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn.
             a.btn Xem thêm
