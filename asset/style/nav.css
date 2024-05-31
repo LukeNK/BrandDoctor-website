@@ -14,10 +14,10 @@ nav .mobile { display: none; }
 #nav-menu {
     justify-content: right;
     align-items: center;
+    cursor: pointer;
 }
 #nav-menu img {
     height: 1.5rem;
-    cursor: pointer;
 }
 
 #nav-logo {
