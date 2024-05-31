@@ -14,10 +14,11 @@ document.querySelectorAll('.dropdown-click')
         button.onclick = () => {
             dropdown.querySelectorAll('button')
                 .forEach(btn => btn.removeAttribute('open'));
-            button.setAttribute('open', 'true');
+            button.setAttribute('open', true);
             sum.click();
         }
 
         dropdown.querySelector('.desktop').append(button);
-    })
+    });
+    dropdown.querySelector('.desktop button').click(); // open the first element
 })
