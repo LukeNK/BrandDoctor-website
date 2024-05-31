@@ -3,7 +3,9 @@
         background-image:
             linear-gradient(to left, #003399e0, #003399e0),
             url(/asset/image/banner_bg.jpg);
+        flex-wrap: wrap;
     }
+    #banner-contact > div { padding: 0; }
 
     #banner-contact a::before {
         content: "➡";
@@ -20,23 +22,27 @@
     #banner-contact p {
         color: white;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
+        column-gap: 1rem;
     }
     #banner-contact span {
         text-align: right;
     }
 
-    #banner-contact .img {
-        padding: 0;
-        align-self: flex-end;
-    }
     #banner-contact img {
         width: 25rem;
+    }
+
+    @media screen and (max-width: 30rem) {
+        #banner-contact img {
+            width: 75%;
+        }
     }
 </style>
 
 <div id="banner-contact" class="banner">
-    <div>
+    <div style="flex: 0 1 40rem">
         <h1>Doanh nghiệp bạn cần giải pháp thương hiệu?</h1>
         <a href="/lien-he">Liên hệ cùng chúng tôi</a>
         <p><span>(028) 398 404 12</span><span>branddoctor.info@gmail.com</span></p>
