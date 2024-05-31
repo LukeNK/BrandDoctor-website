@@ -44,10 +44,13 @@ nav .mobile { display: none; }
 }
 #nav-center > a {
     /* ALign text to vertical center */
-    text-align: center;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
 }
-#nav-center .selected {
+#nav-center a.selected {
     border-top: 0.5rem solid var(--color-theme);
     border-bottom: 0.5rem solid transparent;
 }
@@ -60,28 +63,13 @@ nav .mobile { display: none; }
     padding-right: var(--side-padding);
 }
 
-#nav-lang span {
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-#nav-lang > span {
-    display: flex;
-    justify-content: center;
-}
-#nav-lang > span::after {
-    display: block;
-    content: '◀';
-    width: 1rem; /* To prevent the content "push" the flag when being opened */
-    margin-left: 1rem;
-}
-#nav-lang > span.open::after { content: '▼'; }
-
 #nav-lang details {
-    padding: 1rem;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     display: flex;
 }
+#nav-lang summary::after { margin: 0; }
 #nav-lang details[open] {
+    padding: 1rem;
     background: var(--color-glass-white);
     backdrop-filter: blur(5px); /* TODO: does not work */
 }
@@ -97,7 +85,7 @@ nav .mobile { display: none; }
 }
 #nav-menu-close[open] { display: block; }
 
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 65rem) {
     /* Open and close control */
     #nav-center { display: none; }
     [open] #nav-center { display: flex; }
@@ -133,10 +121,12 @@ nav .mobile { display: none; }
     }
     #nav-center a {
         width: 50%;
+        height: unset;
         padding: 0.5rem 1rem;
+        display: block;
         text-align: left;
     }
-    #nav-center .selected { border: 0px none transparent; }
+    #nav-center a.selected { border: 0px none transparent; }
     /* #nav-center .selected::before {
         margin-right: 1rem;
         content: '▶';
@@ -154,8 +144,10 @@ nav .mobile { display: none; }
     #nav-lang details {
         border-radius: 0;
         width: unset;
-        padding: 0;
     }
-    #nav-lang details[open] { background: none; }
+    #nav-lang details[open] {
+        padding: 0;
+        background: none;
+    }
     #nav-lang details a { padding: 0.4rem; }
 }
