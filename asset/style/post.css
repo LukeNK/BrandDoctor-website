@@ -61,12 +61,10 @@ section aside h2 {
 
 section aside a { text-decoration: none; }
 section aside a:hover { text-decoration: underline; }
-section aside .current {
-    color: var(--color-theme-light);
-}
+section aside .current { color: var(--color-theme-light); }
 
 /* ---------------------------------------------------------- Article content */
-section > article { flex: 2 0 30rem; }
+section > article { flex: 2 1 30rem; }
 
 section > article h2 {
     /* This to ensure when scrolling to ID
