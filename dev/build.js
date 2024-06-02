@@ -100,8 +100,10 @@ function buildPosts(folder, config) {
         fs.writeFileSync(
             join(build, 'index.html'),
             template({
+                lang_code: 'vi',
                 ...parentTranslation,
                 ...post,
+                postList: postList,
                 config: config
             }),
             'utf-8'
