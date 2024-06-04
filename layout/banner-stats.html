@@ -34,6 +34,7 @@
     }
 
     #banner-stats h2 { font-size: xx-large; }
+    #banner-stats h2 > span { font-family: inherit; }
 
     #banner-stats h3 { color: white; }
 </style>
@@ -49,15 +50,15 @@
         </div>
         <div>
             <h2 id="stats-rom" class="circle-border">7</h2>
-            <h3>Phòng, Ban</h3>
+            <h3>Bước đồng hành trọn vẹn</h3>
         </div>
         <div>
-            <h2 id="stats-exp" class="circle-border">267</h2>
-            <h3>Chuyên gia nghiên cứu</h3>
+            <h2 id="stats-exp" class="circle-border">20</h2>
+            <h3>Năm kinh nghiệm</h3>
         </div>
         <div>
-            <h2 id="stats-tch" class="circle-border">1007</h2>
-            <h3>Giảng viên, giáo viên trong và ngoài nước</h3>
+            <h2 class="circle-border">+<span id="stats-tch">100</span></h2>
+            <h3>Chuyên gia trong và ngoài nước</h3>
         </div>
     </div>
 </div>
@@ -65,7 +66,7 @@
 <script>
     const stats = {};
     let statsAnimationTrigger = false; // if the has been triggered
-    document.querySelectorAll('#banner-stats > .banner h2').forEach(elm => {
+    document.querySelectorAll('#banner-stats > .banner [id]').forEach(elm => {
         // save stat numbers
         stats[elm.id] = {
             num: Number(elm.innerHTML),
