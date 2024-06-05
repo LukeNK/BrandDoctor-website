@@ -71,13 +71,28 @@ nav .mobile { display: none; }
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     display: flex;
 }
+#nav-lang details summary {
+    gap: 1rem;
+    justify-content: right;
+}
 #nav-lang summary::after { margin: 0; }
 #nav-lang details[open] {
-    padding: 1rem;
+    position: fixed;
+    top: 0;
+    right: var(--side-padding);
+    padding: 0 0 1rem 1rem;
     background: var(--color-glass-white);
     backdrop-filter: blur(5px); /* TODO: does not work */
 }
-#nav-lang a { text-decoration: none; }
+#nav-lang details[open] summary {
+    align-items: center;
+    margin-bottom: 1rem;
+    height: var(--nav-height);
+}
+#nav-lang a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
 #nav-lang details a span { margin-right: 0.5rem; }
 
 #nav-menu-close {
@@ -145,13 +160,16 @@ nav .mobile { display: none; }
         right: var(--side-padding);
         padding: 0;
     }
-    #nav-lang summary {
-        padding: 1rem;
-        font-size: xx-large;
-    }
-    #nav-lang details {
+    #nav-lang > details {
+        position: unset !important;
         border-radius: 0;
         width: unset;
+    }
+    #nav-lang > details > summary {
+        height: unset !important;
+        padding: 1rem;
+        margin-bottom: 0 !important;
+        font-size: xx-large;
     }
     #nav-lang details[open] {
         padding: 0;

@@ -12,8 +12,8 @@
 
 // handle mobile
 function toggleNav() {
-    let nav = document.querySelector('nav'),
-        navMenu = document.getElementById('nav-menu-close');
-    nav.toggleAttribute('open');
-    navMenu.toggleAttribute('open');
+    document.querySelector('nav').toggleAttribute('open');
+    document.getElementById('nav-menu-close').toggleAttribute('open');
+    // open language by default
+    document.querySelector('#nav-lang details').setAttribute('open', true);
 }
