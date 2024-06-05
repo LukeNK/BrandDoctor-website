@@ -11,10 +11,14 @@ append head
                 url(/asset/image/51589.jpg);
             background-size: contain;
             background-position: left bottom;
-            padding: 6rem 0;
+            padding: 6rem var(--side-padding);
+        }
+        #banner-whois .desktop {
+            flex-basis: 40rem;
         }
         #banner-whois p { color: #ffffff; }
-        @media screen and (max-width: 40rem) {
+        @media screen and (max-width: 60rem) {
+            #banner-whois h1 { text-align: center; }
             #banner-whois .desktop {
                 display: none;
             }
@@ -95,6 +99,11 @@ append head
         #academic h1 { color: var(--color-theme); }
         #academic h2 { color: var(--color-theme-light); }
 
+        @media screen and (max-width: 60rem) {
+            #opportunity > div { padding: var(--side-padding); }
+            #academic > div { padding: var(--side-padding); }
+        }
+
 append content
     .gap
     #banner-whois.banner
@@ -108,7 +117,7 @@ append content
     .gap
     include /layout/banner-stats.html
 
-    h1 GIẢI PHÁP TỪ BRAND DOCTOR
+    h1 GIẢI PHÁP TỪ Brand Doctor
     .dropdown-click
         div
             details
@@ -145,13 +154,6 @@ append content
             h3 Nguyễn Khánh Trung
             p 02/11/2021
                 span 14 phút đọc
-        a(href="/tin-tuc/dinh-vi-thuong-hieu")
-            img(src="/tin-tuc/img/old/BDG.WS-Dinh-vi-thuong-hieu.jpg", loading="lazy")
-            h4 Kiến thức thương hiệu
-            h2 Định vị thương hiệu? 9 phương pháp định vị thương hiệu cơ bản
-            h3 Nguyễn Khánh Trung
-            p 02/11/2021
-                span 15 phút đọc
     p: a.btn(href="/tin-tuc") Xem thêm
 
     #members.noPadding

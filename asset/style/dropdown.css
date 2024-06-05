@@ -64,13 +64,22 @@
         flex: 1 1 0;
     }
 
-    .dropdown-click summary {
-        display: none;
+    .dropdown-click div details,
+    .dropdown-click .desktop {
+        height: 20rem;
     }
+
+    .dropdown-click summary { display: none; }
     .dropdown-click details { display: none; }
     .dropdown-click details[open] { display: block; }
+    .dropdown-click div div {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 
     .dropdown-click .desktop {
         display: flex;
     }
+
 }

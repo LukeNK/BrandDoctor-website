@@ -28,6 +28,13 @@ append head
             padding-right: var(--side-padding);
             background-color: var(--color-gray);
         }
+        #values .float details {
+            padding: 1rem;
+        }
+        #values .float details[open] {
+            border: 2px solid var(--color-theme);
+            border-radius: var(--border-radius);
+        }
         #values .float h1 { color: var(--color-theme); }
         #values .float summary { color: var(--color-bright); }
 
@@ -41,7 +48,8 @@ append head
         }
         .boxItem p {
             height: min-content;
-            font-size: 2rem;
+            font-size: 1.5rem;
+            line-height: 150%;
             text-align: center;
             color: white;
         }
@@ -116,6 +124,7 @@ append content
                 | Tổng GĐ Công ty Cổ phần Bác sĩ Thương hiệu.
                 br
                 | Trưởng Ban thư ký Hội đồng khoa học Brand Doctor
+    .divCol.divBox
         a.divBox.img
             .img(style="background-image: url(/asset/ecosBDG/niwaco.png);")
             h2 Trần Thị Hảo
@@ -130,15 +139,15 @@ append content
                 | Đồng hành tin cậy
                 br
                 | Trưởng phòng Digital Marketing Công ty Cổ phần Bác sĩ Thương hiệu
-    p: a.btn(href="./doi-ngu/") Xem thêm về đội ngũ
+    //- p: a.btn(href="./doi-ngu/") Xem thêm về đội ngũ
 
-    h1 BRAND DOCTOR CÓ
+    h1 Brand Doctor CÓ
     .divCol
         .boxItem: p Chuyên gia trong nhiều lĩnh vực
         .boxItem: p Khả năng sáng tạo giá trị cùng những giải pháp độc đáo
         .boxItem: p Giải pháp dựa trên thực trạng của Doanh nghiệp
 
-    h1 BRAND DOCTOR CẦN
+    h1 Brand Doctor CẦN
     .divCol
         .boxItem(style="background-image: linear-gradient(to top, #0055ffe0, #0055ffe0), url(/asset/image/BDG\ co\ 1.png);")
             p Doanh nghiệp khao khát phát triển trường tồn

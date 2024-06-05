@@ -171,9 +171,6 @@ div.banner {
     justify-content: space-around;
     align-items: center;
 }
-div.banner > div {
-    padding: var(--nav-height);
-}
 div.banner h1,
 div.banner h2 { color: var(--color-light); }
 
@@ -261,4 +258,22 @@ div.divCol {
 }
 .divBox h1, .divBox h2 {
     color: var(--color-theme);
+}
+
+@media screen and (max-width: 60rem) {
+    * {
+        --side-padding: 5vw;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+@media screen and (max-width: 30rem) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.2rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
 }

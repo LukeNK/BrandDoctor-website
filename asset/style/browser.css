@@ -4,15 +4,21 @@
 */
 
 .browser-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: var(--nav-height) var(--side-padding);
 }
 .browser-filter button {
+    border: 2px solid var(--color-theme);
+    border-radius: var(--border-radius);
     background-color: transparent;
     color: var(--color-theme);
     padding: 1rem;
 }
 .browser-filter .selected {
-    color: var(--color-theme-light)
+    background-color: var(--color-theme);
+    color: white;
 }
 .browser-filter .sep {
     /* Separator from border */

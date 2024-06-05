@@ -63,5 +63,10 @@ footer .info .social img {
 }
 
 @media screen and (max-width: 60rem) {
-
+    footer .info .social{
+        margin-top: 1rem;
+    }
+    #quick-links {
+        display: none;
+    }
 }

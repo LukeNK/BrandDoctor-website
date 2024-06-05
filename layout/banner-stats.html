@@ -5,13 +5,21 @@
         background-image:
             linear-gradient(to bottom, #003399a0, #003399a0),
             url(/asset/image/banner_bg.jpg);
-        padding: var(--nav-height) 0;
+        padding: var(--nav-height) var(--side-padding);
     }
 
-    #banner-stats > h1 { margin: var(--nav-height) auto; }
     #banner-stats > p {
-        margin: 1rem var(--side-padding);
+        text-align: center;
         color: white;
+    }
+    #banner-stats h3 {
+        margin-top: 0;
+    }
+
+    @media screen and (max-width: 60rem) {
+        #banner-stats > p {
+            text-align: justify;
+        }
     }
 
     #banner-stats > .banner {
@@ -31,6 +39,16 @@
         width: 10rem;
         height: 10rem;
         border: 0.5rem solid white;
+    }
+    @media screen and (max-width: 500px) {
+        #banner-stats > p {
+            text-align: justify;
+        }
+        #banner-stats .circle-border{
+            width: 9rem;
+            height: 9rem;
+            border-width: 0.4rem;
+        }
     }
 
     #banner-stats h2 { font-size: xx-large; }
@@ -57,7 +75,7 @@
             <h3>Năm kinh nghiệm</h3>
         </div>
         <div>
-            <h2 class="circle-border">+<span id="stats-tch">100</span></h2>
+            <h2 class="circle-border"><span id="stats-tch">100</span>+</h2>
             <h3>Chuyên gia trong và ngoài nước</h3>
         </div>
     </div>

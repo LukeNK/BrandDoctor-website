@@ -16,8 +16,9 @@ nav > * {
 nav .mobile { display: none; }
 
 #nav-menu {
-    justify-content: right;
+    justify-content: left;
     align-items: center;
+    padding-left: var(--side-padding);
     cursor: pointer;
 }
 #nav-menu img {
@@ -25,10 +26,14 @@ nav .mobile { display: none; }
 }
 
 #nav-logo {
+    display: flex;
+    align-items: center;
     width: 0; /* To prevent the logo from overflowing in Safari */
     padding: 0.5rem 3rem 0.5rem var(--side-padding);
 }
-#nav-logo img { height: 100%; }
+#nav-logo img {
+    height: 75%;
+}
 
 #nav-center {
     flex: 2 0 25rem;
@@ -117,7 +122,9 @@ nav .mobile { display: none; }
         flex: 1 1 0;
     }
 
-    #nav-menu { display: flex; }
+    #nav-menu {
+        display: flex;
+    }
 
     #nav-logo {
         display: flex;
@@ -135,8 +142,8 @@ nav .mobile { display: none; }
     #nav-center {
         /* Cover the entire length to act as the background for #nav-lang */
         display: none;
-        left: var(--side-padding);
-        right: var(--side-padding);
+        left: 0;
+        right: 0;
         flex-direction: column;
         align-items: start;
         gap: 0;
@@ -145,7 +152,7 @@ nav .mobile { display: none; }
     #nav-center a {
         width: 50%;
         height: unset;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1rem 0.5rem var(--side-padding);
         display: block;
         text-align: left;
     }
