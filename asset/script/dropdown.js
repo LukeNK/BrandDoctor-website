@@ -5,7 +5,7 @@ document.querySelectorAll('.dropdown-click')
     .forEach(sum => {
         sum.onclick = () =>
             dropdown.querySelectorAll('details')
-                .forEach(elm =>elm.removeAttribute('open'))
+                .forEach(elm =>elm.removeAttribute('open'));
 
         // add button for desktop
         let button = document.createElement('button');

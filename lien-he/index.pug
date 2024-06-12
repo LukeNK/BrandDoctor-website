@@ -44,6 +44,16 @@ append head
             color: var(--color-bright);
         }
 
+        .close-details details summary {
+            padding: 3rem 0;
+        }
+        .close-details details[open] {
+            margin: 3rem 0;
+        }
+        .close-details details[open] summary {
+            padding: 0;
+        }
+
 append content
     #form
         #form-pic
@@ -66,23 +76,24 @@ append content
     #FAQ: h1 FAQ
     p Hãy cùng Brand Doctor tìm hiểu về những thắc mắc thường gặp từ đối tác của chúng tôi.
 
-    //- Open to hint user
-    details(open)
-        summary Giải pháp từ Brand Doctor có chi phí như thế nào?
-        p
-            | Brand Doctor quan niệm mỗi Doanh nghiệp sẽ có thế mạnh, nguồn lực khác nhau. Chính vì thế, chúng tôi không nhân bản một giải pháp cho tất cả Doanh nghiệp mà sẽ dựa trên thực trạng mà đưa ra giải pháp phù hợp.
-            br
-            | Với mỗi Doanh nghiệp, mức phí sẽ được đưa ra dựa trên quy mô, khả năng và nguồn lực mà Doanh nghiệp có. Vì lý do đó, mỗi đơn vị khi cùng Brand Doctor đồng hành đều sẽ trải qua bước Khảo sát để chúng tôi có thể thấu hiểu về Doanh nghiệp.
+    .close-details
+        //- Open to hint user
+        details(open)
+            summary Giải pháp từ Brand Doctor có chi phí như thế nào?
+            p
+                | Brand Doctor quan niệm mỗi Doanh nghiệp sẽ có thế mạnh, nguồn lực khác nhau. Chính vì thế, chúng tôi không nhân bản một giải pháp cho tất cả Doanh nghiệp mà sẽ dựa trên thực trạng mà đưa ra giải pháp phù hợp.
+                br
+                | Với mỗi Doanh nghiệp, mức phí sẽ được đưa ra dựa trên quy mô, khả năng và nguồn lực mà Doanh nghiệp có. Vì lý do đó, mỗi đơn vị khi cùng Brand Doctor đồng hành đều sẽ trải qua bước Khảo sát để chúng tôi có thể thấu hiểu về Doanh nghiệp.
 
-    hr
-    details
-        summary Brand Doctor tư vấn cho Doanh nghiệp trong lĩnh vực nào?
-        p
-            | Nhiều nghiên cứu trên thế giới cho thấy một Doanh nghiệp muốn thành công thì phải thấu hiểu được insight khách hàng và đưa ra những giá trị mà khách hàng mong muốn dù trong bất kỳ lĩnh vực, ngành nghề nào. Với nhiều năm kinh nghiệm của Hội đồng khoa học Brand Doctor, chúng tôi tự tin có khả năng sáng tạo những giá trị khác biệt, đáp ứng được những khao khát của khách hàng.
-            br
-            | Vì lý do đó, Brand Doctor có thể đồng hành cùng với bất kỳ Doanh nghiệp thuộc mọi lĩnh vực.
+        hr
+        details
+            summary Brand Doctor tư vấn cho Doanh nghiệp trong lĩnh vực nào?
+            p
+                | Nhiều nghiên cứu trên thế giới cho thấy một Doanh nghiệp muốn thành công thì phải thấu hiểu được insight khách hàng và đưa ra những giá trị mà khách hàng mong muốn dù trong bất kỳ lĩnh vực, ngành nghề nào. Với nhiều năm kinh nghiệm của Hội đồng khoa học Brand Doctor, chúng tôi tự tin có khả năng sáng tạo những giá trị khác biệt, đáp ứng được những khao khát của khách hàng.
+                br
+                | Vì lý do đó, Brand Doctor có thể đồng hành cùng với bất kỳ Doanh nghiệp thuộc mọi lĩnh vực.
 
-    hr
-    details
-        summary Brand Doctor đồng hành cùng Doanh nghiệp trong bao lâu?
-        p Xây dựng và phát triển thương hiệu là một quá trình tiếp diễn liên tục và bền bỉ. Bước 7 trong 7 bước đồng hành trọn vẹn của Brand Doctor chính là “Cập nhật định vị theo thời gian”. Chúng tôi sẵn sàng cùng Doanh nghiệp phát triển giá trị từng ngày và cập nhật định vị khi đến thời điểm thích hợp. Vì chúng tôi biết rằng giá trị sẽ không bao giờ dừng lại và khách hàng sẽ ngày càng mong muốn nhiều giá trị hơn từ Doanh nghiệp.
+        hr
+        details
+            summary Brand Doctor đồng hành cùng Doanh nghiệp trong bao lâu?
+            p Xây dựng và phát triển thương hiệu là một quá trình tiếp diễn liên tục và bền bỉ. Bước 7 trong 7 bước đồng hành trọn vẹn của Brand Doctor chính là “Cập nhật định vị theo thời gian”. Chúng tôi sẵn sàng cùng Doanh nghiệp phát triển giá trị từng ngày và cập nhật định vị khi đến thời điểm thích hợp. Vì chúng tôi biết rằng giá trị sẽ không bao giờ dừng lại và khách hàng sẽ ngày càng mong muốn nhiều giá trị hơn từ Doanh nghiệp.
