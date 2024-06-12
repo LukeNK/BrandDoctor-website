@@ -2,6 +2,28 @@ extend /layout/standard
 
 append head
     style.
+        .h-with-icon {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .h-with-icon * { flex: 1 0 10rem;}
+        .h-with-icon img { height: 5rem; }
+
+        #main-ideas {
+            gap: var(--side-padding);
+            margin: var(--nav-height) 0;
+        }
+        #main-ideas > div {
+            background-color: var(--color-theme);
+            padding: 1rem;
+            color: white;
+        }
+        #main-ideas p {
+            margin: 0;
+            color: white;
+        }
+
         #values {
             display: flex;
             flex-wrap: wrap;
@@ -60,6 +82,19 @@ append content
 
     include /layout/banner-stats.html
 
+    #main-ideas.divCol
+        div
+            .h-with-icon
+                img(src="/asset/icon/about vision.svg")
+                h1 Tầm nhìn
+            p Trở thành biểu tượng chuẩn mực trong việc xây dựng phát triển thương hiệu mạnh và trường tồn
+        div
+            .h-with-icon
+                img(src="/asset/icon/about mission.svg")
+                h1 Sứ mệnh
+            p Điểm tựa vàng để mỗi cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn
+
+
     #values
         .sticky
             aside
@@ -67,11 +102,9 @@ append content
                 h2 Brand Doctor
                 h3 Thương hiệu thật ⦁ Giá trị thật
         .float.close-details
-            h1 Tầm nhìn
-            p Trở thành biểu tượng chuẩn mực trong việc xây dựng phát triển thương hiệu mạnh và trường tồn
-            h1 Sứ mệnh
-            p Điểm tựa vàng để mỗi cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn
-            h1 Giá trị cốt lõi
+            .h-with-icon
+                img(src="/asset/icon/about values.svg")
+                h1 Giá trị cốt lõi
             //- Open an example so the user knows it can be opened
             details(open)
                 summary Thương hiệu thật • Giá trị thật
