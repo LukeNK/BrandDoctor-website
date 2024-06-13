@@ -64,6 +64,8 @@ section aside a:hover { text-decoration: underline; }
 section aside .current { color: var(--color-theme-light); }
 
 /* ---------------------------------------------------------- Article content */
+html { scroll-behavior: smooth; }
+
 section > article { flex: 2 1 30rem; }
 
 section > article h2 {
