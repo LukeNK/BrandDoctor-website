@@ -6,7 +6,11 @@ append head
 
     style.
         body {
-            /* #members carousel overflow, so this stops the user */
+            /*
+                NUCLEAR OPTION
+                #members carousel overflow, so this stops the user from seeing the overflow
+                to prevent browser auto-scroll, the script at the bottom SHOULD scroll to the top-left;
+            */
             overflow-x: hidden;
         }
 
@@ -61,9 +65,14 @@ append head
         }
         @media screen and (max-width: 60rem) {
             @keyframes moveRow {
-                0% { transform: translateX(40%); }
-                50% { transform: translateX(-40%); }
-                100% { transform: translateX(40%); }
+                0% { transform: translateX(50%); }
+                50% { transform: translateX(-50%); }
+                100% { transform: translateX(50%); }
+            }
+            @keyframes moveRowReverse {
+                0% { transform: translateX(-50%); }
+                50% { transform: translateX(50%); }
+                100% { transform: translateX(-50%); }
             }
             #members {
                 flex-direction: column;
@@ -71,12 +80,14 @@ append head
             #members > .members-logo {
                 width: max-content;
                 flex-wrap: nowrap;
-                overflow-x: hidden;
-                overflow-y: hidden;
                 order: 2; /* logo after text */
                 padding: 0;
                 flex: 1 0 min(20vw, 15rem);
-                animation: moveRow 10s infinite linear;
+                transform-box: border-box;
+                animation: moveRow 30s infinite linear;
+            }
+            #members > .moveRow {
+                animation: moveRowReverse 30s infinite linear;
             }
             #members > .members-logo > div {
                 flex: 1 0 min(20vw, 15rem);
@@ -194,7 +205,7 @@ append content
             h1 ecosBDG
             p Các thành viên của Brand Doctor Group đã và đang có một hành trình hợp tác với các tổ chức/doanh nghiệp trong và ngoài nước. Chúng tôi tin rằng hành trình này sẽ tiếp tục mở rộng trong tương lai.
             // <a class="btn dark" href="">Xem thêm</a>
-        .members-logo
+        .members-logo.moveRow
             div: img(src="/asset/ecosBDG/medapas.png")
             div: img(src="/asset/ecosBDG/mb.png")
             div: img(src="/asset/ecosBDG/dhera.jpg")
