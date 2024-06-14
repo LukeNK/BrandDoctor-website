@@ -5,6 +5,11 @@ append head
     link(rel="stylesheet", href="/asset/style/dropdown.css")
 
     style.
+        body {
+            /* #members carousel overflow, so this stops the user */
+            overflow-x: hidden;
+        }
+
         #banner-whois {
             background-image:
                 linear-gradient(to right, #00339950, #003399ff),
@@ -35,7 +40,7 @@ append head
             color: var(--color-theme);
         }
         #members > div {
-            flex: 1rem 1 1;
+            flex: 1 1 1rem;
             gap: 1rem;
             padding: 1rem;
             padding-bottom: var(--nav-height);
@@ -55,11 +60,26 @@ append head
             width: 100%;
         }
         @media screen and (max-width: 60rem) {
+            @keyframes moveRow {
+                0% { transform: translateX(40%); }
+                50% { transform: translateX(-40%); }
+                100% { transform: translateX(40%); }
+            }
             #members {
                 flex-direction: column;
             }
             #members > .members-logo {
+                width: max-content;
+                flex-wrap: nowrap;
+                overflow-x: hidden;
+                overflow-y: hidden;
                 order: 2; /* logo after text */
+                padding: 0;
+                flex: 1 0 min(20vw, 15rem);
+                animation: moveRow 10s infinite linear;
+            }
+            #members > .members-logo > div {
+                flex: 1 0 min(20vw, 15rem);
             }
         }
 
