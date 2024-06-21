@@ -4,22 +4,27 @@
         height: calc(100vh - var(--nav-height))
     }
 
-    #banner-header > div {
-        height: 100%;
-    }
+    #banner-header > div { height: 100% }
 
     #banner-header > button {
         position: absolute;
         bottom: 1rem;
-        opacity: 50%;
         border-radius: 0;
         width: 5rem;
-        color: #fff;
-        background-color: #444;
-        font-size: 5rem;
+        color: white;
+        background-color: #aaa8;
     }
-    #banner-header > button.prev { right: 50% }
-    #banner-header > button.next { left: 50% }
+    #banner-header > button.prev { right: 10% }
+    #banner-header > button.next { left: 90% }
+
+    @media screen and (max-width: 60rem) {
+        #banner-header > button {
+            bottom: 0;
+            width: 50%;
+        }
+        #banner-header > button.prev { right: 50% }
+        #banner-header > button.next { left: 50% }
+    }
 </style>
 
 <div id="banner-header">
