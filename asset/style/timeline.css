@@ -1,0 +1,88 @@
+/*
+    https://stackoverflow.com/questions/52714885/how-to-display-horizontal-timeline-using-css
+    Thank you!
+*/
+/*
+<ul class="timeline">
+    <li>
+        <div>
+            <time datetime="2018-10-09">October 9, 2018</time>
+            <p>description event #1</p>
+        </div>
+    </li>
+</ul>
+*/
+
+.timeline {
+    /* set a variable for the color */
+    --timeline-color: var(--color-gray);
+
+    position: relative;
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: var(nav-height) var(--side-padding);
+    height: 240px;
+}  /* set here the height of the timeline */
+
+
+/* middle line */
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    width: 100%;
+    height: 2px;
+    background: var(--color-gray);
+}
+
+
+.timeline li {
+    margin: 0 20px;
+    min-width: 200px;
+    align-self: flex-start;
+}
+
+.timeline div {
+    position: relative;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1rem var(--color-theme) solid;
+    width: 15rem;
+    height: 15rem;
+}
+
+.timeline img {
+    width: 100%;
+}
+
+/* style for the dot over the timeline */
+.timeline li:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-left: 100px;
+    transform: translate(-50%, -50%);
+    border: 1px #9bc solid;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-theme);
+}
+
+/* style for the event arrow */
+.timeline div:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 3rem;
+    height: 3rem;
+    transform: translate(-50%, -1px) rotateZ(45deg);
+    background: #fff;
+    margin-top: -8px;
+    border-right: 1rem var(--color-theme) solid;
+    border-bottom: 1rem var(--color-theme) solid;
+}
