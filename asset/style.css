@@ -69,9 +69,7 @@ details > summary::after {
     content: '◀';
     margin-right: 1rem;
 }
-details[open] > summary::after {
-    content: '▼';
-}
+details[open] > summary::after { content: '▼'; }
 
 form button {
     margin-top: 1rem;
@@ -101,17 +99,11 @@ form > textarea {
     margin: var(--border-radius) 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', serif;
-}
+h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
 
-hr {
-    margin: 1rem var(--side-padding);
-}
+hr { margin: 1rem var(--side-padding); }
 
-input, textarea {
-    font-size: 1rem;
-}
+input, textarea { font-size: 1rem; }
 
 p {
     color: var(--color-gray-dark);
@@ -123,9 +115,7 @@ p br {
     margin: 1rem 0;
 }
 
-summary {
-    cursor: pointer;
-}
+summary { cursor: pointer; }
 
 textarea {
     /* Put setting in input, textarea for consistency */
@@ -162,9 +152,7 @@ div.gap {
     height: 0.5rem;
 }
 
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center; }
 
 /* Repetive component classes */
 div.banner {
@@ -254,12 +242,8 @@ div.divCol {
     position: relative;
     top: -7.5rem;
 }
-.divBox.img > h2 {
-    margin-top: -6rem;
-}
-.divBox h1, .divBox h2 {
-    color: var(--color-theme);
-}
+.divBox.img > h2 { margin-top: -6rem; }
+.divBox h1, .divBox h2 { color: var(--color-theme); }
 
 @media screen and (max-width: 60rem) {
     * {
