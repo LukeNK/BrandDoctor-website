@@ -1,3 +1,11 @@
+/*
+    REMEMBER TO INCLUDE JS, which will generate the arrow for the prompts and onclick events
+    .timeline
+        div: h2 Year
+    .time-prompt
+        div: p Content
+*/
+
 .timeline {
     display: flex;
     justify-content: space-around;
@@ -16,13 +24,12 @@
 /* arrow */
 .timeline div::before {
     z-index: -1;
-    content: "";
+    content: "▼";
     position: absolute;
-    width: 5.5rem;
-    height: 5.5rem;
-    margin-top: 4.5rem;
-    background-color: var(--color-theme);
-    transform: translate(-50%, -1px) rotateZ(45deg);
+    margin-top: 6.5rem;
+    transform: translateX(-50%);
+    color: var(--color-theme);
+    font-size: 7rem;
 }
 
 /*
@@ -52,4 +59,23 @@
     font-size: 3rem;
     font-weight: bolder;
     color: var(--color-red-dark);
+}
+
+/* -------------------------------------------------------------------------- */
+.time-arrow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time-arrow div {
+    height: 4rem; /* set height to clip */
+    font-size: 5rem;
+    color: var(--color-gray);
+}
+
+/* -------------------------------------------------------------------------- */
+.time-prompt > div {
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    background-color: var(--color-gray);
 }
