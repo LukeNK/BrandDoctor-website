@@ -28,5 +28,8 @@ document.querySelectorAll('.time-prompt').forEach(timePrompt => {
 
             [...timeArrow.children].forEach(e => e.classList.remove('open'));
             timeArrow.children[index].classList.add('open');        })
-    })
+    });
+
+    // activate the first element
+    timeline.children[0].click()
 }

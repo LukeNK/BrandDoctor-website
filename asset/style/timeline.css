@@ -14,11 +14,16 @@
 
 /* circle */
 .timeline div {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
     width: 10rem; height: 10rem;
     border: 0.5rem solid var(--color-theme);
     border-radius: 50%;
     background-color: white;
-    text-align: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
 }
 
 /* arrow */
@@ -27,16 +32,16 @@
     content: "▼";
     position: absolute;
     margin-top: 6.5rem;
-    transform: translateX(-50%);
     color: var(--color-theme);
     font-size: 7rem;
 }
 
 /*
     dot
-    NOTE: location of the dot being controlled by the margin of div > h2
 */
 .timeline div::after {
+    position: absolute;
+    bottom: -147px;
     content: "•";
     font-size: 5rem;
     color: var(--color-theme);
@@ -54,11 +59,11 @@
 
 /* Minuscule styling */
 .timeline div h2 {
-    height: 100%;
-    margin-bottom: 5px;
+    margin: 0;
     font-size: 3rem;
-    font-weight: bolder;
+    height: fit-content;
     color: var(--color-red-dark);
+    text-align: center;
 }
 
 /* -------------------------------------------------------------------------- */
