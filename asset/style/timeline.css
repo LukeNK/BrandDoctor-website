@@ -68,14 +68,33 @@
 }
 
 .time-arrow div {
+    opacity: 0; /* opacity so it still flex */
     height: 4rem; /* set height to clip */
     font-size: 5rem;
     color: var(--color-gray);
 }
 
+.time-arrow .open {
+    opacity: 1;
+    animation: fadein 1s;
+}
+
 /* -------------------------------------------------------------------------- */
 .time-prompt > div {
+    display: none;
     border-radius: var(--border-radius);
     padding: 2rem;
     background-color: var(--color-gray);
+}
+
+.time-prompt > .open {
+    display: block;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    /* smooth start-stop */
+    0% { opacity: 0%; }
+    75% { opacity: 90%; }
+    1000% { opacity: 100%; }
 }
