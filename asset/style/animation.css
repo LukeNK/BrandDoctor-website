@@ -1,0 +1,6 @@
+@keyframes fadein {
+    /* smooth start-stop */
+    0% { opacity: 0%; }
+    75% { opacity: 90%; }
+    1000% { opacity: 100%; }
+}
