@@ -18,7 +18,7 @@
     flex-wrap: wrap;
     position: relative;
     margin-top: 5rem;
-    width: 10rem; height: 10rem;
+    width: 8rem; height: 8rem;
     border: 0.5rem solid var(--color-theme);
     border-radius: 50%;
     background-color: white;
@@ -32,7 +32,7 @@
     z-index: -1;
     content: "▼";
     position: absolute;
-    margin-top: 6.5rem;
+    margin-top: 4rem;
     color: var(--color-theme);
     font-size: 7rem;
 }
@@ -61,7 +61,7 @@
 /* Minuscule styling */
 .timeline div h2 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2rem;
     height: fit-content;
     color: var(--color-red-dark);
     text-align: center;
