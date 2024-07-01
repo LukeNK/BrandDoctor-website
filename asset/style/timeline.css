@@ -94,6 +94,42 @@
 }
 
 .time-prompt > .open {
-    display: block;
+    display: flex;
     animation: fadein 1s;
+}
+
+.time-prompt > div > h2 {
+    display: none;
+}
+
+@media screen and (max-width: 60rem) {
+    .timeline,
+    .time-arrow { display: none; }
+
+    .time-prompt {
+        margin-top: 3rem;
+    }
+    .time-prompt div {
+        border-left: 4px solid var(--color-gray);
+    }
+
+    .time-prompt > div {
+        display: flex;
+        padding: 1rem;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .time-prompt > div > h2 {
+        display: block;
+        flex: 0 0 5rem;
+        color: var(--color-red-dark);
+    }
+
+    /* timeline dot */
+    .time-prompt > div > h2::before {
+        content: "-";
+        position: absolute;
+        left: var(--side-padding);
+        color: var(--color-gray);
+    }
 }
