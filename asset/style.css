@@ -246,13 +246,9 @@ div.divCol {
 .divBox h1, .divBox h2 { color: var(--color-theme); }
 
 @media screen and (max-width: 60rem) {
-    * {
-        --side-padding: 5vw;
-    }
+    * { --side-padding: 5vw; }
 
-    p {
-        text-align: justify;
-    }
+    p { text-align: justify; }
 }
 @media screen and (max-width: 30rem) {
     h1 { font-size: 1.4rem; }
