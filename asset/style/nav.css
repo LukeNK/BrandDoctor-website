@@ -46,6 +46,7 @@ nav .mobile { display: none; }
 #nav-center button {
     width: 50%;
     padding: 1rem;
+    padding-left: var(--side-padding);
     font-size: xx-large;
     text-align: left;
     background-color: transparent;
@@ -94,6 +95,10 @@ nav .mobile { display: none; }
     margin-bottom: 1rem;
     height: var(--nav-height);
 }
+#nav-lang details[open] > * {
+    /* turn off animation */
+    animation: none;
+}
 #nav-lang a {
     margin-right: 1rem;
     text-decoration: none;
@@ -112,9 +117,15 @@ nav .mobile { display: none; }
 @media screen and (max-width: 65rem) {
     /* Open and close control */
     #nav-center { display: none; }
-    [open] #nav-center { display: flex; }
+    [open] #nav-center {
+        display: flex;
+        animation: nav-expand 1s;
+    }
     #nav-lang { display: none; }
-    [open] #nav-lang { display: flex; }
+    [open] #nav-lang {
+        display: flex;
+        animation: nav-expand 1s;
+    }
 
     /* Style control */
     nav .mobile {

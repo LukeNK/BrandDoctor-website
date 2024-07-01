@@ -58,6 +58,9 @@ append head
             border: 2px solid var(--color-theme);
             border-radius: var(--border-radius);
         }
+        #values .float details[open] > *:not(summary) {
+            animation: fadein 1s;
+        }
         #values .float h1 { color: var(--color-theme); }
         #values .float summary { color: var(--color-bright); }
 

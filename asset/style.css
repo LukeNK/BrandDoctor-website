@@ -69,7 +69,13 @@ details > summary::after {
     content: '◀';
     margin-right: 1rem;
 }
-details[open] > summary::after { content: '▼'; }
+details[open] > summary::after {
+    content: '▼';
+    animation: fadein 1s;
+}
+details[open] > *:not(summary) {
+    animation: flyin 1s;
+}
 
 form button {
     margin-top: 1rem;
