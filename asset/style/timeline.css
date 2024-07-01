@@ -97,3 +97,12 @@
     display: block;
     animation: fadein 1s;
 }
+
+@media screen and (max-width: 60rem) {
+    .timeline::after { display: none;}
+    .timeline::before {
+        content: ;
+        width: 4px;
+        height: 100%;
+    }
+}
