@@ -64,6 +64,10 @@ append head
         #values .float h1 { color: var(--color-theme); }
         #values .float summary { color: var(--color-bright); }
 
+        #commitment > div > img {
+            height: 4rem;
+        }
+
         .boxItem {
             height: 20rem;
             display: flex;
@@ -125,14 +129,17 @@ append content
 
     h1 Cam kết của chúng tôi
     p Với khao khát là Điểm tựa vàng cho cá nhân và Doanh nghiệp, Brand Doctor không đến với các đối tác thông qua một giải pháp trong ngắn hạn mà là sự cam kết bên cạnh trọn vẹn trong từng giai đoạn phát triển thương hiệu, phát triển sự nghiệp.
-    .divCol.divBox
+    #commitment.divCol.divBox
         .divBox
+            img(src="/asset/icon/about true.svg")
             h2 Nền tảng Thương hiệu thật, Giá trị thật
             p Tất cả những giải pháp được chúng tôi đưa ra đều dựa trên Thương hiệu thật, Giá trị thật. Giá trị thật này bao gồm cả giá trị của chính Brand Doctor và của các đối tác.
         .divBox
+            img(src="/asset/icon/about solution.svg")
             h2 Giải pháp theo thực trạng của Doanh nghiệp
             p Được cập nhật theo xu thế phát triển của thế giới và dựa trên thực trạng của đối tác để có những giải pháp phù hợp nhất.
         .divBox
+            img(src="/asset/icon/about collab.svg")
             h2 Đồng hành trong từng giai đoạn
             p Không chỉ là một giải pháp, Brand Doctor sẵn sàng đồng hành cùng các đối tác trên từng chặng đường, từng giai đoạn phát triển.
 
