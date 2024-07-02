@@ -103,6 +103,9 @@ function onBuildComplete(config) {
             if (!cacheFiles[path].includes('<title>'))
                 log(2, path + ' does not include title');
 
+            if (!cacheFiles[path].includes('<meta name="description" content="'))
+                log(2, path + ' does not include meta description');
+
             if (
                 !cacheFiles[path].includes('<nav')
                 || !cacheFiles[path].includes('<footer')
