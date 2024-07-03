@@ -5,15 +5,6 @@ append head
     link(rel="stylesheet", href="/asset/style/dropdown.css")
 
     style.
-        body {
-            /*
-                NUCLEAR OPTION
-                #members carousel overflow, so this stops the user from seeing the overflow
-                to prevent browser auto-scroll, the script at the bottom SHOULD scroll to the top-left;
-            */
-            overflow-x: hidden;
-        }
-
         #banner-whois {
             background-image:
                 linear-gradient(to right, #00339950, #003399ff),
@@ -45,9 +36,7 @@ append head
         }
         #members > div {
             flex: 1 1 1rem;
-            gap: 1rem;
             padding: 1rem;
-            padding-bottom: var(--nav-height);
             text-align: center;
             order: 1;
         }
@@ -56,41 +45,31 @@ append head
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
+            gap: 1rem;
+            width: 100%;
         }
         #members > .members-logo > div {
             flex-basis: 5rem;
         }
         #members > .members-logo img {
-            width: 100%;
+            width: min(100%, 10rem);
         }
         @media screen and (max-width: 60rem) {
-            @keyframes moveRow {
-                0% { transform: translateX(50%); }
-                50% { transform: translateX(-50%); }
-                100% { transform: translateX(50%); }
-            }
-            @keyframes moveRowReverse {
-                0% { transform: translateX(-50%); }
-                50% { transform: translateX(50%); }
-                100% { transform: translateX(-50%); }
-            }
             #members {
                 flex-direction: column;
             }
             #members > .members-logo {
-                width: max-content;
                 flex-wrap: nowrap;
                 order: 2; /* logo after text */
                 padding: 0;
-                flex: 1 0 min(20vw, 15rem);
-                transform-box: border-box;
-                animation: moveRow 30s infinite linear;
-            }
-            #members > .moveRow {
-                animation: moveRowReverse 30s infinite linear;
             }
             #members > .members-logo > div {
+                display: none;
                 flex: 1 0 min(20vw, 15rem);
+            }
+            #members > .members-logo > .show {
+                display: block;
+                animation: fadein 1s;
             }
         }
 
@@ -205,7 +184,7 @@ append content
             h1 ecosBDG
             p Các thành viên của Brand Doctor Group đã và đang có một hành trình hợp tác với các tổ chức/doanh nghiệp trong và ngoài nước. Chúng tôi tin rằng hành trình này sẽ tiếp tục mở rộng trong tương lai.
             // <a class="btn dark" href="">Xem thêm</a>
-        .members-logo.moveRow
+        .members-logo
             div: img(src="/asset/ecosBDG/medapas.png")
             div: img(src="/asset/ecosBDG/mb.png")
             div: img(src="/asset/ecosBDG/dhera.jpg")
@@ -260,3 +239,18 @@ append content
 
 append scripts
     script(src="/asset/script/dropdown.js")
+    script.
+        // members handling script
+        {
+            let members = document.querySelectorAll('#members > .members-logo > div'),
+                iteration = 0;
+
+            setInterval(() => {
+                let index = iteration % members.length;
+                iteration++;
+
+                members.forEach(e => e.classList.remove('show'));
+                for (let i = 0; i < 3; i++)
+                    members.item(index + i).classList.add('show');
+            }, 2000)
+        }
