@@ -5,18 +5,55 @@ head
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="robots" content="noindex")
     title Brand Doctor Group
+    style.
+        @keyframes blink {
+            0%   { border-width: 1rem 0 0 0; }
+            25%  { border-width: 0 1rem 0 0; }
+            50%  { border-width: 0 0 1rem 0; }
+            75%  { border-width: 0 0 0 1rem; }
+            100% { border-width: 1rem 0 0 0; }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            display: block;
+            outline: none;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            background-color: #ffbb33;
+            color: white;
+            cursor: pointer;
+            font-size: inherit;
+        }
+
+        .load {
+            margin: 0 auto;
+            width: 10rem; height: 10rem;
+            border: 0 solid #0055ff;
+            animation: blink 2s 3 linear;
+        }
 
 body
-    p(lang="vi")
-        a(href="trang-chu") Bấm để đi vào trang chủ
+    div: p(lang="vi")
+        a(href="/trang-chu") Bấm để đi vào trang chủ
+
+    .load
 
 script.
+    // animation
+
     // script to auto-detect language
     let lang = navigator.language || navigator.userLanguage;
     lang = lang.split('-')[0];
 
     // find link to navigate to, else get Vietnamese version
-    lang = document.querySelector(`body *[lang="${lang}"] a`);
-    lang = lang || document.querySelector(`body *[lang="vi"] a`);
+    lang =
+        document.querySelector(`body *[lang="${lang}"] a`)
+        || document.querySelector(`body *[lang="vi"] a`);
 
     window.location.replace(lang.getAttribute('href'))
