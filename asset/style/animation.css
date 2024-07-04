@@ -1,3 +1,9 @@
+@keyframes blink {
+    0% { opacity: 0%; }
+    50% { opacity: 100%; }
+    100% { opacity: 0%; }
+}
+
 @keyframes fadein {
     /* smooth stop */
     0% { opacity: 0%; }
