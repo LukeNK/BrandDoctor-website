@@ -9,7 +9,7 @@
     padding: 1rem;
 }
 .dropdown-click details[open] {
-    background-image: linear-gradient(to top, #00339990, #00339990), url(/asset/image/BDG\ co\ 1.png);
+    background-image: linear-gradient(to top, #00339990, #00339990), url(/asset/image/BDG_co_1.png);
 }
 
 .dropdown-click details summary {
