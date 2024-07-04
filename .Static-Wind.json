@@ -13,9 +13,10 @@
         "ve-chung-toi/doi-ngu",
         "ve-chung-toi/ten-ho",
 
-        "du-an",
-        "du-an/chi-tiet",
-
         "tin-tuc"
+    ],
+    "hidden items": [
+        "du-an",
+        "du-an/chi-tiet"
     ]
 }
