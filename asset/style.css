@@ -85,19 +85,6 @@ form button {
     font-size: 1.5rem;
     font-weight: bolder;
 }
-form input, form textarea {
-    width: 100%;
-    padding: var(--border-radius);
-    border: 2px solid var(--color-theme);
-    border-radius: var(--border-radius);
-    background-color: white;
-}
-form label {
-    display: block;
-    margin: var(--border-radius) 0 0.25rem;
-    color: var(--color-theme-light);
-    font-weight: bold;
-}
 form > button,
 form > input,
 form > textarea {
@@ -109,7 +96,21 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
 
 hr { margin: 1rem var(--side-padding); }
 
-input, textarea { font-size: 1rem; }
+input, textarea {
+    width: 100%;
+    padding: var(--border-radius);
+    border: 2px solid var(--color-theme);
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    margin: var(--border-radius) 0 0.25rem;
+    color: var(--color-theme-light);
+    font-weight: bold;
+}
 
 p {
     color: var(--color-gray-dark);
