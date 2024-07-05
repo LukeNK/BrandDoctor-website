@@ -4,6 +4,7 @@
     }
 
     #banner-header > div {
+        width: 100%;
         height: calc(100vh - var(--nav-height));
     }
 
@@ -40,8 +41,8 @@
         </div>
     </div>
 
-    <button onclick="changeBannerSlide()">&#10094;</button>
-    <button onclick="changeBannerSlide(true)">&#10095;</button>
+    <button class="prev" onclick="changeBannerSlide()">&#10094;</button>
+    <button class="next" onclick="changeBannerSlide(true)">&#10095;</button>
 </div>
 
 <script>
