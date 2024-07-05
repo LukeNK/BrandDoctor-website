@@ -3,6 +3,12 @@ extend /layout/standard
 append head
     link(rel="stylesheet", href="/asset/style/timeline.css")
     style.
+        #video-whois {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 7rem;
+        }
+
         .h-with-icon {
             display: flex;
             flex-wrap: wrap;
@@ -91,7 +97,7 @@ append head
 
 append content
     h1 Brand Doctor Group là ai?
-    #video-whois: video(src)
+    #video-whois: <iframe width="560" height="315" src="https://www.youtube.com/embed/F-zt1k0bD9A?si=kyJIjPUZik6yAu_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     include /layout/banner-stats.html
 
@@ -169,7 +175,6 @@ append content
             li Thành lập Brand Doctor Academy;
             li Công bố Lộ trình Bác sĩ Thương hiệu 7 cấp độ;
             li Sự ra đời của ecosBDG.
-
 
     h1 Đội ngũ của chúng tôi
     hr
