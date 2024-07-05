@@ -2,8 +2,8 @@
   "scripts": {
     "servePreview": "node Static-Wind/preview.js",
     "build": "cd Static-Wind && node build.js",
-    "serveBuild": "cd Static-Wind && npm run serveBuild",
-    "test": "cd Static-Wind && node build.js && cd build && npx http-server ./",
+    "serveBuild": "cd ../docs && npx http-server ./",
+    "test": "npm run build && npm run serveBuild",
     "release": "cd Static-Wind && node build.js R"
   },
   "devDependencies": {
