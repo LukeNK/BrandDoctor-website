@@ -1,10 +1,11 @@
 <style>
     #banner-header {
         padding: 0;
-        height: calc(100vh - var(--nav-height))
     }
 
-    #banner-header > div { height: 100% }
+    #banner-header > div {
+        height: calc(100vh - var(--nav-height));
+    }
 
     #banner-header > button {
         position: absolute;
@@ -18,12 +19,16 @@
     #banner-header > button.next { left: 90% }
 
     @media screen and (max-width: 60rem) {
-        #banner-header > button {
-            bottom: 0;
-            width: 50%;
+        #banner-header {
+            display: flex;
+            flex-wrap: wrap;
         }
-        #banner-header > button.prev { right: 50% }
-        #banner-header > button.next { left: 50% }
+        #banner-header > button {
+            width: 50%;
+            position: unset;
+        }
+        #banner-header > button.prev { }
+        #banner-header > button.next { }
     }
 </style>
 
