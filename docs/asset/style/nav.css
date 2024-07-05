@@ -1,0 +1,197 @@
+nav {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10;
+    height: var(--nav-height);
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    color: var(--color-theme);
+    background: var(--color-glass-white);
+    backdrop-filter: blur(5px);
+}
+nav > * {
+    flex: 1 1 0;
+}
+nav .mobile { display: none; }
+
+#nav-menu {
+    justify-content: left;
+    align-items: center;
+    padding-left: var(--side-padding);
+    cursor: pointer;
+}
+#nav-menu img {
+    height: 1.5rem;
+}
+
+#nav-logo {
+    display: flex;
+    align-items: center;
+    width: 0; /* To prevent the logo from overflowing in Safari */
+    padding: 0.5rem 3rem 0.5rem var(--side-padding);
+}
+#nav-logo img {
+    height: 75%;
+}
+
+#nav-center {
+    flex: 2 0 25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 2;
+    gap: 1rem;
+}
+#nav-center button {
+    width: 50%;
+    padding: 1rem;
+    padding-left: var(--side-padding);
+    font-size: xx-large;
+    text-align: left;
+    background-color: transparent;
+    color: red;
+}
+#nav-center > a {
+    /* ALign text to vertical center */
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+#nav-center a.selected {
+    border-top: 0.5rem solid var(--color-theme);
+    border-bottom: 0.5rem solid transparent;
+}
+
+#nav-lang {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 3rem;
+    padding-right: var(--side-padding);
+}
+
+#nav-lang details {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    display: flex;
+}
+#nav-lang details summary {
+    gap: 1rem;
+    justify-content: right;
+}
+#nav-lang summary::after { margin: 0; }
+#nav-lang details[open] {
+    position: fixed;
+    top: 0;
+    right: var(--side-padding);
+    padding: 0 0 1rem 1rem;
+    background: var(--color-glass-white);
+    backdrop-filter: blur(5px); /* TODO: does not work */
+}
+#nav-lang details[open] summary {
+    align-items: center;
+    margin-bottom: 1rem;
+    height: var(--nav-height);
+}
+#nav-lang details[open] > * {
+    /* turn off animation */
+    animation: none;
+}
+#nav-lang a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+#nav-lang details a span { margin-right: 0.5rem; }
+
+#nav-menu-close {
+    z-index: 1;
+    position: fixed;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    display: none;
+}
+#nav-menu-close[open] { display: block; }
+
+@media screen and (max-width: 65rem) {
+    /* Open and close control */
+    #nav-center { display: none; }
+    [open] #nav-center {
+        display: flex;
+        animation: nav-expand 1s;
+    }
+    #nav-lang { display: none; }
+    [open] #nav-lang {
+        display: flex;
+        animation: nav-expand 1s;
+    }
+
+    /* Style control */
+    nav .mobile {
+        display: block;
+        flex: 1 1 0;
+    }
+
+    #nav-menu {
+        display: flex;
+    }
+
+    #nav-logo {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    #nav-center,
+    #nav-lang {
+        /* display: none; */
+        position: fixed;
+        top: var(--nav-height);
+    }
+
+    #nav-center {
+        /* Cover the entire length to act as the background for #nav-lang */
+        display: none;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+        background-color: var(--color-gray);
+    }
+    #nav-center a {
+        width: 50%;
+        height: unset;
+        padding: 0.5rem 1rem 0.5rem var(--side-padding);
+        display: block;
+        text-align: left;
+    }
+    #nav-center a.selected { border: 0px none transparent; }
+    /* #nav-center .selected::before {
+        margin-right: 1rem;
+        content: '▶';
+        font-weight: bolder;
+    } */
+
+    #nav-lang {
+        right: var(--side-padding);
+        padding: 0;
+    }
+    #nav-lang > details {
+        position: unset !important;
+        border-radius: 0;
+        width: unset;
+    }
+    #nav-lang > details > summary {
+        height: unset !important;
+        padding: 1rem;
+        margin-bottom: 0 !important;
+        font-size: xx-large;
+    }
+    #nav-lang details[open] {
+        padding: 0;
+        background: none;
+    }
+    #nav-lang details a { padding: 0.4rem; }
+}

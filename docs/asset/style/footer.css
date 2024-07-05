@@ -1,0 +1,71 @@
+footer {
+    background-color: var(--color-theme);
+    display: flex;
+    flex-direction: column;
+    padding: var(--nav-height) var(--side-padding);
+    color: white
+}
+footer p {
+    color: white;
+    margin: 0;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+footer > div > ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+footer > div > ul > li {
+    margin-left: 0;
+    text-indent: 0;
+    line-height: 2rem;
+}
+footer > div > ul > li > a { text-decoration: none; }
+footer > div > form {
+    flex: 1 1 20rem;
+    max-width: 25rem;
+    padding-top: 1rem;
+}
+
+footer > p {
+    text-align: center;
+    margin-top: var(--nav-height);
+    font-size: 0.75rem;
+}
+
+footer .info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+}
+footer .info div {
+    display: flex;
+}
+footer .info div > img {
+    width: 1.5rem;
+    margin: auto 1rem auto 0;
+}
+footer .info .social a {
+    height: 2rem;
+    margin-bottom: 0.5rem; /* to match with the send button */
+}
+footer .info .social img {
+    /* Specific to overdrive the rules above */
+    height: 100%;
+    margin: auto 1rem auto 0;
+}
+
+@media screen and (max-width: 60rem) {
+    footer > div { justify-content: space-around }
+
+    footer .info .social{ margin-top: 1rem }
+
+    #quick-links { display: none }
+}

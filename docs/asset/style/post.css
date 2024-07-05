@@ -1,0 +1,102 @@
+/*
+    Use for pages that want to show full-page article of something
+    in to column layout: info on the left and article on the right
+    <section> is the body
+    section>div is the information side bar
+    section>aside is the sticky table of content
+    section>article is the article
+*/
+
+.article-title {
+    /* To be used along with .banner.full */
+    background-image:
+        linear-gradient(to right, #0055fff0, #fffffff0),
+        url(/asset/image/banner_bg.jpg);
+    padding: var(--side-padding) !important;
+    flex-wrap: wrap;
+    gap: var(--side-padding);
+}
+.article-title > div {
+    flex: 1 0 15rem;
+    padding: 0 !important;
+}
+.article-title p { color: var(--color-gray) }
+.article-title img { width: 100%; }
+
+section {
+    padding: 3rem var(--side-padding);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 3rem;
+}
+
+/* ----------------------------------------------------------------- Side bar */
+section > div { flex: 1 0 15rem; }
+
+section > div h3 { color: var(--color-theme);
+}
+section > div p,
+section > div li {
+    border-top: 2px solid var(--color-gray);
+    margin: 0;
+    padding: 2rem 0;
+}
+
+section > div ol { padding-left: 2rem; }
+
+section aside {
+    position: sticky;
+    z-index: 0;
+    overflow-x: hidden;
+    height: calc(100vh - var(--nav-height));
+    left: 0;
+    top: var(--nav-height);
+}
+
+section aside h2 {
+    border-left: 0.5rem solid var(--color-theme-light);
+    padding-left: 0.5rem;
+}
+
+section aside a { text-decoration: none; }
+section aside a:hover { text-decoration: underline; }
+section aside .current { color: var(--color-theme-light); }
+
+/* ---------------------------------------------------------- Article content */
+html { scroll-behavior: smooth; }
+
+section > article { flex: 2 1 30rem; }
+
+section > article h2 {
+    /* This to ensure when scrolling to ID
+    the nav bar does not cover the heading */
+    padding-top: var(--nav-height);
+    margin-top: calc(-1 * var(--nav-height));
+    color: var(--color-gray-dark);
+}
+section > article * { color: var(--color-gray-dark); }
+section > article > p { text-align: justify; }
+
+section > article figure { margin: 0; }
+
+section > article img {
+    display: block;
+    width: 100%;
+}
+
+section > article figcaption {
+    padding: 1rem;
+    border-bottom: 2px solid var(--color-gray);
+    font-weight: bold;
+    color: var(--color-gray-dark);
+}
+
+section > article > hr { margin: 1rem 0; }
+
+@media screen and (max-width: 60rem) {
+    section aside {
+        position: unset;
+        height: unset;
+    }
+}

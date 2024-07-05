@@ -1,0 +1,135 @@
+/*
+    REMEMBER TO INCLUDE JS, which will generate the arrow for the prompts and onclick events
+    .timeline
+        div: h2 Year
+    .time-prompt
+        div: p Content
+*/
+
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* circle */
+.timeline div {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 5rem;
+    width: 8rem; height: 8rem;
+    border: 0.5rem solid var(--color-theme);
+    border-radius: 50%;
+    background-color: white;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+/* arrow */
+.timeline div::before {
+    z-index: -1;
+    content: "▼";
+    position: absolute;
+    margin-top: 4rem;
+    color: var(--color-theme);
+    font-size: 7rem;
+}
+
+/*
+    dot
+*/
+.timeline div::after {
+    position: absolute;
+    bottom: -147px;
+    content: "•";
+    font-size: 5rem;
+    color: var(--color-theme);
+}
+
+/* line */
+.timeline::after {
+    z-index: -2;
+    content: "";
+    margin-top: 83px;
+    height: 4px;
+    width: 100%;
+    background-color: var(--color-gray);
+}
+
+/* Minuscule styling */
+.timeline div h2 {
+    margin: 0;
+    font-size: 2rem;
+    height: fit-content;
+    color: var(--color-red-dark);
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+.time-arrow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time-arrow div {
+    opacity: 0; /* opacity so it still flex */
+    height: 4rem; /* set height to clip */
+    font-size: 5rem;
+    color: var(--color-gray);
+}
+
+.time-arrow .open {
+    opacity: 1;
+    animation: fadein 1s;
+}
+
+/* -------------------------------------------------------------------------- */
+.time-prompt > div {
+    display: none;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    background-color: var(--color-gray);
+}
+
+.time-prompt > .open {
+    display: flex;
+    animation: fadein 1s;
+}
+
+.time-prompt > div > h2 {
+    display: none;
+}
+
+@media screen and (max-width: 60rem) {
+    .timeline,
+    .time-arrow { display: none; }
+
+    .time-prompt {
+        margin-top: 3rem;
+    }
+    .time-prompt div {
+        border-left: 4px solid var(--color-gray);
+    }
+
+    .time-prompt > div {
+        display: flex;
+        padding: 1rem;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .time-prompt > div > h2 {
+        display: block;
+        flex: 0 0 5rem;
+        color: var(--color-red-dark);
+    }
+
+    /* timeline dot */
+    .time-prompt > div > h2::before {
+        content: "-";
+        position: absolute;
+        left: var(--side-padding);
+        color: var(--color-gray);
+    }
+}

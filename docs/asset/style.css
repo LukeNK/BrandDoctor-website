@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+
+    /* Config vars */
+    font-family: 'Be Vietnam Pro', sans-serif;
+    --border-radius: 0.5rem;
+    --nav-height: 4rem;
+    --side-padding: 10vw; /* padding to both side of text */
+    --flex-gap: 2rem;
+
+    /* Color vars */
+    --color-theme: #003399;
+    --color-theme-light: #0055ff;
+    --color-light: #fcf0ce;
+    --color-bright: #ffbb33;
+    --color-red: #ff3377;
+    --color-red-dark: #cc0044;
+    --color-gray: #ededed;
+    --color-gray-light: #ababab;
+    --color-gray-dark: #5d5d5d;
+    --color-glass-white: linear-gradient(to bottom, #ffffffcc, #ffffffcc);
+
+    /* Other good default settings */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ------------------------------------------------------------------Elements */
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    /* Additional link @ a.btn */
+}
+
+a.btn, button {
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--border-radius);
+    background-color: var(--color-bright);
+    color: white;
+    cursor: pointer;
+    font-size: inherit;
+}
+a.btn.dark, button.dark {
+    background-color: var(--color-theme-light);
+}
+
+main > details {
+    margin: 3rem var(--side-padding);
+}
+details > summary {
+    list-style-type: none;
+    width: 100%;
+    display: flex; /* Make the ::after at the end of the line */
+    justify-content: space-between;
+    color: var(--color-theme);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+details > summary::marker, /* Latest Chrome, Edge, Firefox */
+details > summary::-webkit-details-marker /* Safari */ {
+    content: '◀';
+    display: none;
+}
+details > summary::after {
+    content: '◀';
+    margin-right: 1rem;
+}
+details[open] > summary::after {
+    content: '▼';
+    animation: fadein 1s;
+}
+details[open] > *:not(summary) {
+    animation: flyin 1s;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: var(--border-radius);
+    width: 100%;
+    line-height: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+form > button,
+form > input,
+form > textarea {
+    /* If the input is not inside a label (free floating) */
+    margin: var(--border-radius) 0;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; }
+
+hr { margin: 1rem var(--side-padding); }
+
+input, textarea {
+    width: 100%;
+    padding: var(--border-radius);
+    border: 2px solid var(--color-theme);
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    margin: var(--border-radius) 0 0.25rem;
+    color: var(--color-theme-light);
+    font-weight: bold;
+}
+
+p {
+    color: var(--color-gray-dark);
+    line-height: 2rem;
+}
+p br {
+    display: block;
+    content: "";
+    margin: 1rem 0;
+}
+
+summary { cursor: pointer; }
+
+textarea {
+    /* Put setting in input, textarea for consistency */
+    resize: none;
+}
+
+/* --------------------------------------------------------------------Layout */
+body {
+    margin: 0;
+    font-size: 18px;
+}
+
+main { margin-top: var(--nav-height); }
+
+main > h1 {
+    text-align: center;
+    color: var(--color-theme);
+    margin-top: 7rem;
+}
+main > p {
+    margin: var(--nav-height) var(--side-padding);
+    text-align: center;
+}
+main > div {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+}
+
+/* -------------------------------------------------------------------Classes */
+/* Generally good classes to have */
+.noPadding { padding: 0 !important; }
+div.gap {
+    /* empty gap */
+    height: 0.5rem;
+}
+
+.text-center { text-align: center; }
+
+/* Repetive component classes */
+div.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+div.banner h1,
+div.banner h2 { color: var(--color-light); }
+
+/* Banner with columns */
+div.banner.col { flex-direction: column; }
+div.banner.col h1,
+div.banner.col h2,
+div.banner.col h3 { text-align: center; }
+div.banner.col > div.banner { padding: 0; }
+div.banner.col > div.banner > div {
+    /* Align center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* full-screen banner */
+div.banner.full { height: 100vh; }
+div.banner.full h1,
+div.banner.full h2 {
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-theme);
+}
+
+/* Div with two-column layout */
+div.divCol {
+    /* Section with column layout */
+    display: flex;
+    flex-wrap: wrap;
+}
+.divCol.reverse { flex-direction: row-reverse; }
+.divCol > div { flex: 1 0 20rem; }
+
+.divCol > div.text {
+    padding: 3rem;
+    align-self: center;
+    text-align: justify;
+}
+.divCol > div.text h1 {
+    text-align: center;
+}
+.divCol > div.img {
+    /* Mobile when the div being warpped */
+    min-height: 10rem;
+}
+.divCol > .right {
+    /* Allign items to the right */
+    text-align: right;
+}
+
+.divCol.divBox {
+    /* Surrounding divBox elements */
+    padding: 0 var(--side-padding);
+    justify-content: space-around;
+    gap: var(--flex-gap);
+}
+.divCol > .divBox {
+    /* Create a box for contents */
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--color-gray);
+    text-decoration: none;
+}
+.divBox.img {
+    /* divbox with image */
+    margin-top: 7.5rem;
+}
+.divBox.img > .img {
+    margin: auto;
+    border: 4px solid var(--color-theme);
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    background-size: cover;
+    position: relative;
+    top: -7.5rem;
+}
+.divBox.img > h2 { margin-top: -6rem; }
+.divBox h1, .divBox h2 { color: var(--color-theme); }
+
+@media screen and (max-width: 60rem) {
+    * { --side-padding: 5vw; }
+
+    p { text-align: justify; }
+}
+@media screen and (max-width: 30rem) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.2rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+}

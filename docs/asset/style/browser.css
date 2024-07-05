@@ -1,0 +1,89 @@
+/*
+    Use to create multiple items browser in a grid format
+    Example from the project page
+*/
+
+.browser-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: var(--nav-height) var(--side-padding);
+}
+.browser-filter button {
+    border: 2px solid var(--color-theme);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--color-theme);
+    padding: 1rem;
+}
+.browser-filter .selected {
+    background-color: var(--color-theme);
+    color: white;
+}
+.browser-filter .sep {
+    /* Separator from border */
+    border-right: 2px solid black;
+    border-radius: 0;
+}
+
+.browser-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+.browser-list > a {
+    display: block;
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    text-decoration: none;
+}
+.browser-list > a img {
+    width: 100%;
+}
+.browser-list > a h2 {
+    color: var(--color-theme);
+    font-size: 1.5rem;
+}
+.browser-list > a h3 { color: var(--color-gray-dark); }
+.browser-list > a h4 { color: var(--color-bright); }
+.browser-list > a p { color: var(--color-gray-light); }
+.browser-list > a p span { margin-left: 2rem; }
+
+.browser-nav {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    gap: 1rem
+}
+.browser-nav a {
+    display: block;
+    text-align: center;
+    width: 3rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: #fcefce;
+    color: black;
+}
+.browser-nav .current {
+    background-color: var(--color-bright);
+}
+
+a.browser-return {
+    /* Return from sub-page to main browser page */
+    display: flex;
+    margin: auto;
+    width: max-content;
+    line-height: 5rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--color-gray-dark);
+}
+
+a.browser-return::before {
+    content: "⟵";
+    font-size: 3rem;
+    margin-right: 2rem;
+    color: var(--color-bright);
+}
