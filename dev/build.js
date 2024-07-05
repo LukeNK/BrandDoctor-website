@@ -13,6 +13,12 @@ module.exports = {
     onBuild: (config) => {
         const buildPath = config.buildPath;
 
+        console.log('Moving CNAME')
+        fs.copyFileSync(
+            join('..', 'dev', 'CNAME'),
+            join(buildPath, 'CNAME')
+        );
+
         console.log('Moving index and 404 page');
         fs.copyFileSync(
             join('..', 'dev', 'index.pug'),
