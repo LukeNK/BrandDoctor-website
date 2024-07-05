@@ -11,18 +11,20 @@ const postPerBrowser = 12,
 
 module.exports = {
     onBuild: (config) => {
+        const buildPath = config.buildPath;
+
         console.log('Moving index and 404 page');
         fs.copyFileSync(
             join('..', 'dev', 'index.pug'),
-            join('build', 'index.pug')
+            join(buildPath, 'index.pug')
         );
         fs.copyFileSync(
             join('..', 'dev', '404.pug'),
-            join('build', '404.pug')
+            join(buildPath, '404.pug')
         );
         fs.copyFileSync(
             join('..', 'dev', 'robots.txt'),
-            join('build', 'robots.txt')
+            join(buildPath, 'robots.txt')
         );
         config.releaseItems.push('index.pug');
         config.releaseItems.push('404.pug');
@@ -50,17 +52,18 @@ module.exports = {
 }
 
 function buildPosts(folder, config) {
+    const buildPath = config.buildPath;
     let postList = [],
         template = pug.compileFile(join('..', 'layout', 'post.pug'), {basedir: '../'});
 
-    fs.readdirSync(join('build', folder, 'posts'), 'utf-8').forEach(post => {
+    fs.readdirSync(join(buildPath, folder, 'posts'), 'utf-8').forEach(post => {
         if (
             post.startsWith('!')
             || !post.endsWith('.json')
         ) return; // skip template
         postList.push({
             ...JSON.parse(fs.readFileSync(
-                join('build', folder, 'posts', post),
+                join(buildPath, folder, 'posts', post),
                 'utf-8'
             )),
             path: `/${folder}/${post.split('.')[0]}`
@@ -86,7 +89,7 @@ function buildPosts(folder, config) {
     });
 
     const parentTranslation = JSON.parse(fs.readFileSync(
-        join('build', folder, 'vi.json'),
+        join(buildPath, folder, 'vi.json'),
         'utf-8'
     ))
 
@@ -94,7 +97,7 @@ function buildPosts(folder, config) {
         // save to build
         config.releaseItems.push(post.path);
 
-        let build = join('build', post.path)
+        let build = join(buildPath, post.path)
 
         fs.mkdirSync(build, { recursive: true })
         fs.writeFileSync(
@@ -119,9 +122,9 @@ function buildPosts(folder, config) {
     for (let index = 1; postList.length > 0; index++) {
         let browserPath = join(folder, index.toString());
 
-        fs.mkdirSync(join('build', browserPath));
+        fs.mkdirSync(join(buildPath, browserPath));
         fs.writeFileSync(
-            join('build', browserPath, 'vi.json'),
+            join(buildPath, browserPath, 'vi.json'),
             JSON.stringify({
                 ...parentTranslation,
                 config: config,
@@ -135,8 +138,8 @@ function buildPosts(folder, config) {
 
         // copy browser file from parent folder
         fs.copyFileSync(
-            join('build', folder, 'index.pug'),
-            join('build', browserPath, 'index.pug')
+            join(buildPath, folder, 'index.pug'),
+            join(buildPath, browserPath, 'index.pug')
         )
 
         // add to release
@@ -145,10 +148,10 @@ function buildPosts(folder, config) {
 
     // write the parent main page as the first page
     fs.copyFileSync(
-        join('build', folder, '1', 'vi.json'),
-        join('build', folder, 'vi.json')
+        join(buildPath, folder, '1', 'vi.json'),
+        join(buildPath, folder, 'vi.json')
     )
 
     // remove original post folder from build
-    fs.rmSync(join('build', folder, 'posts'), { recursive: true })
+    fs.rmSync(join(buildPath, folder, 'posts'), { recursive: true })
 }

@@ -2,7 +2,7 @@
   "scripts": {
     "servePreview": "node Static-Wind/preview.js",
     "build": "cd Static-Wind && node build.js",
-    "serveBuild": "cd ../docs && npx http-server ./",
+    "serveBuild": "cd docs && npx http-server ./",
     "test": "npm run build && npm run serveBuild",
     "release": "cd Static-Wind && node build.js R"
   },

@@ -31,7 +31,7 @@ function log(level, msg) {
 }
 
 function onBuildComplete(config) {
-    const buildFolder = 'build';
+    const buildFolder = config.buildPath;
 
     // stats report
     {
