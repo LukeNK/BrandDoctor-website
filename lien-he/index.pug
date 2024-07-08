@@ -61,12 +61,12 @@ append content
             h1 Đồng hành cùng Brand Doctor
             p Đừng ngại chia sẻ khao khát và mong muốn của bạn với Brand Doctor về việc phát triển Doanh nghiệp. Chúng tôi sẵn sàng lắng nghe và cùng bạn viết nên câu chuyện trường tồn.
             form
-                input(type="text", placeholder="Họ & Tên")
-                input(type="text", placeholder="Tên Doanh Nghiệp")
-                input(type="email", placeholder="Email")
-                input(type="tel", placeholder="Điện thoại")
-                textarea(rows="5", placeholder="Nội dung cần tư vấn")
-                button GỬI
+                input(id="name", type="text", placeholder="Họ & Tên")
+                input(id="company", type="text", placeholder="Tên Doanh Nghiệp")
+                input(id="email", type="email", placeholder="Email")
+                input(id="tel", type="tel", placeholder="Điện thoại")
+                textarea(id="text", rows="5", placeholder="Nội dung cần tư vấn")
+                button(onclick="contactSubmit()") GỬI
 
     #FAQ: h1 FAQ
     p Hãy cùng Brand Doctor tìm hiểu về những thắc mắc thường gặp từ đối tác của chúng tôi.
@@ -92,3 +92,29 @@ append content
         details
             summary Brand Doctor đồng hành cùng Doanh nghiệp trong bao lâu?
             p Xây dựng và phát triển thương hiệu là một quá trình tiếp diễn liên tục và bền bỉ. Bước 7 trong 7 bước đồng hành trọn vẹn của Brand Doctor chính là “Cập nhật định vị theo thời gian”. Chúng tôi sẵn sàng cùng Doanh nghiệp phát triển giá trị từng ngày và cập nhật định vị khi đến thời điểm thích hợp. Vì chúng tôi biết rằng giá trị sẽ không bao giờ dừng lại và khách hàng sẽ ngày càng mong muốn nhiều giá trị hơn từ Doanh nghiệp.
+
+append scripts
+    script.
+        //- https://docs.google.com/forms/d/e/1FAIpQLSfkwYE3ftGx2fwtIQMwdQEnTuL2Cl6QIrFDJ7OpkFlgSeL4Xg/viewform?usp=pp_url&entry.1061795165=Name&entry.1385511241=Company&entry.1872327793=Email@email.ca&entry.0236148131=09&entry.1402602297=test
+
+        // map between URL param and the filled field
+        const map = {
+            "1061795165": "name",
+            "1385511241": "company",
+            "1872327793": "email",
+            "0236148131": "tel",
+            "1402602297": "text"
+        }
+
+        function contactSubmit() {
+            let params = new URLSearchParams();
+            for (const key in map)
+                params.append(
+                    'entry.' + key,
+                    document.getElementById(map[key]).value
+                );
+
+            window.location.href =
+                'https://docs.google.com/forms/d/e/1FAIpQLSfkwYE3ftGx2fwtIQMwdQEnTuL2Cl6QIrFDJ7OpkFlgSeL4Xg/viewform?'
+                + params.toString();
+        }
