@@ -91,26 +91,33 @@ function onBuildComplete(config) {
             if (!existsSync(path))
                 return log(2, path + ' in sitemap, but not an HTML file');
 
-            // remove capitalization
-            cacheFiles[path] = readFileSync(path, 'utf-8').toLowerCase();
+            let cacheFile = cacheFiles[path];
 
-            if (!cacheFiles[path].startsWith('<!doctype html>'))
+            // remove capitalization
+            cacheFile = readFileSync(path, 'utf-8').toLowerCase();
+
+            if (!cacheFile.startsWith('<!doctype html>'))
                 log(1, path + ' does not start with doctype declaration');
 
-            if (!cacheFiles[path].includes('<meta charset="utf-8">'))
+            if (!cacheFile.includes('<meta charset="utf-8">'))
                 log(1, path + ' does not set charset');
 
-            if (!cacheFiles[path].includes('<title>'))
+            if (!cacheFile.includes('<title>'))
                 log(2, path + ' does not include title');
 
-            if (!cacheFiles[path].includes('<meta name="description" content="'))
+            if (!cacheFile.includes('<meta name="description" content="'))
                 log(2, path + ' does not include meta description');
 
             if (
-                !cacheFiles[path].includes('<nav')
-                || !cacheFiles[path].includes('<footer')
+                !cacheFile.includes('<nav')
+                || !cacheFile.includes('<footer')
             )
-                log(2, path + ' does not include nav or footer')
+                log(2, path + ' does not include nav or footer');
+
+            // content check
+            let emptyAnchors = (cacheFile.match(/<a>/g) || []).length;
+            if (emptyAnchors)
+                log(2, `${path} has ${emptyAnchors} empty anchors`);
         });
     }
 
