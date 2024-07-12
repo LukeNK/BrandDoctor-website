@@ -1,9 +1,13 @@
 {
     "languages": ["vi"],
     "masterTranslation": "dev/",
+
     "buildPath": "docs",
     "buildScript": "dev/build.js",
+    "buildVersion": "docs/VERSION",
+
     "sitemap": "https://branddoctorgroup.com/",
+
     "releaseItems": [
         "asset",
 
