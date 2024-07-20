@@ -55,6 +55,16 @@
     #banner-stats h2 > span { font-family: inherit; }
 
     #banner-stats h3 { color: white; }
+
+    /* animation */
+    @keyframes borderW {
+        0% { border-width: 0; }
+        25% { border-top-width: 0.4rem; }
+        50% { border-right-width: 0.4rem; }
+        75% { border-bottom-width: 0.4rem; }
+        100% { border-left-width: 0.4rem; }
+    }
+    #banner-stats.animate .circle-border { animation: borderW 2s; }
 </style>
 
 <!-- Surround to have the heading inside the background -->
@@ -107,7 +117,9 @@
             )
         ) return
         statsAnimationTrigger = true;
-        for (const id in stats) {
+
+        document.getElementById('banner-stats').classList.add('animate');
+        for (const id in stats)
             stats[id].interval = setInterval(() => {
                 let cur = Number(document.getElementById(id).innerHTML);
                 stats[id].inc = ~~((stats[id].num - cur) / 50) + 1;
@@ -117,6 +129,5 @@
                 else
                     document.getElementById(id).innerHTML = cur + stats[id].inc;
             }, 1000 / 60); // 60fps
-        }
     });
 </script>
