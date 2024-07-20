@@ -110,9 +110,9 @@ nav .mobile { display: none; }
     position: fixed;
     top: 0; left: 0;
     bottom: 0; right: 0;
+    /* only open for mobile */
     display: none;
 }
-#nav-menu-close[open] { display: block; }
 
 @media screen and (max-width: 65rem) {
     /* Open and close control */
@@ -194,4 +194,6 @@ nav .mobile { display: none; }
         background: none;
     }
     #nav-lang details a { padding: 0.4rem; }
+
+    #nav-menu-close[open] { display: block; }
 }
