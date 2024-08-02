@@ -2,89 +2,87 @@ extend /layout/standard
 
 append head
     style.
-        main > details {
-            border-radius: var(--border-radius);
-            background-color: var(--color-gray);
-        }
-        main > details > summary {
-            scroll-margin-top: var(--nav-height);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            color: white;
-            background-color: var(--color-theme);
+        .banner .desktop {
+            flex: 50vw 0 0;
         }
 
-        main > details[open] > summary {
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        #ev-steps {
+            display: flex;
+            flex-direction: column;
+            border-top: 2px solid var(--color-theme);
+            border-bottom: 2px solid var(--color-theme);
+            padding: 0;
+            margin: 0 var(--side-padding)
         }
-        main > details[open] > *:not(summary) {
-            margin: 1rem;
-            animation: fadein 1s;
+        #ev-steps > .top {
+            display: flex;
+        }
+        #ev-steps h2 {
+            flex: 1 1 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            color: var(--color-theme);
+            cursor: pointer;
+            transition: flex-grow 0.5s;
+        }
+        #ev-steps h2.select {
+            color: var(--color-bright)
+        }
+        #ev-steps h2:after {
+            margin: 0 1rem;
+            content: "›";
+        }
+        #ev-steps h2:hover {
+            flex-grow: 1.5;
+            font-weight: bolder;
+            transition: flex-grow 0.5s;
+        }
+        #ev-steps p {
+            display: none;
+            text-align: center;
+        }
+        #ev-steps .appear {
+            display: block;
+            animation: movein 1s;
         }
 
-        main > details.done > summary {
-            background-color: var(--color-bright);
-        }
-        main > details.done > summary:after {
-            content: "✓";
-        }
 
 block content
-    script.
-        document.querySelector('main').classList.add('close-details');
+    //- block content to remove the header
+    .banner
+        .desktop
+        div
+            h1 Khảo sát SBI
+            p Hội đồng Khoa học Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate odio, suscipit inventore nostrum, molestias debitis veritatis expedita, nam cumque rem blanditiis voluptatum dolorum repellat quo earum amet placeat praesentium cum.
 
-    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad numquam sapiente dolorem ullam neque, nisi ducimus animi, tempora repudiandae quo excepturi nemo fugiat. Pariatur totam laudantium saepe a fugiat.
+    h1 Brand Doctor đồng hành với doanh nghiệp qua nhiều giai đoạn
 
-    details(open)
-        summary Hệ Thống Nhận Diện Thương Hiệu
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        label
-            | Tagline
-            input(type="text")
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
-    details
-        summary Hệ Thống Nhận Diện Thương Hiệu
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        label
-            | Tagline
-            input(type="text")
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+    h1 Những đối tác đã được khảo sát
+    .divCol.divBox
+        a.divBox.img
+            .img(style="background-image: url(/asset/ecosBDG/ksh.jpg);")
+            h2 A company
+            p It's role
+            p "Tôi tin vào khảo sát"
 
-    details
-        summary Hệ Thống Nhận Diện Thương Hiệu
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        label
-            | Tagline
-            input(type="text")
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
-    details
-        summary Hệ Thống Nhận Diện Thương Hiệu
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
-        label
-            | Tagline
-            input(type="text")
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+    h1 Những bước khảo sát
+    #ev-steps
+        .top
+            h2 Tư vấn
+            h2 Khảo sát
+            h2 Phân tích
+            h2 Báo cáo
+        .bottom
+            p Tìm hiểu doanh nghiệp để tư vấn khảo sát phù hợp
+            p Brand Doctor sẽ gửi bản câu hỏi để doanh nghiệp trả lời
+            p Hội đồng khoa học sẽ phân tích câu trả lời của doanh nghiệp
+            p Brand Doctor sẽ tổ chức một buổi báo cáo kết quả cho doanh nghiệp
 
+    h1 Các khảo sát
 
 append scripts
-    script(src="/SBI/UI.js")
-    script(src="/SBI/SBI.js")
+    script(src="/SBI/ev-steps.js")
+
+//- Uncomment this to remove float contact
+//- block floatContact
