@@ -24,6 +24,19 @@
     }
 }
 
+@keyframes movein {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        /* width: 0; */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* width: 100%; */
+    }
+}
+
 @keyframes nav-expand {
     0% {
         opacity: 0;
