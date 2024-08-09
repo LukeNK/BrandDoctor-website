@@ -153,6 +153,12 @@ main > h1 {
     text-align: center;
     color: var(--color-theme);
     margin-top: 7rem;
+    margin-left: var(--side-padding);
+    margin-right: var(--side-padding);
+}
+main > h2,
+main > h3 {
+    text-align: center;
 }
 main > p {
     margin: var(--nav-height) var(--side-padding);

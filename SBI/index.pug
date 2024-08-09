@@ -57,6 +57,12 @@ append head
 
         main > table { padding: 0 var(--side-padding); }
 
+        #demo {
+            padding: var(--nav-height) var(--side-padding);
+            background-color: var(--color-gray);
+            text-align: center;
+        }
+
 block content
     //- block content to remove the header
     .banner
@@ -103,6 +109,12 @@ block content
             th Số lượng câu hỏi
             td 20
             td 20
+
+    #demo
+        h2(style="color: var(--color-theme);") Khảo sát sơ bộ tự đánh giá
+        p Trải nghiệm khảo sát tự đánh giá do hội đồng khoa học
+        a.btn(href="/SBI/demo") Làm khảo sát sơ bộ (15 phút)
+
 
 append scripts
     script(src="/SBI/ev-steps.js")

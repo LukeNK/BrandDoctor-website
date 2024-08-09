@@ -1,0 +1,93 @@
+extend /layout/standard
+
+append head
+    style.
+        main > details {
+            border-radius: var(--border-radius);
+            background-color: var(--color-gray);
+        }
+        main > details > summary {
+            scroll-margin-top: var(--nav-height);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            color: white;
+            background-color: var(--color-theme);
+        }
+
+        main > details[open] > summary {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        main > details[open] > *:not(summary) {
+            margin: 1rem;
+            animation: fadein 1s;
+        }
+
+        main > details.done > summary {
+            background-color: var(--color-bright);
+        }
+        main > details.done > summary:after {
+            content: "✓";
+        }
+
+block content
+    script.
+        document.querySelector('main').classList.add('close-details');
+
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad numquam sapiente dolorem ullam neque, nisi ducimus animi, tempora repudiandae quo excepturi nemo fugiat. Pariatur totam laudantium saepe a fugiat.
+
+    details(open)
+        summary Những lưu ý trước khi bắt đầu
+
+    details
+        summary Hệ Thống Nhận Diện Thương Hiệu
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        label
+            | Tagline
+            input(type="text")
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+    details
+        summary Hệ Thống Nhận Diện Thương Hiệu
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        label
+            | Tagline
+            input(type="text")
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+
+    details
+        summary Hệ Thống Nhận Diện Thương Hiệu
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        label
+            | Tagline
+            input(type="text")
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+    details
+        summary Hệ Thống Nhận Diện Thương Hiệu
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit tenetur esse nostrum nam numquam sapiente officia illum, necessitatibus odio incidunt, deleniti veniam exercitationem quos tempora. Dolorem asperiores dolorum quaerat.
+        label
+            | Tagline
+            input(type="text")
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa quisquam animi corrupti, sequi voluptate at perspiciatis assumenda quae, itaque voluptates earum numquam voluptatem beatae ad facere corporis cumque nobis?
+
+
+append scripts
+    script(src="/SBI/UI.js")
+    script(src="/SBI/SBI.js")
