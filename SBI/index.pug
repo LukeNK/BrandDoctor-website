@@ -55,6 +55,7 @@ append head
             animation: movein 1s;
         }
 
+        main > table { padding: 0 var(--side-padding); }
 
 block content
     //- block content to remove the header
@@ -89,6 +90,19 @@ block content
             p Brand Doctor sẽ tổ chức một buổi báo cáo kết quả cho doanh nghiệp
 
     h1 Các khảo sát
+    table
+        colgroup
+            col(style="width: 40%")
+            col(style="width: 30%")
+            col(style="width: 30%")
+        tr
+            td.no-border
+            th HTNDTH
+            th HGT
+        tr
+            th Số lượng câu hỏi
+            td 20
+            td 20
 
 append scripts
     script(src="/SBI/ev-steps.js")

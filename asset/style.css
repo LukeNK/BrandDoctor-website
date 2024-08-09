@@ -124,6 +124,18 @@ p br {
 
 summary { cursor: pointer; }
 
+table { width: 100%; }
+th {
+    padding: 1rem;
+    background-color: var(--color-theme);
+    color: var(--color-light);
+}
+th,
+td {
+    border: 2px solid var(--color-theme);
+    text-align: center;
+}
+
 textarea {
     /* Put setting in input, textarea for consistency */
     resize: none;
@@ -252,6 +264,8 @@ div.divCol {
 }
 .divBox.img > h2 { margin-top: -6rem; }
 .divBox h1, .divBox h2 { color: var(--color-theme); }
+
+.no-border { border: none }
 
 @media screen and (max-width: 60rem) {
     * { --side-padding: 5vw; }
