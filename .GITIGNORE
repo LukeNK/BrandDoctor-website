@@ -3,4 +3,5 @@ package-lock.json
 /node_modules
 /Static-Wind
 
+/_site
 /Gemfile.lock
