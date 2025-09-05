@@ -62,12 +62,16 @@
             <a href="/lien-he/">Liên hệ</a>
         </div>
 
-        <div id="nav-menu-close" onclick="toggleNav()"></div>
+        <div id="nav-lang"></div>
 
         <script src="/asset/script/nav.js" async></script>
     </nav>
+    <div id="nav-menu-close" onclick="toggleNav()"></div>
 
     <main>
+        {% if page.include.banner or layout.include.banner %}
+            {% include banner-header.html %}
+        {% endif %}
         {{ content }}
     </main>
 
@@ -140,7 +144,11 @@
         </script>
     </footer>
 
-    {% include float-contact.html %}
+    {% if page.include.contact == false or layout.include.contact == false %}
+        <!-- Default float-contact to show -->
+    {% else %}
+        {% include float-contact.html %}
+    {% endif %}
 
 </body>
 <script src="/asset/script.js"></script>

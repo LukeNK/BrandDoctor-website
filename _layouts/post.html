@@ -1,0 +1,55 @@
+---
+layout: standard
+include:
+    banner: false
+---
+<link rel="stylesheet" href="/asset/style/browser.css">
+<link rel="stylesheet" href="/asset/style/post.css">
+
+<div class="article-title banner">
+    <div>
+        <p>{{ category }}</p>
+        <h1>{{ title }}</h1>
+        <p>{{ readTime }}</p>
+    </div>
+    <div>
+        <img src="{{ thumbnail }}">
+    </div>
+</div>
+
+<section>
+    <div>
+        <!-- metadata will go here -->
+        <h3>{{ author }}</h3>
+        <p>{{ date }}</p>
+        <aside>
+            <h2>Nội dung</h2>
+        </aside>
+    </div>
+
+    <!-- Unescaped content because the content already has HTML -->
+    <article>
+        {{ content }}
+        <hr>
+        <p>Chia sẻ nếu bạn thấy hay:</p>
+        <div class="fb-like"
+            data-href="https://www.facebook.com/BrandDoctorGroup"
+            data-width=""
+            data-layout="button_count"
+            data-action=""
+            data-size="large"
+            data-share="true">
+        </div>
+    </article>
+</section>
+
+{% include banner-contact.html%}
+
+<h1>Bài viết cùng chủ đề</h1>
+<div class="browser-list"></div>
+
+<a class="browser-return" href="../">Khám phá toàn bộ nội dung</a>
+
+{% include brevo-form-signup.html %}
+
+<script src="/asset/script/article.js"></script>
