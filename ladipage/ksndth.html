@@ -107,180 +107,1042 @@
     background: #c00000;
 }
 </style>
-<section class="stats-section">
-    <h2>MỘT VÀI SỐ LIỆU <span class="highlight">THỐNG KÊ THÚ VỊ</span></h2>
 
-    <div class="stats-grid">
-        <!-- Item 1 -->
-        <div class="stat-item">
-            <div class="icon">
-                <img src="icon1.png" alt="Study icon">
+<section class="statistics-section">
+    <div class="container">
+        <h2>MỘT VÀI SỐ LIỆU THỐNG KÊ THÚ VỊ</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <img src="icon-clipboard.png" alt="Clipboard Icon">
+                <p class="percentage">50%</p>
+                <p class="description">50% số người được khảo sát cho biết có nhiều khả năng mua hàng từ những thương hiệu có logo mà họ nhận ra.</p>
+                <p class="source">(Theo Study Finds)</p>
             </div>
-            <div class="value highlight">50%</div>
-            <p>50% số người được khảo sát cho biết có nhiều khả năng mua hàng từ những thương hiệu có logo mà họ nhận ra.</p>
-            <em>(Theo Study Finds)</em>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="stat-item">
-            <div class="icon">
-                <img src="icon2.png" alt="Color icon">
+            <div class="stat-item">
+                <img src="icon-water-drops.png" alt="Water Drops Icon">
+                <p class="percentage">80%</p>
+                <p class="description">Màu sắc đặc trưng có thể giúp tăng 80% mức độ nhận biết của người tiêu dùng.</p>
+                <p class="source">(Theo nghiên cứu của Đại học Loyola)</p>
             </div>
-            <div class="value highlight">80%</div>
-            <p>Màu sắc đặc trưng có thể giúp tăng 80% mức độ nhận biết của người tiêu dùng.</p>
-            <em>(Theo nghiên cứu của Đại học Loyola)</em>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="stat-item">
-            <div class="icon">
-                <img src="icon3.png" alt="Consistency icon">
+            <div class="stat-item">
+                <img src="icon-pencil-ruler.png" alt="Pencil Ruler Icon">
+                <p class="percentage">3,5 lần</p>
+                <p class="description">Doanh nghiệp xây dựng thương hiệu nhất quán có khả năng hiển thị thương hiệu tốt hơn 3,5 lần so với những thương hiệu không có sự trình bày nhất quán.</p>
+                <p class="source">(Theo Demand Metric)</p>
             </div>
-            <div class="value highlight">3,5 lần</div>
-            <p>Doanh nghiệp xây dựng thương hiệu nhất quán có khả năng hiển thị thương hiệu tốt hơn 3,5 lần so với những thương hiệu không có sự trình bày nhất quán.</p>
-            <em>(Theo Demand Metric)</em>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="stat-item">
-            <div class="icon">
-                <img src="icon4.png" alt="Logo budget icon">
+            <div class="stat-item">
+                <img src="icon-package.png" alt="Package Icon">
+                <p class="percentage">57%</p>
+                <p class="description">57% doanh nghiệp nhỏ chấp nhận chi đến 500 USD để thiết kế logo.</p>
+                <p class="source">(Theo Website Planet)</p>
             </div>
-            <div class="value highlight">57%</div>
-            <p>57% doanh nghiệp nhỏ chấp nhận chi đến 500 USD để thiết kế logo.</p>
-            <em>(Theo Website Planet)</em>
         </div>
     </div>
 </section>
 
 <style>
-.stats-section {
-    background: #f9fafc;
-    text-align: center;
-    padding: 60px 20px;
-    font-family: Arial, sans-serif;
-    color: #002f80;
-}
+    .statistics-section {
+        background-color: #ffffff;
+        padding: 60px 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: #002f80;
+    }
 
-.stats-section h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
+    .statistics-section .container {
+        max-width: 1200px;
+        margin: auto;
+    }
 
-.stats-section .highlight {
-    color: #ffb400;
-}
+    .statistics-section h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+        color: #002f80;
+    }
 
-.stats-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: auto;
-}
+    .statistics-section .stats-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
 
-.stat-item {
-    flex: 1 1 220px;
-    max-width: 250px;
-}
+    .statistics-section .stat-item {
+        flex: 1 1 220px; /* Allows items to grow/shrink, with a base of 220px */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.stat-item .icon img {
-    height: 40px;
-    margin-bottom: 10px;
-}
+    .statistics-section .stat-item img {
+        height: 60px; /* Adjust icon size as needed */
+        margin-bottom: 20px;
+    }
 
-.stat-item .value {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+    .statistics-section .percentage {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ffb400; /* Highlight color */
+        margin-bottom: 15px;
+    }
 
-.stat-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
+    .statistics-section .description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #002f80;
+    }
 
-.stat-item em {
-    font-size: 0.9rem;
-    color: #555;
-}
+    .statistics-section .source {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #777; /* Slightly lighter color for source */
+    }
 
-@media (max-width: 768px) {
-    .stats-grid {
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .statistics-section .stats-grid {
+            gap: 30px;
+        }
+
+        .statistics-section .stat-item {
+            flex: 1 1 45%; /* Two items per row on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .statistics-section h2 {
+            font-size: 1.7rem;
+        }
+
+        .statistics-section .stat-item {
+            flex: 1 1 90%; /* One item per row on very small screens */
+        }
+
+        .statistics-section .percentage {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<section class="brand-doctor-about">
+    <div class="background-container">
+        <div class="logo-circle">
+            <img src="brand-doctor-logo.png" alt="Brand Doctor Logo">
+            <p>BRAND<br>DOCTOR</p>
+        </div>
+        <div class="text-block">
+            <p>
+                <strong>Brand Doctor Group</strong> được thành lập và dẫn dắt bởi đội ngũ Brand Doctor (Bác sĩ Thương hiệu). Là Tổ chức tiên phong trong việc chăm sóc sức mạnh thương hiệu với mong muốn trở thành biểu tượng chuẩn mực trong việc xây dựng thương hiệu mạnh và trường tồn. Chúng tôi đồng hành cùng từng cá nhân và Doanh nghiệp để chứa lành hệ giá trị, bồi đắp những điểm khác biệt.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .brand-doctor-about {
+        background-color: #002f80; /* A solid color to represent the blue background */
+        /* The specific background pattern would require a background-image URL */
+        color: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .brand-doctor-about .background-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
-}
+
+    .brand-doctor-about .logo-circle {
+        background-color: #f7e6c4; /* The light yellow color */
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .brand-doctor-about .logo-circle img {
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    .brand-doctor-about .logo-circle p {
+        color: #002f80;
+        font-weight: bold;
+        line-height: 1.2;
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .brand-doctor-about .text-block {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .brand-doctor-about .text-block p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #f0f0f0;
+    }
+
+    .brand-doctor-about .text-block strong {
+        color: #ffffff;
+    }
 </style>
 
-<section class="about-section">
-    <div class="about-content">
-        <div class="logo-circle">
-            <img src="brand-logo.png" alt="Brand Doctor Logo">
-            <h3>BRAND<br>DOCTOR</h3>
+<section class="brand-content-section">
+    <div class="content-block light-background">
+        <div class="column left-column">
+            <img src="typography-image.jpg" alt="Typography terms" class="illustration-image">
         </div>
-        <p>
-            <strong>Brand Doctor Group</strong> được thành lập và dẫn dắt bởi đội ngũ Brand Doctor (Bác sĩ Thương hiệu).
-            Là Tổ chức tiên phong trong việc chăm sóc sức mạnh thương hiệu với mong muốn trở thành biểu tượng chuẩn mực
-            trong việc xây dựng thương hiệu mạnh và trường tồn. Chúng tôi đồng hành cùng từng cá nhân và Doanh nghiệp
-            để chữa lành hệ giá trị, bồi đắp những điểm khác biệt.
-        </p>
+        <div class="column right-column">
+            <p class="question">
+                Quý vị có biết rằng tagline và slogan là hai khái niệm khác nhau?
+            </p>
+            <p>
+                Trong khi tagline gắn liền với Doanh nghiệp/Tổ chức, truyền tải giá trị của Doanh nghiệp, thì slogan được sử dụng trong một thời gian ngắn và liên kết với sản phẩm/dịch vụ/chiến dịch. Thế nhưng, không ít người cho rằng câu khẩu hiệu sau mỗi thương hiệu luôn là slogan.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-block white-background">
+        <div class="column left-column">
+            <img src="stationery-mockup-image.jpg" alt="Stationery and office supplies" class="illustration-image">
+        </div>
+        <div class="column right-column">
+            <p class="question">
+                Nhiều logo mang trong mình sự “phức tạp hóa” và Doanh chủ muốn đưa “tất cả mọi thứ” vào logo?
+            </p>
+            <p>
+Liệu Quý vị đã từng đặt ra câu hỏi rằng logo của Doanh nghiệp được xây dựng dựa trên điều gì?
+            </p>
+        </div>
+    </div>
+
+    <div class="content-block white-background">
+        <div class="column left-column">
+            <img src="puzzle-piece-change-image.jpg" alt="Puzzle piece with 'change' and 'brands' on it" class="illustration-image">
+        </div>
+        <div class="column right-column">
+            <p class="question">
+                Nhiều người cho rằng trách nhiệm thiết kế Hệ thống nhận diện thương hiệu là chỉ của bên thiết kế và chỉ cần thiết kế đẹp là được?
+            </p>
+            <p>
+                Hệ thống nhận diện xuất phát từ giá trị của một Tổ chức, chính vì thế nó cần phải có sự phối hợp của cả Doanh nghiệp và người thiết kế để xây dựng.
+            </p>
+        </div>
+    </div>
+    <div class="content-block light-background">
+        <div class="column left-column">
+            <img src="typography-image.jpg" alt="Typography terms" class="illustration-image">
+        </div>
+        <div class="column right-column">
+            <p class="question">
+                Quý vị có biết màu sắc và kiểu chữ cũng thể hiện được tính chất của thương hiệu?
+            </p>
+            <p>
+                Không ít Doanh nghiệp lựa chọn màu sắc, kiểu chữ dựa trên sở thích nhưng lại quên đi tính phù hợp với ngành nghề và mong đợi của khách hàng. Sẽ ra sao khi mỗi một văn bản, một ấn phẩm có các kiểu chữ hay màu sắc khác nhau. Qua thời gian, điều này cũng sẽ làm khách hàng thắc mắc đâu mới là màu sắc và kiểu chữ của thương hiệu.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-block white-background">
+        <div class="column left-column">
+            <img src="stationery-mockup-image.jpg" alt="Stationery and office supplies" class="illustration-image">
+        </div>
+        <div class="column right-column">
+            <p class="question">
+                Chỉ Tập đoàn lớn mới cần Hệ thống nhận diện?
+            </p>
+            <p>
+                Các Tập đoàn lớn cũng có những ngày đầu nỗ lực không ngừng mới phát triển. Dù chỉ là Doanh nghiệp nhỏ, việc tạo ấn tượng cũng rất cần thiết, vì xây dựng dấu ấn và lòng tin của khách hàng thì mới khiến Tổ chức lớn mạnh từng ngày.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-block white-background">
+        <div class="column left-column">
+            <img src="puzzle-piece-change-image.jpg" alt="Puzzle piece with 'change' and 'brands' on it" class="illustration-image">
+        </div>
+        <div class="column right-column">
+            <p class="question">
+                Có thể thường xuyên thay đổi để đổi mới từng ngày?
+            </p>
+            <p>
+                Việc thay đổi thường xuyên hệ thống nhận diện sẽ khiến chính khách hàng cảm thấy bị rối, khó làm quen khi thay đổi liên tục và nó cũng gây nên những tổn thất không nhỏ cho mức độ nhận diện thương hiệu. Bên cạnh đó điều này sẽ gây nên tốn kém chi phí và thời gian.
+            </p>
+        </div>
     </div>
 </section>
 
 <style>
-.about-section {
-    background: #012a86;          /* Deep blue */
-    padding: 80px 20px;
-    color: #ffffff;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    position: relative;
-}
+    .brand-content-section {
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 20px;
+    }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
+    .content-block {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px auto; /* Added margin to the side */
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        align-items: center;
+        gap: 30px;
+        max-width: 1000px; /* Limits the max width to create side margins */
+    }
 
-.logo-circle {
-    background: #fbeed5;          /* Beige circle */
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    margin: 0 auto 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .light-background {
+        background-color: #f8f6e8;
+    }
 
-.logo-circle img {
-    height: 40px;
-    margin-bottom: 6px;
-}
+    .white-background {
+        background-color: #ffffff;
+    }
 
-.logo-circle h3 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #002f80;
-    line-height: 1.3;
-    margin: 0;
-}
+    .column {
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.about-section p {
-    font-size: 1rem;
-    line-height: 1.8;
-}
+    .left-column {
+        text-align: center;
+    }
 
-.about-section strong {
-    font-weight: bold;
-}
+    .left-column img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .illustration-image {
+        width: 250px; /* A consistent size for the images */
+    }
+
+    .right-column {
+        text-align: left;
+    }
+
+    .question {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .highlight {
+        color: #002f80; /* Blue color for highlights */
+    }
+
+    @media (max-width: 768px) {
+        .content-block {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .left-column, .right-column {
+            width: 100%;
+        }
+
+        .right-column {
+            text-align: center;
+        }
+    }
 </style>
 
-<section>
-
+<section class="brand-identity-info">
+    <div class="background-overlay">
+        <div class="content-container">
+            <h1>CÙNG BRAND DOCTOR TÌM HIỂU VỀ</h1>
+            <h2>HỆ THỐNG NHẬN DIỆN</h2>
+            <div class="text-columns">
+                <div class="left-column">
+                    <p>
+                        Doanh nghiệp phải có cho mình hệ thống nhận diện mà khi nhìn vào chúng khách hàng có thể liên tưởng nhanh chóng tới mình. Hệ thống này góp phần giúp Doanh nghiệp/Tổ chức xây dựng hình ảnh, tính cách, dấu ấn, thông điệp của mình trong tâm trí khách hàng và tạo dựng lòng tin của đối tượng mình hướng đến.
+                    </p>
+                </div>
+                <div class="right-column">
+                    <p>
+                        Hệ thống nhận diện thương hiệu thường bao gồm bộ nhận diện thương hiệu cốt lõi (tên, khẩu hiệu, logo, màu sắc, kiểu chữ), bộ nhận diện thương hiệu văn phòng, bộ nhận diện thương hiệu ngoài trời, bộ nhận diện thương hiệu marketing... Đi kèm với Hệ thống nhận diện là những hướng dẫn và quy tắc sử dụng hiệu quả.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+    .brand-identity-info {
+        background: url('your-background-image.jpg') center/cover no-repeat;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    .brand-identity-info .background-overlay {
+        background-color: rgba(0, 47, 128, 0.7);
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .brand-identity-info .content-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .brand-identity-info h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .brand-identity-info h2 {
+        font-size: 2.5rem;
+        margin: 10px 0 40px;
+        font-weight: bold;
+    }
+
+    .brand-identity-info .text-columns {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .brand-identity-info .left-column,
+    .brand-identity-info .right-column {
+        flex: 1 1 45%;
+        text-align: justify;
+        max-width: 500px;
+    }
+
+    .brand-identity-info p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .brand-identity-info .text-columns {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-identity-info .left-column,
+        .brand-identity-info .right-column {
+            text-align: center;
+            max-width: 100%;
+        }
+    }
+</style>
+
+<section class="logo-section">
+    <div class="background-overlay">
+        <div class="content-container">
+            <div class="title-box">
+                <p>LOGO VÀ HỆ THỐNG NHẬN DIỆN</p>
+            </div>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="icon">?</span>
+                    <p>
+                        Không ít sự nhầm lẫn xảy ra khi nhiều người định nghĩa Hệ thống nhận diện là logo. Tuy nhiên, thực chất logo lại là một thành phần cốt lõi của hệ thống nhận diện.
+                    </p>
+                </div>
+                <div class="question-item">
+                    <span class="icon">?</span>
+                    <p>
+                        Bản chất của thương hiệu không chỉ là logo. Và ngay cả chúng ta cũng thấy được, để tạo nên logo cần cả màu sắc, kiểu chữ, sự bố trí, sắp xếp và quan trọng nhất phải là “hồn”, những giá trị, những câu chuyện mà chúng ta đưa vào.
+                    </p>
+                </div>
+                <div class="question-item">
+                    <span class="icon">?</span>
+                    <p>
+                        Một logo tốt sẽ không phát huy được đầy đủ giá trị khi những ấn phẩm mà logo ấy gắn vào không thể hiện được tinh thần của thương hiệu.
+                    </p>
+                </div>
+                <div class="question-item">
+                    <span class="icon">?</span>
+                    <p>
+                        Chính vì thế, logo không phải là tất cả của Hệ thống nhận diện mà Hệ thống này còn bao gồm những yếu tố khác như màu sắc, kiểu chữ, hình ảnh…
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .logo-section {
+        background: url('your-background-image.jpg') center/cover no-repeat;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    .logo-section .background-overlay {
+        background-color: rgba(0, 47, 128, 0.7);
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .logo-section .content-container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .logo-section .title-box {
+        display: inline-block;
+        border: 2px solid #ffb400;
+        padding: 10px 25px;
+        margin-bottom: 50px;
+    }
+
+    .logo-section .title-box p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ffb400;
+        margin: 0;
+    }
+
+    .logo-section .question-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .logo-section .question-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .logo-section .icon {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffb400;
+        line-height: 1;
+        margin-top: -5px;
+    }
+
+    .logo-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+</style>
+
+<section class="benefits-section">
+    <div class="container">
+        <h2 class="main-title">Vậy Hệ thống nhận diện mang lại điều gì?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-hands-globe.png" alt="Hands and globe icon">
+                </div>
+                <h3>Truyền tải hệ giá trị</h3>
+                <p>
+                    Đem giá trị và thông điệp đến với khách hàng tiềm năng mà chưa có sự tiếp xúc trực tiếp giữa người và người.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-lightbulb-sparkle.png" alt="Lightbulb with sparkle icon">
+                </div>
+                <h3>Nổi bật Doanh nghiệp/Tổ chức</h3>
+                <p>
+                    Giúp khách hàng nhận ra Doanh nghiệp/Tổ chức giữa muôn vàn thương hiệu, nó cũng góp phần tạo nên sự thu hút khách hàng vì 55% ấn tượng đầu tiên về thương hiệu chính là trực quan (Phòng thương mại Hoa Kỳ).
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-head-lightbulb.png" alt="Head with lightbulb icon">
+                </div>
+                <h3>Làm rõ tính cách của thương hiệu</h3>
+                <p>
+                    Hệ thống nhận diện tốt sẽ thể hiện được tính cách của thương hiệu, điều này giúp thương hiệu đến gần với nhóm khách hàng tiềm năng, bởi họ sẽ cảm nhận được sự đồng điệu với thương hiệu.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-hand-check.png" alt="Hand with checkmark icon">
+                </div>
+                <h3>Khẳng định bản sắc thương hiệu</h3>
+                <p>
+                    Hệ thống nhận diện thương hiệu thể hiện được những điểm cốt lõi của thương hiệu. Và như thế điều này giúp nổi bật bản sắc của thương hiệu, thể hiện được thương hiệu có những đặc điểm để khách hàng lưu giữ trong tâm trí.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-diamond.png" alt="Diamond icon">
+                </div>
+                <h3>Gia tăng sự nhất quán</h3>
+                <p>
+                    Đảm bảo rằng các yếu tố như logo, màu sắc, kiểu chữ, đặc tính hình ảnh được sử dụng đúng và nhất quán trên các nền tảng sẽ giúp thương hiệu giữ được hình ảnh rõ ràng trong mắt khách hàng và không gây nhầm lẫn với đơn vị khác.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="icon-circle">
+                    <img src="icon-trust.png" alt="Handshake trust icon">
+                </div>
+                <h3>Bồi đắp niềm tin nơi khách hàng</h3>
+                <p>
+                    Càng có tính nhất quán, nổi bật và thể hiện bản sắc sẽ giúp khách hàng tin tưởng thương hiệu hơn và góp phần gia tăng lòng trung thành nơi khách hàng.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .benefits-section {
+        background-color: #f0f8ff;
+        font-family: Arial, sans-serif;
+        color: #002f80;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .benefits-section .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .benefits-section .main-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
+    .benefits-section .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+
+    .benefits-section .benefit-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .benefits-section .icon-circle {
+        background-color: #ffffff;
+        border: 2px solid #002f80;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .benefits-section .icon-circle img {
+        height: 40px;
+        filter: invert(15%) sepia(85%) saturate(300%) hue-rotate(200deg); /* Adjusts color of icons to blue */
+    }
+
+    .benefits-section h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffb400;
+    }
+
+    .benefits-section p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #333333;
+    }
+</style>
+
+<section class="brand-solution-section">
+    <div class="main-container">
+        <div class="left-panel">
+            <h2 class="title-highlight">Giải pháp từ Brand Doctor</h2>
+            <div class="text-block">
+                <p>
+                    Quý vị đã từng đánh giá hệ thống nhận diện của Doanh nghiệp/Tổ chức mình xem đã thể hiện được những lợi ích trên hay chưa.
+                </p>
+                <p>
+                    Quý vị có mong muốn tìm hiểu những điểm cần “đặc biệt lưu ý” tại Hệ thống nhận diện thương hiệu của Doanh nghiệp/Tổ chức mình hoặc muốn biết được rằng nhận diện hiện tại đã phù hợp hay chưa.
+                </p>
+                <p>
+                    Brand Doctor sẽ giúp Quý vị có cơ hội nhìn lại hệ thống nhận diện xem đã làm đúng và đủ chưa, có thể hiện được “hồn” của tổ chức hay không.
+                </p>
+            </div>
+            <a href="#" class="cta-button">ĐĂNG KÝ ĐÁNH GIÁ NGAY!</a>
+        </div>
+        <div class="right-panel">
+            <div class="title-box">
+                <h3>Brand Doctor đánh giá dựa trên tiêu chí nào?</h3>
+                <p class="solution-text">SOLUTION</p>
+            </div>
+            <div class="criteria-grid">
+                <div class="criteria-item blue-bg">
+                    <h4>Một số nguyên tắc thiết kế</h4>
+                    <p>
+                        Một thiết kế được ra đời cần phải đảm bảo những nguyên lý không bị vi phạm, có như thế mới tạo được cảm giác hài hòa, có điểm nhấn và làm tối đa hóa trải nghiệm người dùng. Sẽ ra sao nếu khách hàng thấy một văn bản về nhận diện quá rối và thiếu đi sự cân bằng?
+                    </p>
+                </div>
+                <div class="criteria-item dark-blue-bg">
+                    <h4>Hệ giá trị truyền tải</h4>
+                    <p>
+                        Những giá trị nào đã được Quý vị đưa vào hệ thống nhận diện của mình, liệu hệ thống ấy có “nói” lên được câu chuyện của doanh nghiệp/tổ chức và thể hiện được thông điệp truyền tải hay không.
+                    </p>
+                </div>
+                <div class="criteria-item dark-blue-bg">
+                    <h4>Khả năng ứng dụng</h4>
+                    <p>
+                        Một hệ thống nhận diện sẽ không được xem là thành công nếu nó không được ứng dụng rộng rãi và sử dụng trong các hoạt động, các nền tảng mà Doanh nghiệp/Tổ chức hiện diện một cách chuyên nghiệp, cũng như phân biệt với đối thủ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .brand-solution-section {
+        font-family: Arial, sans-serif;
+        background-color: #f8f6e8;
+        padding: 50px 20px;
+    }
+
+    .brand-solution-section .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+        border: 1px solid #e0e0e0;
+        background-color: #fff;
+    }
+
+    .brand-solution-section .left-panel {
+        flex: 1 1 40%;
+        padding: 40px;
+        background-color: #fff;
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .brand-solution-section .right-panel {
+        flex: 1 1 60%;
+        background-color: #002f80;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand-solution-section .title-highlight {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #002f80;
+        border-left: 5px solid #ffb400;
+        padding-left: 15px;
+        margin-bottom: 30px;
+    }
+
+    .brand-solution-section .text-block p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .brand-solution-section .cta-button {
+        display: inline-block;
+        border: 2px solid #ff0000;
+        color: #ff0000;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .brand-solution-section .cta-button:hover {
+        background-color: #ff0000;
+        color: #fff;
+    }
+
+    .brand-solution-section .title-box {
+        padding: 40px;
+        text-align: center;
+        position: relative;
+    }
+
+    .brand-solution-section .title-box h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .brand-solution-section .solution-text {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        margin: 0;
+    }
+
+    .brand-solution-section .criteria-grid {
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 2;
+        position: relative;
+    }
+
+    .brand-solution-section .criteria-item {
+        flex: 1 1 50%;
+        padding: 30px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .brand-solution-section .blue-bg {
+        background-color: #002f80;
+    }
+
+    .brand-solution-section .dark-blue-bg {
+        background-color: #002466;
+    }
+
+    .brand-solution-section .criteria-item h4 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffb400;
+    }
+
+    .brand-solution-section .criteria-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #e0e0e0;
+    }
+
+    @media (max-width: 992px) {
+        .brand-solution-section .main-container {
+            flex-direction: column;
+        }
+
+        .brand-solution-section .left-panel {
+            border-right: none;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .brand-solution-section .right-panel .title-box {
+            padding-top: 60px;
+        }
+    }
+</style>
+
+<section class="brand-reasons-section">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="highlight-box"></span>
+            Vì sao nên hiểu về <span class="highlight-text">Hệ thống nhận diện thương hiệu</span> của doanh nghiệp/tổ chức ngay hôm nay?
+        </h2>
+        <div class="reasons-grid">
+            <div class="reasons-col-left">
+                <div class="reason-card dark-blue">
+                    <div class="icon-circle">
+                        <img src="icon-1.png" alt="Icon 1">
+                    </div>
+                    <p>Hiểu về Hệ thống nhận diện hiện tại không bao giờ là dư thừa</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon-circle">
+                        <img src="icon-3.png" alt="Icon 3">
+                    </div>
+                    <p>Đánh giá tính nhất quán và ứng dụng trong việc quản lý các tài sản nhận diện</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon-circle">
+                        <img src="icon-5.png" alt="Icon 5">
+                    </div>
+                    <p>Cơ sở cho việc nâng cấp và cải thiện bộ nhận diện</p>
+                </div>
+            </div>
+            <div class="reasons-col-center">
+                <div class="reason-card">
+                    <div class="icon-circle">
+                        <img src="icon-2.png" alt="Icon 2">
+                    </div>
+                    <p>Đảm bảo rằng Hệ thống nhận diện phù hợp với khách hàng tiềm năng và có thể “chạm” đến họ</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon-circle">
+                        <img src="icon-4.png" alt="Icon 4">
+                    </div>
+                    <p>Tìm ra được lợi thế trong nhận diện hiện tại và những điểm cần đặc biệt lưu ý</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon-circle">
+                        <img src="icon-6.png" alt="Icon 6">
+                    </div>
+                    <p>Bước đầu trong việc gia tăng nhận diện và ấn tượng</p>
+                </div>
+            </div>
+            <div class="reasons-col-right">
+                <img src="modern-building.jpg" alt="Modern building">
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .brand-reasons-section {
+        background-color: #e6f0ff;
+        font-family: Arial, sans-serif;
+        padding: 60px 20px;
+        color: #002f80;
+    }
+
+    .brand-reasons-section .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .brand-reasons-section .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 20px;
+    }
+
+    .brand-reasons-section .highlight-box {
+        position: absolute;
+        left: 0;
+        width: 15px;
+        height: 100%;
+        background-color: #66b2ff;
+        border-radius: 4px;
+        z-index: -1;
+    }
+
+    .brand-reasons-section .highlight-text {
+        color: #002f80;
+    }
+
+    .brand-reasons-section .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .brand-reasons-section .reasons-col-left,
+    .brand-reasons-section .reasons-col-center {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .brand-reasons-section .reasons-col-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .brand-reasons-section .reasons-col-right img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 2px solid #66b2ff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .brand-reasons-section .reason-card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+    }
+
+    .brand-reasons-section .reason-card.dark-blue {
+        background-color: #002f80;
+        color: #fff;
+    }
+
+    .brand-reasons-section .dark-blue .icon-circle {
+        background-color: #e6f0ff;
+    }
+
+    .brand-reasons-section .dark-blue .icon-circle img {
+        filter: none;
+    }
+
+    .brand-reasons-section .icon-circle {
+        background-color: #002f80;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .brand-reasons-section .icon-circle img {
+        height: 30px;
+        filter: invert(100%);
+    }
+
+    .brand-reasons-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    @media (max-width: 992px) {
+        .brand-reasons-section .reasons-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .brand-reasons-section .reasons-col-left,
+        .brand-reasons-section .reasons-col-center {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .brand-reasons-section .reasons-col-right {
+            order: -1;
+            margin-bottom: 30px;
+        }
+
+        .brand-reasons-section .section-title {
+            text-align: left;
+        }
+    }
+</style>
