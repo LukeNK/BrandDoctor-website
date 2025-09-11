@@ -10,7 +10,7 @@ include:
     <div>
         <p>{{ page.tag }}</p>
         <h1>{{ page.title }}</h1>
-        <p>{{ page.readTime }}</p>
+        <p>{{ page.content | split: " " | size | divided_by: 200 }} phút đọc</p>
     </div>
     <div>
         <img src="{{ page.thumbnail }}">
@@ -21,7 +21,7 @@ include:
     <div>
         <!-- metadata will go here -->
         <h3>{{ page.author }}</h3>
-        <p>{{ page.date }}</p>
+        <p>{{ page.date | split: " " | first }}</p>
         <aside>
             <h2>Nội dung</h2>
         </aside>
@@ -50,16 +50,7 @@ include:
     {% assign count = 3 %}
     {% for post in site.related_posts %}
         {% if post.tag == page.tag %}
-            <a href="{{ post.url }}">
-                <img src="{{ post.thumbnail }}" alt="">
-                <h4>{{ post.tag }}</h4>
-                <h2>{{ post.title }}</h2>
-                <h3>{{ post.author }}</h3>
-                <p>
-                    {{ post.date }}
-                    <span>{{ post.readTime }}</span>
-                </p>
-            </a>
+            {% include post-preview.html post = post %}
             {% assign count = count | minus: 1 %}
         {% endif %}
         {% if count == 0 %}
