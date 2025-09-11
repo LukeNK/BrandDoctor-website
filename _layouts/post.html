@@ -48,7 +48,7 @@ include:
 <h1>Bài viết cùng chủ đề</h1>
 <div class="browser-list">
     {% assign count = 3 %}
-    {% for post in site.categories.tin-tuc %}
+    {% for post in site.related_posts %}
         {% if post.tag == page.tag %}
             <a href="{{ post.url }}">
                 <img src="{{ post.thumbnail }}" alt="">
