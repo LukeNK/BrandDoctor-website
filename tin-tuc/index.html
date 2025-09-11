@@ -1,0 +1,33 @@
+---
+layout: standard
+---
+<link rel="stylesheet" href="/asset/style/browser.css">
+
+<div class="browser-filter">
+    <button onclick="browserFilter(this)" class="selected sep">Tất cả</button>
+    <button onclick="browserFilter(this)">Sự kiện nổi bật</button>
+    <button onclick="browserFilter(this)">Bí quyết kinh doanh</button>
+    <button onclick="browserFilter(this)">Kiến thức thương hiệu</button>
+    <button onclick="browserFilter(this)">Thị trường hôm nay</button>
+</div>
+
+<div class="browser-list">
+    {% for post in site.categories.tin-tuc %}
+        <a href="{{ post.url }}">
+            <img src="{{ post.thumbnail }}" alt="">
+            <h4>{{ post.tag }}</h4>
+            <h2>{{ post.title }}</h2>
+            <h3>{{ post.author }}</h3>
+            <p>
+                {{ post.date }}
+                <span>{{ post.readTime }}</span>
+            </p>
+        </a>
+    {% endfor %}
+</div>
+
+<div class="browser-nav">
+
+</div>
+
+<script src="/asset/script/browser.js"></script>
