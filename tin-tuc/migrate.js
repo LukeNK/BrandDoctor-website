@@ -7,7 +7,7 @@ files.forEach(file => {
     let json = JSON.parse(content);
     let frontMatter = `---
 layout: post
-permalink: "tin-tuc/${file.replace('.json', '')}"
+permalink: "/tin-tuc/${file.replace('.json', '')}"
 title: "${json.title}"
 thumbnail: "${json.thumbnail}"
 author: "${json.author}"
