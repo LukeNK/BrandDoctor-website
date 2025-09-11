@@ -1,2 +1,4 @@
 theme: null
 exclude: [ "*.pug", "vi.json", "du-an/" ]
+plugins:
+    - jekyll-sitemap

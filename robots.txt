@@ -3,4 +3,4 @@ Allow: /
 Disallow: /status/
 Disallow: /dev/
 
-Sitemap: https://branddoctorgroup.com/sitemap.txt
+Sitemap: https://branddoctorgroup.com/sitemap.xml
