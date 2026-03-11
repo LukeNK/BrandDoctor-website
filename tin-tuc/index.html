@@ -1,0 +1,27 @@
+---
+layout: standard
+title: "Tin tức"
+include:
+    banner: true
+---
+<link rel="stylesheet" href="/asset/style/browser.css">
+
+<div class="browser-filter">
+    <button onclick="browserFilter(this)" class="selected sep">Tất cả</button>
+    <button onclick="browserFilter(this)">Sự kiện nổi bật</button>
+    <button onclick="browserFilter(this)">Bí quyết kinh doanh</button>
+    <button onclick="browserFilter(this)">Kiến thức thương hiệu</button>
+    <button onclick="browserFilter(this)">Thị trường hôm nay</button>
+</div>
+
+<div class="browser-list">
+    {% for post in site.categories.tin-tuc %}
+        {% include post-preview.html post = post %}
+    {% endfor %}
+</div>
+
+<div class="browser-nav">
+
+</div>
+
+<script src="/asset/script/browser.js"></script>

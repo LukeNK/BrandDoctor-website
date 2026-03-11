@@ -1,0 +1,321 @@
+---
+layout: standard
+title: "Về Chúng Tôi"
+include:
+    banner: true
+---
+<link rel="stylesheet" href="/asset/style/timeline.css">
+<style>
+    #video-whois {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 7rem;
+    }
+
+    .h-with-icon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .h-with-icon * { flex: 1 0 10rem;}
+    .h-with-icon img { height: 5rem; }
+
+    #main-ideas {
+        gap: var(--side-padding);
+        margin: var(--nav-height) 0;
+    }
+    #main-ideas > div {
+        background-color: var(--color-theme);
+        padding: 1rem;
+        color: white;
+    }
+    #main-ideas p {
+        margin: 0;
+        color: white;
+    }
+
+    #values {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    #values .sticky {
+        flex: 1 0 20rem;
+        text-align: center;
+        background-image:
+            linear-gradient(to right, #0055ffe0, #0055ffe0),
+            url(/asset/image/core_values.jpg);
+        padding: var(--side-padding);
+    }
+    #values aside {
+        position: sticky;
+        top: 5rem; left: 0;
+    }
+    #values aside h1,
+    #values aside h3 { color: white;}
+    #values aside h2 { color: var(--color-light); }
+    #values .float {
+        flex: 40rem;
+        padding: 3rem;
+        padding-right: var(--side-padding);
+        background-color: var(--color-gray);
+    }
+    #values .float details {
+        padding: 1rem;
+    }
+    #values .float details[open] {
+        border: 2px solid var(--color-theme);
+        border-radius: var(--border-radius);
+    }
+    #values .float details[open] > *:not(summary) {
+        animation: fadein 1s;
+    }
+    #values .float h1 { color: var(--color-theme); }
+    #values .float summary { color: var(--color-bright); }
+
+    #commitment > div > img {
+        height: 4rem;
+    }
+
+    .boxItem {
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+
+        background-color: var(--color-theme);
+    }
+    .boxItem p {
+        height: min-content;
+        font-size: 1.5rem;
+        line-height: 150%;
+        text-align: center;
+        color: white;
+    }
+
+    @media screen and (max-width: 60rem) {
+        #values .float { padding: 3rem var(--side-padding); }
+    }
+</style>
+
+<h1>Brand Doctor Group là ai?</h1>
+<div id="video-whois">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/F-zt1k0bD9A?si=kyJIjPUZik6yAu_U"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+{% include banner-stats.html %}
+
+<div id="main-ideas" class="divCol">
+    <div>
+        <div class="h-with-icon">
+            <img src="/asset/icon/about vision.svg">
+            <h1>Tầm nhìn</h1>
+        </div>
+        <p>Trở thành biểu tượng chuẩn mực trong việc xây dựng phát triển thương hiệu mạnh và trường tồn</p>
+    </div>
+    <div>
+        <div class="h-with-icon">
+            <img src="/asset/icon/about mission.svg">
+            <h1>Sứ mệnh</h1>
+        </div>
+        <p>Điểm tựa vàng để mỗi cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn</p>
+    </div>
+</div>
+
+<div id="values">
+    <div class="sticky">
+        <aside>
+            <h1>Các giá trị mà<br>chúng tôi theo đuổi</h1>
+            <h2>Brand Doctor</h2>
+            <h3>Thương hiệu thật ⦁ Giá trị thật</h3>
+        </aside>
+    </div>
+
+    <div class="float close-details">
+        <div class="h-with-icon">
+            <img src="/asset/icon/about values.svg">
+            <h1>Giá trị cốt lõi</h1>
+        </div>
+
+        <!-- Open an example so the user knows it can be opened -->
+        <details open>
+            <summary>Thương hiệu thật • Giá trị thật</summary>
+            <p>
+                Mỗi người, mỗi tổ chức đều có giá trị của riêng mình, không nhầm lẫn với ai. Theo Brand Doctor, một thương hiệu thật cần có sức bật mạnh mẽ từ trong nội tại để tồn tại trên thị trường. Và sức bật ấy đến từ những “giá trị thật”, điều gắn kết giữa khách hàng và doanh nghiệp. Những giá trị này đều tồn tại trong mỗi người, mỗi tổ chức, chỉ là bạn có thể chưa tìm ra được nó. Vì điều ấy, chúng tôi luôn sát cánh với từng doanh nghiệp khám phá năng lực tiềm ẩn ấy.
+            </p>
+        </details>
+
+        <details>
+            <summary>Tâm sáng • Trí minh</summary>
+            <p>
+                Đạo đức là điều mà mỗi Brand Doctor cần phải giữ vững. Bởi lẽ để trở thành “Điểm tựa vàng”, chính Brand Doctor cũng phải giữ cho tâm luôn sáng, biết rõ nên làm điều gì. Và chỉ khi giữ vững được tâm sáng thì trí mới minh, những sáng kiến mới và hiệu quả mới được đưa ra.
+            </p>
+        </details>
+
+        <details>
+            <summary>Tư duy khác biệt</summary>
+            <p>
+                Là đơn vị tiên phong trong việc lan tỏa giá trị sáng tạo, chúng tôi hiểu rõ rằng để một người đưa ra được những sáng kiến mới thì chính người đó phải có can đảm dám nghĩ khác đi. Và điều khác biệt ấy phải dựa trên bản sắc của mỗi người, mỗi tổ chức. Đến với Brand Doctor, bạn chính là một đối tác trong ecosBDG và chúng tôi sẽ cùng bạn xây dựng sự khác biệt vượt trội.
+            </p>
+        </details>
+
+        <details>
+            <summary>Theo đuổi khát vọng đến cùng</summary>
+            <p>
+                Để có được thành công, điều rất quan trọng đó là không từ bỏ ước mơ dù có gặp bất cứ trở ngại nào. Và để bạn có cơ sở không từ bỏ, để bạn có niềm tin thực hiện kế hoạch và khát vọng, bạn cần sở hữu đủ “Kiến thức thật, Kỹ năng thật, Thái độ thật”. Nền tảng này sẽ giúp mỗi cá nhân, mỗi tổ chức chinh phục mục tiêu tương lai.
+            </p>
+        </details>
+    </div>
+</div>
+
+<h1>Cam kết của chúng tôi</h1>
+<p>Với khao khát là Điểm tựa vàng cho cá nhân và Doanh nghiệp, Brand Doctor không đến với các đối tác thông qua một giải pháp trong ngắn hạn mà là sự cam kết bên cạnh trọn vẹn trong từng giai đoạn phát triển thương hiệu, phát triển sự nghiệp.</p>
+
+<div id="commitment" class="divCol divBox">
+    <div class="divBox">
+        <img src="/asset/icon/about true.svg">
+        <h2>Nền tảng Thương hiệu thật, Giá trị thật</h2>
+        <p>
+            Tất cả những giải pháp được chúng tôi đưa ra đều dựa trên Thương hiệu thật, Giá trị thật. Giá trị thật này bao gồm cả giá trị của chính Brand Doctor và của các đối tác.
+        </p>
+    </div>
+    <div class="divBox">
+        <img src="/asset/icon/about solution.svg">
+        <h2>Giải pháp theo thực trạng của Doanh nghiệp</h2>
+        <p>
+            Được cập nhật theo xu thế phát triển của thế giới và dựa trên thực trạng của đối tác để có những giải pháp phù hợp nhất.
+        </p>
+    </div>
+    <div class="divBox">
+        <img src="/asset/icon/about collab.svg">
+        <h2>Đồng hành trong từng giai đoạn</h2>
+        <p>
+            Không chỉ là một giải pháp, Brand Doctor sẵn sàng đồng hành cùng các đối tác trên từng chặng đường, từng giai đoạn phát triển.
+        </p>
+    </div>
+</div>
+
+<div class="timeline">
+    <div><h2>2004<br>2014</h2></div>
+    <div><h2>2015</h2></div>
+    <div><h2>2018</h2></div>
+    <div><h2>2020</h2></div>
+    <div><h2>2021</h2></div>
+</div>
+
+<div class="time-prompt">
+    <div>
+        <ul>
+            <li>Mong muốn phát triển nhân lực Việt có năng lực mạnh mẽ;</li>
+            <li>Thành lập Công ty Cổ phần Đào tạo và Giáo dục PTC vào 2014 (Sau đổi tên thành Công ty Cổ phần Đầu tư và Giáo dục PTC vào năm 2016 và đổi tên thành Công ty Cổ phần Lamoncton vào năm 2020);</li>
+            <li>Lý tưởng lan tỏa giá trị sáng tạo ra đời.</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Thành lập Viện Thống kê - Ứng dụng PTC;</li>
+            <li>Thực hiện nhiều nghiên cứu về các Tổ chức/Doanh nghiệp trong và ngoài nước.</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Vườn ươm Học Đại Học Hiệu Quả ra đời</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Công ty Cổ phần Bác sĩ Thương hiệu chính thức được thành lập</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Thành lập Brand Doctor Academy;</li>
+            <li>Công bố Lộ trình Bác sĩ Thương hiệu 7 cấp độ;</li>
+            <li>Sự ra đời của ecosBDG.</li>
+        </ul>
+    </div>
+</div>
+
+<h1>Đội ngũ của chúng tôi</h1>
+<hr>
+
+<div class="divCol divBox">
+    <a class="divBox img" href="./ten-ho/">
+        <div class="img" style="background-image: url(/asset/image/staff/Nguyen_Khanh_Trung.jpg);"></div>
+        <h2>Nguyễn Khánh Trung</h2>
+        <p>
+            Bác sĩ thương hiệu đầu tiên tại Việt Nam.<br>
+            Chủ tịch HĐQT Công ty Cổ phần Bác sĩ Thương hiệu.<br>
+            Viện trưởng Viện đào tạo Bác sĩ Thương hiệu
+        </p>
+    </a>
+    <a class="divBox img">
+        <div class="img" style="background-image: url(/asset/image/staff/Pham_Nguyen_Thuy_Anh.jpg);"></div>
+        <h2>Phạm Nguyễn Thụy Anh</h2>
+        <p>
+            Người viết câu chuyện Brand Doctor.<br>
+            Tổng GĐ Công ty Cổ phần Bác sĩ Thương hiệu.<br>
+            Trưởng Ban thư ký Hội đồng khoa học Brand Doctor
+        </p>
+    </a>
+</div>
+
+<div class="divCol divBox">
+    <a class="divBox img">
+        <div class="img" style="background-image: url(/asset/image/staff/Tran_Thi_Hao.jpg);"></div>
+        <h2>Trần Thị Hảo</h2>
+        <p>
+            Trao gửi yêu thương<br>
+            Giám đốc truyền thông Công ty Cổ phần Bác sĩ Thương hiệu
+        </p>
+    </a>
+    <a class="divBox img">
+        <div class="img" style="background-image: url(/asset/image/staff/Le_Quang_Nguyen_An.jpg);"></div>
+        <h2>Lê Quang Nguyên An</h2>
+        <p>
+            Đồng hành tin cậy<br>
+            Trưởng phòng Digital Marketing Công ty Cổ phần Bác sĩ Thương hiệu
+        </p>
+    </a>
+</div>
+<!-- <p><a class="btn" href="./doi-ngu/">Xem thêm về đội ngũ</a></p> -->
+
+<h1>Brand Doctor có</h1>
+<div class="divCol">
+    <div class="boxItem" style="background-image: linear-gradient(to top, #003399e0, #003399e0), url(/asset/image/BDG_co_1.png);">
+        <p>Chuyên gia trong nhiều lĩnh vực</p>
+    </div>
+    <div class="boxItem" style="background-image: linear-gradient(to top, #0055ffe0, #0055ffe0), url(/asset/image/BDG_co_2.png);">
+        <p>Khả năng sáng tạo giá trị cùng những giải pháp độc đáo</p>
+    </div>
+    <div class="boxItem" style="background-image: linear-gradient(to top, #003399e0, #003399e0), url(/asset/image/BDG_co_3.png);">
+        <p>Giải pháp dựa trên thực trạng của Doanh nghiệp</p>
+    </div>
+</div>
+
+<h1>Brand Doctor cần</h1>
+<div class="divCol">
+    <div class="boxItem" style="background-image: linear-gradient(to top, #003399e0, #003399e0), url(/asset/image/BDG_co_1.png);">
+        <p>Doanh nghiệp khao khát phát triển trường tồn</p>
+    </div>
+    <div class="boxItem" style="background-image: linear-gradient(to top, #0055ffe0, #0055ffe0), url(/asset/image/BDG_co_1.png);">
+        <p>Sự sẵn sàng chia sẻ thực trạng</p>
+    </div>
+    <div class="boxItem" style="background-image: linear-gradient(to top, #003399e0, #003399e0), url(/asset/image/BDG_co_3.png);">
+        <p>Quyết tâm hướng đến giá trị sáng tạo</p>
+    </div>
+</div>
+<hr>
+
+<script src="/asset/script/dropdown.js"></script>
+<script src="/asset/script/timeline.js"></script>

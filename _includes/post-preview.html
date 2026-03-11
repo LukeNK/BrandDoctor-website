@@ -1,0 +1,11 @@
+{% assign post = include.post %}
+<a href="{{ post.url }}">
+    <img src="{{ post.thumbnail }}" alt="">
+    <h4>{{ post.tag }}</h4>
+    <h2>{{ post.title }}</h2>
+    <h3>{{ post.author }}</h3>
+    <p>
+        {{ post.date | split: " " | first }}
+        <span>{{ post.content | split: " " | size | divided_by: 20 }} phút đọc</span>
+    </p>
+</a>

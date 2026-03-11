@@ -1,0 +1,140 @@
+---
+layout: standard
+title: "Liên hệ"
+include:
+    banner: true
+---
+<style>
+    #form {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        padding: 0;
+    }
+    #form-pic {
+        flex: 1 1 20rem;
+        display: flex;
+        align-items: end;
+        padding-left: var(--side-padding);
+        padding-right: 1rem;
+        padding-bottom: var(--nav-height);
+        background-image: url(/asset/image/contact.jpg);
+    }
+    #form-pic p {
+        color: white;
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+    #form-form {
+        flex: 2 1 50rem;
+        padding: var(--nav-height) 10%;
+        text-align: center;
+        background-color: var(--color-gray);
+    }
+    #form-form form {
+        max-width: 25rem;
+        margin: 0 auto;
+    }
+    #form-form h1 { color: var(--color-theme); }
+
+    #FAQ {
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image:
+            linear-gradient(to left, #0055ffe0, #0055ffe0),
+            url(/asset/image/banner_bg.jpg);
+        color: var(--color-bright);
+    }
+
+    .close-details details summary { padding: 3rem 0; }
+    .close-details details[open] { margin: 3rem 0; }
+    .close-details details[open] summary { padding: 0; }
+    .close-details hr { margin: 1rem 0; }
+</style>
+
+<div id="form">
+    <div id="form-pic">
+        <p>
+            Địa chỉ: 87 Đường 14, Phường Linh Chiểu,<br>
+            TP. Thủ Đức, TP. Hồ Chí Minh<br>
+            Email: branddoctor.info@gmail.com<br>
+            Điện thoại: (028) 398 404 12
+        </p>
+    </div>
+
+    <div id="form-form">
+        <h1>Đồng hành cùng Brand Doctor</h1>
+        <p>
+            Đừng ngại chia sẻ khao khát và mong muốn của bạn với Brand Doctor về việc phát triển Doanh nghiệp. Chúng tôi sẵn sàng lắng nghe và cùng bạn viết nên câu chuyện trường tồn.
+        </p>
+        <form>
+            <input id="name" type="text" placeholder="Họ & Tên">
+            <input id="company" type="text" placeholder="Tên Doanh Nghiệp">
+            <input id="email" type="email" placeholder="Email">
+            <input id="tel" type="tel" placeholder="Điện thoại">
+            <textarea id="text" rows="5" placeholder="Nội dung cần tư vấn"></textarea>
+            <button onclick="contactSubmit()">GỬI</button>
+        </form>
+    </div>
+</div>
+
+<div id="FAQ"><h1>FAQ</h1></div>
+<p>Hãy cùng Brand Doctor tìm hiểu về những thắc mắc thường gặp từ đối tác của chúng tôi.</p>
+
+<div class="close-details">
+    <!-- Open to hint user -->
+    <details open>
+        <summary>Giải pháp từ Brand Doctor có chi phí như thế nào?</summary>
+        <p>
+            Brand Doctor quan niệm mỗi Doanh nghiệp sẽ có thế mạnh, nguồn lực khác nhau. Chính vì thế, chúng tôi không nhân bản một giải pháp cho tất cả Doanh nghiệp mà sẽ dựa trên thực trạng mà đưa ra giải pháp phù hợp.<br>
+            Với mỗi Doanh nghiệp, mức phí sẽ được đưa ra dựa trên quy mô, khả năng và nguồn lực mà Doanh nghiệp có. Vì lý do đó, mỗi đơn vị khi cùng Brand Doctor đồng hành đều sẽ trải qua bước Khảo sát để chúng tôi có thể thấu hiểu về Doanh nghiệp.
+        </p>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary>Brand Doctor tư vấn cho Doanh nghiệp trong lĩnh vực nào?</summary>
+        <p>
+            Nhiều nghiên cứu trên thế giới cho thấy một Doanh nghiệp muốn thành công thì phải thấu hiểu được insight khách hàng và đưa ra những giá trị mà khách hàng mong muốn dù trong bất kỳ lĩnh vực, ngành nghề nào. Với nhiều năm kinh nghiệm của Hội đồng khoa học Brand Doctor, chúng tôi tự tin có khả năng sáng tạo những giá trị khác biệt, đáp ứng được những khao khát của khách hàng.<br>
+            Vì lý do đó, Brand Doctor có thể đồng hành cùng với bất kỳ Doanh nghiệp thuộc mọi lĩnh vực.
+        </p>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary>Brand Doctor đồng hành cùng Doanh nghiệp trong bao lâu?</summary>
+        <p>
+            Xây dựng và phát triển thương hiệu là một quá trình tiếp diễn liên tục và bền bỉ. Bước 7 trong 7 bước đồng hành trọn vẹn của Brand Doctor chính là “Cập nhật định vị theo thời gian”. Chúng tôi sẵn sàng cùng Doanh nghiệp phát triển giá trị từng ngày và cập nhật định vị khi đến thời điểm thích hợp. Vì chúng tôi biết rằng giá trị sẽ không bao giờ dừng lại và khách hàng sẽ ngày càng mong muốn nhiều giá trị hơn từ Doanh nghiệp.
+        </p>
+    </details>
+</div>
+
+
+<script>
+//- https://docs.google.com/forms/d/e/1FAIpQLSfkwYE3ftGx2fwtIQMwdQEnTuL2Cl6QIrFDJ7OpkFlgSeL4Xg/viewform?usp=pp_url&entry.1061795165=Name&entry.1385511241=Company&entry.1872327793=Email@email.ca&entry.0236148131=09&entry.1402602297=test
+
+// map between URL param and the filled field
+const map = {
+    "1061795165": "name",
+    "1385511241": "company",
+    "1872327793": "email",
+    "0236148131": "tel",
+    "1402602297": "text"
+}
+
+function contactSubmit() {
+    let params = new URLSearchParams();
+    for (const key in map)
+        params.append(
+            'entry.' + key,
+            document.getElementById(map[key]).value
+        );
+
+    window.location.href =
+        'https://docs.google.com/forms/d/e/1FAIpQLSfkwYE3ftGx2fwtIQMwdQEnTuL2Cl6QIrFDJ7OpkFlgSeL4Xg/viewform?'
+        + params.toString();
+}
+</script>

@@ -1,0 +1,12 @@
+theme: null
+exclude: [ "*.pug", "vi.json", "du-an/" ]
+plugins:
+    - jekyll-sitemap
+    - jekyll-seo-tag
+
+url: "https://branddoctor.vn"
+title: "Brand Doctor Group"
+tagline: "Brand Doctor Group"
+description: "Điểm tựa vàng để cá nhân và Doanh nghiệp gửi gắm niềm tin về thương hiệu từ ý tưởng - phát triển đến trường tồn"
+logo: "/asset/image/logo_blue_favicon.png"
+locale: "vi_VN"
